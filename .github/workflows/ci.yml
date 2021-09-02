@@ -1,13 +1,17 @@
 name: CI
-# Run on push and PR submission
-on: [push, pull_request]
+# Run on PRs
+on: 
+  pull_request:
+    branches:
+      - main
 jobs:
-  build:
+  verify:
     runs-on: ubuntu-latest
     strategy:
       # Only run the 14.x build
       matrix:
         node-version: [14.x]
+    name: Verify build, tests, and code style
     steps:
     - uses: actions/checkout@v1
     - name: Setup Node ${{ matrix.node-version }}
