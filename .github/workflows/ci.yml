@@ -1,0 +1,25 @@
+name: CI
+# Run on push and PR submission
+on: [push, pull_request]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    strategy:
+      # Only run the 14.x build
+      matrix:
+        node-version: [14.x]
+    steps:
+    - uses: actions/checkout@v1
+    - name: Setup Node ${{ matrix.node-version }}
+      uses: actions/setup-node@v1
+      with:
+        node-version: ${{ matrix.node-version }}
+    - run: npm install -g yarn
+    - name: Install
+      run: yarn install
+    - name: Build
+      run: yarn build
+    - name: Test
+      run: yarn test
+    - name: Lint
+      run: yarn lint
