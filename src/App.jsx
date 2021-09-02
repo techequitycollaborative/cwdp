@@ -1,29 +1,25 @@
 import React from 'react';
+import { ThemeProvider } from 'styled-components';
 
-import logo from './logo.svg';
-import './App.css';
+import { themeStyles, GlobalStyles } from './theme';
+
+import { homepageCopy } from './assets';
+
+import {
+  Logo, Header, Text, Link,
+} from './components';
 
 const App = () => (
-  <div className="App">
-    <header className="App-header">
-      <img src={logo} className="App-logo" alt="logo" />
-      <p>
-        Edit
-        {' '}
-        <code>src/App.js</code>
-        {' '}
-        and save to reload.
-      </p>
-      <a
-        className="App-link"
-        href="https://reactjs.org"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        Learn React
-      </a>
-    </header>
-  </div>
+  <ThemeProvider theme={themeStyles}>
+    <GlobalStyles />
+    <Header>
+      <Logo />
+      <Text>{homepageCopy.title}</Text>
+      <Link href={homepageCopy.link.source}>
+        {homepageCopy.link.text}
+      </Link>
+    </Header>
+  </ThemeProvider>
 );
 
 export default App;
