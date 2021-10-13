@@ -1,29 +1,28 @@
-import React from 'react';
-import styled, { keyframes } from 'styled-components';
-
+/** @jsxImportSource @emotion/react */
+import { keyframes } from '@emotion/react';
 import { logoSvg } from '../assets';
 
-const logoRotate = keyframes`
-  from {
-    transform: rotate(0deg);
-  }
+const logoRotate = keyframes({
+  from: {
+    transform: 'rotate(0deg)',
+  },
+  to: {
+    transform: 'rotate(360deg)',
+  },
+});
 
-  to {
-    transform: rotate(360deg);
-  }
-`;
-
-const LogoStyled = styled.img`
-  height: 40vmin;
-  pointer-events: none;
-
-  @media (prefers-reduced-motion: no-preference) {
-    animation: ${logoRotate} infinite 20s linear;
-  }
-`;
+const styles = {
+  logo: {
+    height: '40vmin',
+    pointerEvents: 'none',
+    '@media(prefers-reduced-motion: no-preference)': {
+      animation: `${logoRotate} infinite 20s linear`,
+    },
+  },
+};
 
 const Logo = () => (
-  <LogoStyled src={logoSvg} alt="logo" />
+  <img css={styles.logo} src={logoSvg} alt="logo" />
 );
 
 export default Logo;

@@ -1,18 +1,21 @@
-import React from 'react';
+/** @jsxImportSource @emotion/react */
 import PropTypes from 'prop-types';
-import styled from 'styled-components';
 
-const LinkStyled = styled.a`
-  color: ${(props) => props.theme.colors.link};
-  align-self: center;
-`;
+import { themeStyles } from '../theme';
+
+const styles = {
+  link: {
+    color: themeStyles.colors.link,
+    alignSelf: 'center',
+  },
+};
 
 const Link = ({ children, href }) => (
-  <LinkStyled href={href} target="_blank" rel="noopener noreferrer">{children}</LinkStyled>
+  <a css={styles.link} href={href} target="_blank" rel="noopener noreferrer">{children}</a>
 );
 
 Link.propTypes = {
-  children: PropTypes.element.isRequired,
+  children: PropTypes.string.isRequired,
   href: PropTypes.string.isRequired,
 };
 

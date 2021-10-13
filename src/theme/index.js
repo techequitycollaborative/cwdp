@@ -1,10 +1,10 @@
 import themeStyles from './themeStyles';
 import { breakpoints, mediaQueries } from './mediaQueries';
-import GlobalStyles from './GlobalStyles';
+import globalStyles from './globalStyles';
 
 export {
   themeStyles,
-  GlobalStyles,
+  globalStyles,
   breakpoints,
   mediaQueries,
 };
