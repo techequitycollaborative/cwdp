@@ -1,7 +1,7 @@
 /** @jsxImportSource @emotion/react */
 import PropTypes from 'prop-types';
 
-import { themeStyles } from '../theme';
+import { themeStyles } from 'theme';
 
 const styles = {
   link: {

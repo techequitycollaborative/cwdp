@@ -1,11 +1,11 @@
 import { Global } from '@emotion/react';
 
-import { globalStyles } from './theme';
-import { homepageCopy } from './assets';
+import { globalStyles } from 'theme';
+import { homepageCopy } from 'assets';
 
 import {
   Logo, Header, Text, Link,
-} from './components';
+} from 'components';
 
 const App = () => (
   <>

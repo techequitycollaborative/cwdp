@@ -19,6 +19,8 @@ module.exports = {
   extends: [
     'plugin:react/recommended',
     'airbnb',
+    'plugin:import/errors', 
+    'plugin:import/warnings',
   ],
   parserOptions: {
     ecmaFeature: {
@@ -26,6 +28,13 @@ module.exports = {
     },
     ecmaVersion: 12,
     sourceType: 'module',
+  },
+  settings: {
+    'import/resolver': {
+      node: {
+        paths: ['src']
+      }
+    },
   },
   ignorePatterns: ['eslint-plugin-custom-rules'],
   plugins: [
