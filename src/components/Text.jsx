@@ -1,4 +1,3 @@
-import React from 'react';
 import PropTypes from 'prop-types';
 
 const Text = ({ children }) => (
@@ -6,7 +5,7 @@ const Text = ({ children }) => (
 );
 
 Text.propTypes = {
-  children: PropTypes.element.isRequired,
+  children: PropTypes.string.isRequired,
 };
 
 export default Text;

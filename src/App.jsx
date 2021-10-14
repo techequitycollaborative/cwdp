@@ -1,8 +1,6 @@
-import React from 'react';
-import { ThemeProvider } from 'styled-components';
+import { Global } from '@emotion/react';
 
-import { themeStyles, GlobalStyles } from './theme';
-
+import { globalStyles } from './theme';
 import { homepageCopy } from './assets';
 
 import {
@@ -10,8 +8,8 @@ import {
 } from './components';
 
 const App = () => (
-  <ThemeProvider theme={themeStyles}>
-    <GlobalStyles />
+  <>
+    <Global styles={globalStyles} />
     <Header>
       <Logo />
       <Text>{homepageCopy.title}</Text>
@@ -19,7 +17,7 @@ const App = () => (
         {homepageCopy.link.text}
       </Link>
     </Header>
-  </ThemeProvider>
+  </>
 );
 
 export default App;

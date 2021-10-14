@@ -1,24 +1,27 @@
-import React from 'react';
+/** @jsxImportSource @emotion/react */
 import PropTypes from 'prop-types';
-import styled from 'styled-components';
 
-const StyledHeader = styled.header`
-    background-color: ${(props) => props.theme.colors.main};
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    font-size: calc(10px + 2vmin);
-    color: ${(props) => props.theme.colors.text};
-`;
+import { themeStyles } from '../theme';
+
+const styles = {
+  header: {
+    backgroundColor: themeStyles.colors.main,
+    minHeight: '100vh',
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
+    justifyContent: 'center',
+    fontSize: 'calc(10px + 2vmin)',
+    color: themeStyles.colors.text,
+  },
+};
 
 const Header = ({ children }) => (
-  <StyledHeader>{children}</StyledHeader>
+  <header css={styles.header}>{children}</header>
 );
 
 Header.propTypes = {
-  children: PropTypes.element.isRequired,
+  children: PropTypes.node.isRequired,
 };
 
 export default Header;
