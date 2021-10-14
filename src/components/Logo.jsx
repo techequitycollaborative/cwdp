@@ -1,6 +1,7 @@
 /** @jsxImportSource @emotion/react */
 import { keyframes } from '@emotion/react';
-import { logoSvg } from '../assets';
+
+import { logoSvg } from 'assets';
 
 const logoRotate = keyframes({
   from: {
