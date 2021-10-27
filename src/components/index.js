@@ -1,8 +1,6 @@
-import Logo from './Logo';
-import Header from './Header';
-import Text from './Text';
-import Link from './Link';
+import ScrollSnapContainer from './ScrollSnapContainer';
+import ScrollSnapSection from './ScrollSnapSection';
 
 export {
-  Logo, Header, Text, Link,
+  ScrollSnapContainer, ScrollSnapSection,
 };

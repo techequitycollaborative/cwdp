@@ -19,7 +19,7 @@ module.exports = {
   extends: [
     'plugin:react/recommended',
     'airbnb',
-    'plugin:import/errors', 
+    'plugin:import/errors',
     'plugin:import/warnings',
   ],
   parserOptions: {
@@ -45,13 +45,15 @@ module.exports = {
   ],
   rules: {
     'jest/no-disabled-tests': 'error',
+    'comma-dangle': 'off',
     'jest/no-focused-tests': 'error',
     'jest/no-identical-title': 'error',
     'jest/prefer-to-have-length': 'warn',
     'jest/valid-expect': 'error',
     'custom-rules/emotion-jsx-import': ['error', { runtime: 'automatic' }],
     '@emotion/syntax-preference': [2, 'object'],
-    "react/jsx-uses-react": "off",
-    "react/react-in-jsx-scope": "off"
+    'react/jsx-uses-react': 'off',
+    'react/react-in-jsx-scope': 'off',
+    'no-unused-vars': 'warn'
   },
 };

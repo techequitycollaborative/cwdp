@@ -1,0 +1,10 @@
+{
+  "left": {
+    "header": "FTE",
+    "benefits": ["benefits", "perks", "benefits 2", "perks 2"]
+  },
+  "right": {
+    "header": "Contractor",
+    "benefits": ["no benefits", "no perks", "no benefits 2", "no perks 2"]
+  }
+}

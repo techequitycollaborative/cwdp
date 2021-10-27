@@ -1,8 +1,12 @@
 const themeStyles = {
   colors: {
-    main: '#282c34',
-    link: '#61dafb',
-    text: 'white',
+    light: {
+      background: 'white'
+    },
+    dark: {
+      background: 'lightgrey'
+    },
+    text: 'black',
   },
 };
 

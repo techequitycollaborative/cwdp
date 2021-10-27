@@ -1,22 +1,31 @@
 import { Global } from '@emotion/react';
 
 import { globalStyles } from 'theme';
-import { homepageCopy } from 'assets';
 
 import {
-  Logo, Header, Text, Link,
-} from 'components';
+  LandingSection,
+  VideoSection,
+  PaySection,
+  BenefitsSection,
+  QuotesSection,
+  PrevalenceSection,
+  FooterSection
+} from 'sections';
+
+import { ScrollSnapContainer } from 'components';
 
 const App = () => (
   <>
     <Global styles={globalStyles} />
-    <Header>
-      <Logo />
-      <Text>{homepageCopy.title}</Text>
-      <Link href={homepageCopy.link.source}>
-        {homepageCopy.link.text}
-      </Link>
-    </Header>
+    <ScrollSnapContainer>
+      <LandingSection />
+      <VideoSection />
+      <PaySection />
+      <BenefitsSection />
+      <QuotesSection />
+      <PrevalenceSection />
+      <FooterSection />
+    </ScrollSnapContainer>
   </>
 );
 
