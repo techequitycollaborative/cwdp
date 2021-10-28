@@ -1,0 +1,34 @@
+{
+  "header": "Conclusion",
+  "description": "The workers highlighted in the Contract Worker Disparity Project point to the precarious nature of contracting and the dysfunctional  relationships between all involved—contract worker, tech manager, contracting agency, and direct employees—as key reasons their contracting experiences have been so poor, and critical levers to pull for meaningful progress across the contract workforce.",
+  "leftSubHeader": "Stay Informed",
+  "rightSubHeader": "Related Articles",
+  "input": {
+    "buttonText": "Submit",
+    "placeholder": "Email"
+  },
+  "socials":{
+    "twitter": "https://twitter.com/TECollab",
+    "instagram": "https://www.instagram.com/techequitycollab/",
+    "facebook": "https://www.facebook.com/techequitycollaborative/",
+    "linkedin": "https://www.linkedin.com/company/techequity-collaborative/"
+  },
+  "links": [
+    {
+      "label": "Segregation of Contract Workers",
+      "url": "https://techequitycollaborative.org/2021/10/14/separate-and-unequal-contract-workers-in-tech/"
+    },
+    {
+      "label": "A Broken Career Ladder",
+      "url": "https://techequitycollaborative.org/2021/08/18/a-broken-career-ladder-how-contract-work-hurts-and-helps-worker-advancement/"
+    },
+    {
+      "label": "Contracting Agency Operations",
+      "url": "https://techequitycollaborative.org/2021/06/16/the-murky-middleman-how-contracting-agencies-exploit-workers-in-tech/"
+    },
+    {
+      "label": "Working Conditions for Contract Workers",
+      "url": "https://techequitycollaborative.org/2021/05/19/contract-working-conditions-in-tech-whats-it-really-like/"
+    }
+  ]
+}

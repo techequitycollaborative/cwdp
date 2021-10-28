@@ -1,0 +1,10 @@
+{
+  "left": {
+    "header": "FTE",
+    "payValue": "$YYY,YYY"
+  },
+  "right": {
+    "header": "Contractor",
+    "payValue": "$XX,XXX"
+  }
+}

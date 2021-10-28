@@ -1,0 +1,9 @@
+{
+  "header": "Prevalence",
+  "description": "% of contractors vs FTEs",
+  "grid": {
+    "totalBoxes": 60,
+    "subtotalBoxes": 15,
+    "numberOfRows": 6
+  }
+}
