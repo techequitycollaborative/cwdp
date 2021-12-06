@@ -1,7 +1,6 @@
 import landingSectionCopy from './copy/landingSectionCopy.json';
 import videoSectionCopy from './copy/videoSectionCopy.json';
 import paySectionCopy from './copy/paySectionCopy.json';
-import benefitsSectionCopy from './copy/benefitsSectionCopy.json';
 import quotesSectionCopy from './copy/quotesSectionCopy.json';
 import prevalenceSectionCopy from './copy/prevalenceSectionCopy.json';
 import footerSectionCopy from './copy/footerSectionCopy.json';
@@ -13,12 +12,13 @@ import linkedinLogoSvg from './svg/linkedin.svg';
 import tecLogoSvg from './svg/tec.svg';
 import badgesSvg from './svg/badges.svg';
 import landingSvg from './svg/landing.svg';
+import contractorBadgeSvg from './svg/contractorBadge.svg';
+import fullTimeEmployeeBadge from './svg/fullTimeBadge.svg';
 
 export {
   landingSectionCopy,
   videoSectionCopy,
   paySectionCopy,
-  benefitsSectionCopy,
   quotesSectionCopy,
   prevalenceSectionCopy,
   footerSectionCopy,
@@ -28,5 +28,7 @@ export {
   linkedinLogoSvg,
   tecLogoSvg,
   badgesSvg,
-  landingSvg
+  landingSvg,
+  contractorBadgeSvg,
+  fullTimeEmployeeBadge
 };

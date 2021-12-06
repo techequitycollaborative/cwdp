@@ -1,39 +1,65 @@
 /** @jsxImportSource @emotion/react */
-import { paySectionCopy } from 'assets';
-import { ScrollSnapSection } from 'components';
+import { paySectionCopy, contractorBadgeSvg, fullTimeEmployeeBadge } from 'assets';
+import { ScrollSnapSection, VerticalSplit } from 'components';
+import { themeStyles } from 'theme';
 
 const styles = {
   container: {
     display: 'flex',
     flex: 1,
-    alignSelf: 'stretch',
-    flexDirection: 'row',
-    margin: '0px -100px',
-  },
-  split: {
-    display: 'flex',
     flexDirection: 'column',
-    flex: 1,
+    justifyContent: 'center',
+    alignSelf: 'stretch'
+  },
+  badge: {
+    height: 100,
+    margin: 25
+  },
+  header: {
+    display: 'flex',
     alignItems: 'center',
-    justifyContent: 'center'
+    flexDirection: 'column',
   },
-  right: {
-    backgroundColor: 'whitesmoke'
+  benefits: {
+    background: '#FFFFFF',
+    padding: 30,
+    margin: '0px 15%',
   },
+  paneHeaderText: {
+    fontSize: 32,
+    lineHeight: '50px',
+  }
 };
 
-const PaySection = () => (
-  <ScrollSnapSection background="dark">
-    <div css={styles.container}>
-      <div css={styles.split}>
-        <h1>{paySectionCopy.left.header}</h1>
-        <p>{paySectionCopy.left.payValue}</p>
-      </div>
-      <div css={[styles.split, styles.right]}>
-        <h1>{paySectionCopy.right.header}</h1>
-        <p>{paySectionCopy.right.payValue}</p>
-      </div>
+const infoPane = (header, benefits, badgeSvg) => (
+  <div css={styles.container}>
+    <div css={styles.header}>
+      <img css={styles.badge} src={badgeSvg} alt="Worker Badge" />
+      <h2 css={[themeStyles.text.headline, styles.paneHeaderText]}>{header}</h2>
     </div>
+    <div css={styles.benefits}>
+      {benefits.map((benefit) => (
+        <p css={themeStyles.text.description} key={benefit}>{benefit}</p>
+      ))}
+    </div>
+  </div>
+);
+
+const PaySection = () => (
+  <ScrollSnapSection title={paySectionCopy.title} background="dark">
+    <VerticalSplit
+      left={infoPane(
+        paySectionCopy.contract.header,
+        paySectionCopy.contract.benefits,
+        contractorBadgeSvg
+      )}
+      right={infoPane(
+        paySectionCopy.fullTime.header,
+        paySectionCopy.fullTime.benefits,
+        fullTimeEmployeeBadge
+      )}
+      hasDivider
+    />
   </ScrollSnapSection>
 );
 

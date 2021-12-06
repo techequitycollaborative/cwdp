@@ -15,6 +15,11 @@ const themeStyles = {
       lineHeight: '58px',
       marginTop: 0
     },
+    sectionTitle: {
+      color: '#FFFFFF',
+      fontSize: 28,
+      margin: 0,
+    },
     description: {
       color: '#000000',
       fontSize: 20,

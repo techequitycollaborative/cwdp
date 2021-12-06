@@ -22,11 +22,6 @@ const styles = {
     padding: '16px 38px',
     alignSelf: 'flex-start'
   },
-  titleText: {
-    color: '#FFFFFF',
-    fontSize: 28,
-    margin: 0,
-  }
 };
 
 const ScrollSnapSection = ({ children, background, title }) => (
@@ -36,7 +31,8 @@ const ScrollSnapSection = ({ children, background, title }) => (
       background === 'dark' ? styles.dark : styles.light
     ]}
   >
-    { title && <div css={styles.titleContainer}><h2 css={styles.titleText}>{title}</h2></div>}
+    { title
+    && <div css={styles.titleContainer}><h2 css={themeStyles.text.sectionTitle}>{title}</h2></div>}
     { children }
   </section>
 );

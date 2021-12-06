@@ -6,7 +6,6 @@ import {
   LandingSection,
   VideoSection,
   PaySection,
-  BenefitsSection,
   QuotesSection,
   PrevalenceSection,
   FooterSection
@@ -18,10 +17,9 @@ const App = () => (
   <>
     <Global styles={globalStyles} />
     <ScrollSnapContainer>
-      <PaySection />
       <LandingSection />
+      <PaySection />
       <VideoSection />
-      <BenefitsSection />
       <QuotesSection />
       <PrevalenceSection />
       <FooterSection />

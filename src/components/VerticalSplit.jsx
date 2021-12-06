@@ -16,13 +16,19 @@ const styles = {
     alignItems: 'center',
     justifyContent: 'center',
   },
+  divider: {
+    alignSelf: 'center',
+    borderLeft: '2px solid #E5E5E5',
+    height: '70%',
+  }
 };
 
-const VerticalSplit = ({ left, right }) => (
+const VerticalSplit = ({ left, right, hasDivider }) => (
   <div css={styles.container}>
     <div css={styles.split}>
       {left}
     </div>
+    { hasDivider && <div css={styles.divider} />}
     <div css={[styles.split, styles.right]}>
       {right}
     </div>
@@ -31,7 +37,12 @@ const VerticalSplit = ({ left, right }) => (
 
 VerticalSplit.propTypes = {
   left: PropTypes.node.isRequired,
-  right: PropTypes.node.isRequired
+  right: PropTypes.node.isRequired,
+  hasDivider: PropTypes.bool
+};
+
+VerticalSplit.defaultProps = {
+  hasDivider: false
 };
 
 export default VerticalSplit;
