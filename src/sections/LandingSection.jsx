@@ -6,7 +6,7 @@ import {
   landingSvg
 } from 'assets';
 import { themeStyles } from 'theme';
-import { ScrollSnapSection, VerticalSplit } from 'components';
+import { ScrollSnapSection, VerticalSplit, Button } from 'components';
 
 const styles = {
   headerContainer: {
@@ -29,16 +29,6 @@ const styles = {
   badges: {
     paddingRight: 15
   },
-  button: {
-    padding: '16px 38px',
-    borderRadius: 50,
-    background: '#CC3333',
-    border: '1px solid #CC3333',
-    color: '#FFFFFF',
-    fontSize: 20,
-    margin: '20px 0',
-    fontWeight: 700
-  },
   disparityImage: {
     width: '100%',
   },
@@ -54,7 +44,7 @@ const left = () => (
   <div>
     <h1 css={[themeStyles.text.headline]}>{landingSectionCopy.headline}</h1>
     <p css={themeStyles.text.description}>{landingSectionCopy.description}</p>
-    <button css={styles.button} type="button">{landingSectionCopy.button}</button>
+    <Button text={landingSectionCopy.button} />
   </div>
 );
 
