@@ -18,9 +18,9 @@ const App = () => (
   <>
     <Global styles={globalStyles} />
     <ScrollSnapContainer>
+      <PaySection />
       <LandingSection />
       <VideoSection />
-      <PaySection />
       <BenefitsSection />
       <QuotesSection />
       <PrevalenceSection />

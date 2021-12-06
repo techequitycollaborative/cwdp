@@ -8,27 +8,35 @@ const styles = {
     height: '100vh',
     display: 'flex',
     flexDirection: 'column',
-    justifyContent: 'center',
-    alignItems: 'center',
     color: 'black',
     scrollSnapAlign: 'start',
-    padding: '0px 100px'
   },
   dark: {
     background: themeStyles.colors.dark.background,
   },
   light: {
     background: themeStyles.colors.light.background,
+  },
+  titleContainer: {
+    background: '#112353',
+    padding: '16px 38px',
+    alignSelf: 'flex-start'
+  },
+  titleText: {
+    color: '#FFFFFF',
+    fontSize: 28,
+    margin: 0,
   }
 };
 
-const ScrollSnapSection = ({ children, background }) => (
+const ScrollSnapSection = ({ children, background, title }) => (
   <section
     css={[
       styles.section,
       background === 'dark' ? styles.dark : styles.light
     ]}
   >
+    { title && <div css={styles.titleContainer}><h2 css={styles.titleText}>{title}</h2></div>}
     { children }
   </section>
 );
@@ -36,10 +44,12 @@ const ScrollSnapSection = ({ children, background }) => (
 ScrollSnapSection.propTypes = {
   children: PropTypes.node.isRequired,
   background: PropTypes.oneOf(['light', 'dark']),
+  title: PropTypes.string,
 };
 
 ScrollSnapSection.defaultProps = {
-  background: 'light'
+  background: 'light',
+  title: ''
 };
 
 export default ScrollSnapSection;

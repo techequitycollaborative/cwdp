@@ -10,6 +10,9 @@ import facebookLogoSvg from './svg/facebook.svg';
 import instagramLogoSvg from './svg/instagram.svg';
 import twitterLogoSvg from './svg/twitter.svg';
 import linkedinLogoSvg from './svg/linkedin.svg';
+import tecLogoSvg from './svg/tec.svg';
+import badgesSvg from './svg/badges.svg';
+import landingSvg from './svg/landing.svg';
 
 export {
   landingSectionCopy,
@@ -22,5 +25,8 @@ export {
   facebookLogoSvg,
   twitterLogoSvg,
   instagramLogoSvg,
-  linkedinLogoSvg
+  linkedinLogoSvg,
+  tecLogoSvg,
+  badgesSvg,
+  landingSvg
 };
