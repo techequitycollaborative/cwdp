@@ -24,7 +24,7 @@ const styles = {
   },
 };
 
-const ScrollSnapSection = ({ children, background, title }) => (
+const ContentSection = ({ children, background, title }) => (
   <section
     css={[
       styles.section,
@@ -37,15 +37,15 @@ const ScrollSnapSection = ({ children, background, title }) => (
   </section>
 );
 
-ScrollSnapSection.propTypes = {
+ContentSection.propTypes = {
   children: PropTypes.node.isRequired,
   background: PropTypes.oneOf(['light', 'dark']),
   title: PropTypes.string,
 };
 
-ScrollSnapSection.defaultProps = {
+ContentSection.defaultProps = {
   background: 'light',
   title: ''
 };
 
-export default ScrollSnapSection;
+export default ContentSection;

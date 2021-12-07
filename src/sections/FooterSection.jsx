@@ -6,7 +6,7 @@ import {
   twitterLogoSvg,
   linkedinLogoSvg
 } from 'assets';
-import { ScrollSnapSection } from 'components';
+import { ContentSection } from 'components';
 
 const styles = {
   footerContainer: {
@@ -51,7 +51,7 @@ const renderSocial = (url, svg, altText) => (
 );
 
 const FooterSection = () => (
-  <ScrollSnapSection>
+  <ContentSection>
     <div css={styles.conslusionContainer}>
       <h1>{footerSectionCopy.header}</h1>
       <p>{footerSectionCopy.description}</p>
@@ -77,7 +77,7 @@ const FooterSection = () => (
         ))}
       </div>
     </div>
-  </ScrollSnapSection>
+  </ContentSection>
 );
 
 export default FooterSection;

@@ -7,7 +7,7 @@ import {
 } from 'assets';
 import { themeStyles } from 'theme';
 import {
-  ScrollSnapSection,
+  ContentSection,
   VerticalSplit,
   Blurb
 } from 'components';
@@ -51,7 +51,7 @@ const right = () => (
 );
 
 const LandingSection = () => (
-  <ScrollSnapSection>
+  <ContentSection>
     <div css={styles.headerContainer}>
       <div css={styles.headerLeft}>
         <img css={[styles.logos, styles.badges]} src={badgesSvg} alt="Badges" />
@@ -69,7 +69,7 @@ const LandingSection = () => (
       )}
       right={right()}
     />
-  </ScrollSnapSection>
+  </ContentSection>
 );
 
 export default LandingSection;

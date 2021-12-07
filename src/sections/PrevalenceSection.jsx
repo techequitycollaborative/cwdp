@@ -1,6 +1,6 @@
 /** @jsxImportSource @emotion/react */
 import { prevalenceSectionCopy } from 'assets';
-import { ScrollSnapSection } from 'components';
+import { ContentSection } from 'components';
 
 const styles = {
   box: {
@@ -33,13 +33,13 @@ const renderBoxes = () => (
 );
 
 const PrevalenceSection = () => (
-  <ScrollSnapSection background="dark">
+  <ContentSection background="dark">
     <h1>{prevalenceSectionCopy.header}</h1>
     <p>{prevalenceSectionCopy.description}</p>
     <div css={styles.outerFlexContainer}>
       <div css={styles.gridContainer}>{renderBoxes()}</div>
     </div>
-  </ScrollSnapSection>
+  </ContentSection>
 );
 
 export default PrevalenceSection;
