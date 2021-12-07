@@ -6,6 +6,11 @@ const themeStyles = {
     dark: {
       background: '#F2F8FB'
     },
+    brandBlue: '#006AC3',
+    brandNavy: '#172F6E',
+    callToActionRed: '#CC3333',
+    darkBlueGray: '#696C78',
+    blueGray: '#9FA9B4'
   },
   text: {
     headline: {

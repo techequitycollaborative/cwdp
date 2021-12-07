@@ -3,6 +3,7 @@ import { Global } from '@emotion/react';
 import { globalStyles } from 'theme';
 
 import {
+  FooterSection,
   LandingSection,
   // VideoSection,
   PaySection,
@@ -19,8 +20,8 @@ const App = () => (
       <PaySection />
       <QuoteSection />
       {/* <VideoSection />
-      <PrevalenceSection />
-      <FooterSection /> */}
+      <PrevalenceSection /> */}
+      <FooterSection />
     </div>
   </>
 );

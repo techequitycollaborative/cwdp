@@ -9,12 +9,13 @@ import facebookLogoSvg from './svg/facebook.svg';
 import instagramLogoSvg from './svg/instagram.svg';
 import twitterLogoSvg from './svg/twitter.svg';
 import linkedinLogoSvg from './svg/linkedin.svg';
-import tecLogoSvg from './svg/tec.svg';
+import techEquityLogoSvg from './svg/techEquityLogo.svg';
 import badgesSvg from './svg/badges.svg';
 import landingSvg from './svg/landing.svg';
 import contractorBadgeSvg from './svg/contractorBadge.svg';
 import fullTimeEmployeeBadge from './svg/fullTimeBadge.svg';
 import quoteSvg from './svg/quote.svg';
+import techEquityLogoSquareSvg from './svg/techEquityLogoSquare.svg';
 
 export {
   landingSectionCopy,
@@ -27,10 +28,11 @@ export {
   twitterLogoSvg,
   instagramLogoSvg,
   linkedinLogoSvg,
-  tecLogoSvg,
+  techEquityLogoSvg,
   badgesSvg,
   landingSvg,
   contractorBadgeSvg,
   fullTimeEmployeeBadge,
-  quoteSvg
+  quoteSvg,
+  techEquityLogoSquareSvg
 };

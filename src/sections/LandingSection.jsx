@@ -1,7 +1,7 @@
 /** @jsxImportSource @emotion/react */
 import {
   landingSectionCopy,
-  tecLogoSvg,
+  techEquityLogoSvg,
   badgesSvg,
   landingSvg
 } from 'assets';
@@ -57,7 +57,7 @@ const LandingSection = () => (
         <img css={[styles.logos, styles.badges]} src={badgesSvg} alt="Badges" />
         <h1 css={[themeStyles.text.headline, styles.title]}>{landingSectionCopy.header}</h1>
       </div>
-      <img css={styles.logos} src={tecLogoSvg} alt="TEC Logo" />
+      <img css={styles.logos} src={techEquityLogoSvg} alt="TEC Logo" />
     </div>
     <VerticalSplit
       left={(
