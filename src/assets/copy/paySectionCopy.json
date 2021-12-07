@@ -1,10 +1,11 @@
 {
-  "left": {
-    "header": "FTE",
-    "payValue": "$YYY,YYY"
+  "title": "At a Glance",
+  "fullTime": {
+    "header": "Full-Time Employees",
+    "benefits": ["$YYY,YYY", "perks", "benefits", "stock options"]
   },
-  "right": {
-    "header": "Contractor",
-    "payValue": "$XX,XXX"
+  "contract": {
+    "header": "Contract Workers",
+    "benefits": ["$XX,XXX", "no perks", "no benefits", "no stock options"]
   }
 }

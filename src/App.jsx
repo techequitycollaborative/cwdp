@@ -4,12 +4,11 @@ import { globalStyles } from 'theme';
 
 import {
   LandingSection,
-  VideoSection,
+  // VideoSection,
   PaySection,
-  BenefitsSection,
-  QuotesSection,
-  PrevalenceSection,
-  FooterSection
+  // PrevalenceSection,
+  // FooterSection,
+  QuoteSection
 } from 'sections';
 
 import { ScrollSnapContainer } from 'components';
@@ -19,12 +18,11 @@ const App = () => (
     <Global styles={globalStyles} />
     <ScrollSnapContainer>
       <LandingSection />
-      <VideoSection />
       <PaySection />
-      <BenefitsSection />
-      <QuotesSection />
+      <QuoteSection />
+      {/* <VideoSection />
       <PrevalenceSection />
-      <FooterSection />
+      <FooterSection /> */}
     </ScrollSnapContainer>
   </>
 );
