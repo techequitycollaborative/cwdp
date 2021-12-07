@@ -13,7 +13,25 @@ const styles = {
 };
 
 const Button = ({ color, onClick, text }) => (
-  <button onClick={onClick} css={[styles.button, { background: color, border: `1px solid ${color}` }]} type="button">{text}</button>
+  <button
+    onClick={onClick}
+    css={[
+      styles.button,
+      {
+        background: color,
+        border: `3px solid ${color}`,
+        '&:hover': {
+          background: '#FFFFFF',
+          color
+        },
+        '&:active': {
+          opacity: '.5'
+        }
+      }]}
+    type="button"
+  >
+    {text}
+  </button>
 );
 
 Button.propTypes = {
