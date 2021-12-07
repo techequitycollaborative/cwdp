@@ -6,9 +6,9 @@ import {
   LandingSection,
   VideoSection,
   PaySection,
-  QuotesSection,
   PrevalenceSection,
-  FooterSection
+  FooterSection,
+  QuoteSection
 } from 'sections';
 
 import { ScrollSnapContainer } from 'components';
@@ -17,10 +17,10 @@ const App = () => (
   <>
     <Global styles={globalStyles} />
     <ScrollSnapContainer>
+      <QuoteSection />
       <LandingSection />
       <PaySection />
       <VideoSection />
-      <QuotesSection />
       <PrevalenceSection />
       <FooterSection />
     </ScrollSnapContainer>

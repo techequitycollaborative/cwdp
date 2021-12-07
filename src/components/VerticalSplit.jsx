@@ -28,7 +28,7 @@ const VerticalSplit = ({ left, right, hasDivider }) => (
     <div css={styles.split}>
       {left}
     </div>
-    { hasDivider && <div css={styles.divider} />}
+    { hasDivider && <hr css={styles.divider} />}
     <div css={[styles.split, styles.right]}>
       {right}
     </div>

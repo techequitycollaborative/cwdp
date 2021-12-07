@@ -6,7 +6,11 @@ import {
   landingSvg
 } from 'assets';
 import { themeStyles } from 'theme';
-import { ScrollSnapSection, VerticalSplit, Button } from 'components';
+import {
+  ScrollSnapSection,
+  VerticalSplit,
+  Blurb
+} from 'components';
 
 const styles = {
   headerContainer: {
@@ -40,14 +44,6 @@ const styles = {
   }
 };
 
-const left = () => (
-  <div>
-    <h1 css={[themeStyles.text.headline]}>{landingSectionCopy.headline}</h1>
-    <p css={themeStyles.text.description}>{landingSectionCopy.description}</p>
-    <Button text={landingSectionCopy.button} />
-  </div>
-);
-
 const right = () => (
   <div css={styles.contentRight}>
     <img css={styles.disparityImage} src={landingSvg} alt="Disparity" />
@@ -64,7 +60,13 @@ const LandingSection = () => (
       <img css={styles.logos} src={tecLogoSvg} alt="TEC Logo" />
     </div>
     <VerticalSplit
-      left={left()}
+      left={(
+        <Blurb
+          headline={landingSectionCopy.headline}
+          description={landingSectionCopy.description}
+          button={{ text: landingSectionCopy.button }}
+        />
+      )}
       right={right()}
     />
   </ScrollSnapSection>

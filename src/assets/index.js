@@ -1,7 +1,7 @@
 import landingSectionCopy from './copy/landingSectionCopy.json';
 import videoSectionCopy from './copy/videoSectionCopy.json';
 import paySectionCopy from './copy/paySectionCopy.json';
-import quotesSectionCopy from './copy/quotesSectionCopy.json';
+import quoteSectionCopy from './copy/quoteSectionCopy.json';
 import prevalenceSectionCopy from './copy/prevalenceSectionCopy.json';
 import footerSectionCopy from './copy/footerSectionCopy.json';
 
@@ -14,12 +14,13 @@ import badgesSvg from './svg/badges.svg';
 import landingSvg from './svg/landing.svg';
 import contractorBadgeSvg from './svg/contractorBadge.svg';
 import fullTimeEmployeeBadge from './svg/fullTimeBadge.svg';
+import quoteSvg from './svg/quote.svg';
 
 export {
   landingSectionCopy,
   videoSectionCopy,
   paySectionCopy,
-  quotesSectionCopy,
+  quoteSectionCopy,
   prevalenceSectionCopy,
   footerSectionCopy,
   facebookLogoSvg,
@@ -30,5 +31,6 @@ export {
   badgesSvg,
   landingSvg,
   contractorBadgeSvg,
-  fullTimeEmployeeBadge
+  fullTimeEmployeeBadge,
+  quoteSvg
 };
