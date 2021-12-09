@@ -17,6 +17,7 @@ const intersectionObserverOptions = {
 
 const styles = {
   indicatorContainer: {
+    marginRight: 10,
     position: 'fixed',
     top: 0,
     right: 20,
