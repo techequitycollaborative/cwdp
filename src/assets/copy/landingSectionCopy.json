@@ -2,5 +2,8 @@
   "header": "Contract Worker Disparity Project",
   "headline": "Impactful headline lorem ipsum dolor sit amet.",
   "description": "First-of-its-kind worker-centered research initiative combining workers’ first-hand accounts, industry research, and a sector-wide sampling to reveal contract work practices in the tech industry.",
-  "button": "Download the report"
+  "button": {
+    "label": "Download the report",
+    "url": "https://techequitycollaborative.org/wp-content/uploads/2020/10/November-2020-Ballot-Voter-Guide-1.pdf"
+  }
 }

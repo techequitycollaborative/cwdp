@@ -64,7 +64,7 @@ const LandingSection = () => (
         <Blurb
           headline={landingSectionCopy.headline}
           description={landingSectionCopy.description}
-          button={{ text: landingSectionCopy.button }}
+          button={{ text: landingSectionCopy.button.label, url: landingSectionCopy.button.url }}
         />
       )}
       right={right()}

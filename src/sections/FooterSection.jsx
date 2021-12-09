@@ -117,7 +117,11 @@ const FooterSection = () => (
         {renderSocial(footerSectionCopy.socials.twitter, twitterLogoSvg, 'twitter')}
         {renderSocial(footerSectionCopy.socials.linkedin, linkedinLogoSvg, 'linkedin')}
         <p css={styles.socialDescription}>{footerSectionCopy.socialDescription}</p>
-        <Button text={footerSectionCopy.button.label} color={themeStyles.colors.brandNavy} />
+        <Button
+          url={footerSectionCopy.button.url}
+          text={footerSectionCopy.button.label}
+          color={themeStyles.colors.brandNavy}
+        />
       </div>
     </div>
     <div css={styles.bottomBannerContainer}>
