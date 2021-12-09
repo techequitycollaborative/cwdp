@@ -1,4 +1,5 @@
 /** @jsxImportSource @emotion/react */
+import { forwardRef } from 'react';
 import PropTypes from 'prop-types';
 
 import { themeStyles } from 'theme';
@@ -24,8 +25,15 @@ const styles = {
   },
 };
 
-const ContentSection = ({ children, background, title }) => (
+const ContentSection = forwardRef(({
+  content,
+  background,
+  title,
+  id
+}, ref) => (
   <section
+    ref={ref}
+    id={id}
     css={[
       styles.section,
       background === 'dark' ? styles.dark : styles.light
@@ -33,19 +41,21 @@ const ContentSection = ({ children, background, title }) => (
   >
     { title
     && <div css={styles.titleContainer}><h2 css={themeStyles.text.sectionTitle}>{title}</h2></div>}
-    { children }
+    { content }
   </section>
-);
+));
 
 ContentSection.propTypes = {
-  children: PropTypes.node.isRequired,
+  content: PropTypes.node.isRequired,
   background: PropTypes.oneOf(['light', 'dark']),
   title: PropTypes.string,
+  id: PropTypes.string,
 };
 
 ContentSection.defaultProps = {
   background: 'light',
-  title: ''
+  title: '',
+  id: undefined
 };
 
 export default ContentSection;

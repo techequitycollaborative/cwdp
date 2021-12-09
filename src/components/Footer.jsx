@@ -7,8 +7,9 @@ import {
   linkedinLogoSvg,
   techEquityLogoSquareSvg
 } from 'assets';
-import { Button } from 'components';
 import { themeStyles } from 'theme';
+
+import Button from './Button';
 
 const styles = {
   footerContainer: {
@@ -87,7 +88,7 @@ const renderSocial = (url, svg, altText) => (
 );
 
 const renderClickabelText = (link, textStyle) => (
-  <a css={styles.link} href={link.url} target="_blank" rel="noopener noreferrer">
+  <a key={link.label} css={styles.link} href={link.url} target="_blank" rel="noopener noreferrer">
     <p css={textStyle}>{link.label}</p>
   </a>
 );
@@ -105,7 +106,7 @@ const renderVerticalDivider = () => (
   <hr css={styles.verticalDivider} />
 );
 
-const FooterSection = () => (
+const Footer = () => (
   <div css={styles.footerContainer}>
     <div css={styles.topBannerContainer}>
       <img css={styles.techEquityLogo} src={techEquityLogoSquareSvg} alt="TEC Logo" />
@@ -143,4 +144,4 @@ const FooterSection = () => (
   </div>
 );
 
-export default FooterSection;
+export default Footer;

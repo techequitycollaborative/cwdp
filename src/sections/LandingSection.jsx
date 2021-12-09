@@ -6,11 +6,7 @@ import {
   landingSvg
 } from 'assets';
 import { themeStyles } from 'theme';
-import {
-  ContentSection,
-  VerticalSplit,
-  Blurb
-} from 'components';
+import { VerticalSplit, Blurb } from 'components';
 
 const styles = {
   headerContainer: {
@@ -51,7 +47,7 @@ const right = () => (
 );
 
 const LandingSection = () => (
-  <ContentSection>
+  <>
     <div css={styles.headerContainer}>
       <div css={styles.headerLeft}>
         <img css={[styles.logos, styles.badges]} src={badgesSvg} alt="Badges" />
@@ -69,7 +65,7 @@ const LandingSection = () => (
       )}
       right={right()}
     />
-  </ContentSection>
+  </>
 );
 
 export default LandingSection;
