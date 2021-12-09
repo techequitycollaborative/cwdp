@@ -7,8 +7,9 @@ import {
   linkedinLogoSvg,
   techEquityLogoSquareSvg
 } from 'assets';
-import { Button } from 'components';
 import { themeStyles } from 'theme';
+
+import Button from './Button';
 
 const styles = {
   footerContainer: {
@@ -105,7 +106,7 @@ const renderVerticalDivider = () => (
   <hr css={styles.verticalDivider} />
 );
 
-const FooterSection = () => (
+const Footer = () => (
   <div css={styles.footerContainer}>
     <div css={styles.topBannerContainer}>
       <img css={styles.techEquityLogo} src={techEquityLogoSquareSvg} alt="TEC Logo" />
@@ -143,4 +144,4 @@ const FooterSection = () => (
   </div>
 );
 
-export default FooterSection;
+export default Footer;
