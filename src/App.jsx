@@ -3,6 +3,7 @@ import { Global } from '@emotion/react';
 import { globalStyles } from 'theme';
 
 import {
+  FooterSection,
   LandingSection,
   // VideoSection,
   PaySection,
@@ -11,19 +12,17 @@ import {
   QuoteSection
 } from 'sections';
 
-import { ScrollSnapContainer } from 'components';
-
 const App = () => (
   <>
     <Global styles={globalStyles} />
-    <ScrollSnapContainer>
+    <div>
       <LandingSection />
       <PaySection />
       <QuoteSection />
       {/* <VideoSection />
-      <PrevalenceSection />
-      <FooterSection /> */}
-    </ScrollSnapContainer>
+      <PrevalenceSection /> */}
+      <FooterSection />
+    </div>
   </>
 );
 

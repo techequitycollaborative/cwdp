@@ -1,9 +1,9 @@
 /** @jsxImportSource @emotion/react */
 import { videoSectionCopy } from 'assets';
-import { ScrollSnapSection } from 'components';
+import { ContentSection } from 'components';
 
 const VideoSection = () => (
-  <ScrollSnapSection>
+  <ContentSection>
     <p>{videoSectionCopy.description}</p>
     <iframe
       width="560"
@@ -14,7 +14,7 @@ const VideoSection = () => (
       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
       allowFullScreen
     />
-  </ScrollSnapSection>
+  </ContentSection>
 );
 
 export default VideoSection;

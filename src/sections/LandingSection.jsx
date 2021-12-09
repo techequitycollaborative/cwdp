@@ -1,13 +1,13 @@
 /** @jsxImportSource @emotion/react */
 import {
   landingSectionCopy,
-  tecLogoSvg,
+  techEquityLogoSvg,
   badgesSvg,
   landingSvg
 } from 'assets';
 import { themeStyles } from 'theme';
 import {
-  ScrollSnapSection,
+  ContentSection,
   VerticalSplit,
   Blurb
 } from 'components';
@@ -51,25 +51,25 @@ const right = () => (
 );
 
 const LandingSection = () => (
-  <ScrollSnapSection>
+  <ContentSection>
     <div css={styles.headerContainer}>
       <div css={styles.headerLeft}>
         <img css={[styles.logos, styles.badges]} src={badgesSvg} alt="Badges" />
         <h1 css={[themeStyles.text.headline, styles.title]}>{landingSectionCopy.header}</h1>
       </div>
-      <img css={styles.logos} src={tecLogoSvg} alt="TEC Logo" />
+      <img css={styles.logos} src={techEquityLogoSvg} alt="TEC Logo" />
     </div>
     <VerticalSplit
       left={(
         <Blurb
           headline={landingSectionCopy.headline}
           description={landingSectionCopy.description}
-          button={{ text: landingSectionCopy.button }}
+          button={{ text: landingSectionCopy.button.label, url: landingSectionCopy.button.url }}
         />
       )}
       right={right()}
     />
-  </ScrollSnapSection>
+  </ContentSection>
 );
 
 export default LandingSection;

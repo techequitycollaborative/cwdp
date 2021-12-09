@@ -12,19 +12,37 @@ const styles = {
   }
 };
 
-const Button = ({ color, onClick, text }) => (
-  <button onClick={onClick} css={[styles.button, { background: color, border: `1px solid ${color}` }]} type="button">{text}</button>
+const Button = ({ color, url, text }) => (
+  <a href={url} target="_blank" rel="noopener noreferrer">
+    <button
+      css={[
+        styles.button,
+        {
+          background: color,
+          border: `3px solid ${color}`,
+          '&:hover': {
+            background: '#FFFFFF',
+            color
+          },
+          '&:active': {
+            opacity: '.5'
+          }
+        }]}
+      type="button"
+    >
+      {text}
+    </button>
+  </a>
 );
 
 Button.propTypes = {
   color: PropTypes.string,
-  onClick: PropTypes.func,
   text: PropTypes.string.isRequired,
+  url: PropTypes.string.isRequired
 };
 
 Button.defaultProps = {
   color: '#CC3333',
-  onClick: undefined
 };
 
 export default Button;

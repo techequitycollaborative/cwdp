@@ -1,14 +1,14 @@
 /** @jsxImportSource @emotion/react */
 import { quoteSectionCopy } from 'assets';
 import {
-  ScrollSnapSection,
+  ContentSection,
   VerticalSplit,
   Blurb,
   Quote
 } from 'components';
 
 const QuoteSection = () => (
-  <ScrollSnapSection title={quoteSectionCopy.title}>
+  <ContentSection title={quoteSectionCopy.title}>
     <VerticalSplit
       left={(
         <Blurb
@@ -23,7 +23,7 @@ const QuoteSection = () => (
         />
       )}
     />
-  </ScrollSnapSection>
+  </ContentSection>
 );
 
 export default QuoteSection;

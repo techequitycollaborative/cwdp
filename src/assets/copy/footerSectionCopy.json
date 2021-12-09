@@ -1,34 +1,73 @@
 {
-  "header": "Conclusion",
-  "description": "The workers highlighted in the Contract Worker Disparity Project point to the precarious nature of contracting and the dysfunctional  relationships between all involved—contract worker, tech manager, contracting agency, and direct employees—as key reasons their contracting experiences have been so poor, and critical levers to pull for meaningful progress across the contract workforce.",
-  "leftSubHeader": "Stay Informed",
-  "rightSubHeader": "Related Articles",
-  "input": {
-    "buttonText": "Submit",
-    "placeholder": "Email"
+  "button": {
+    "label": "Donate",
+    "url": "https://techequitycollaborative.org/donate/"
   },
+  "socialDescription": "Follow us on social for live updates.",
   "socials":{
     "twitter": "https://twitter.com/TECollab",
     "instagram": "https://www.instagram.com/techequitycollab/",
     "facebook": "https://www.facebook.com/techequitycollaborative/",
     "linkedin": "https://www.linkedin.com/company/techequity-collaborative/"
   },
-  "links": [
-    {
-      "label": "Segregation of Contract Workers",
-      "url": "https://techequitycollaborative.org/2021/10/14/separate-and-unequal-contract-workers-in-tech/"
+  "linkColumns": {
+    "firstColumn": [
+      {
+        "label": "About",
+        "url": "https://techequitycollaborative.org/about/"
+      },
+      {
+        "label": "Become a Member",
+        "url": "https://techequitycollaborative.org/membership/"
+      },
+      {
+        "label": "Join the Movement",
+        "url": "https://techequitycollaborative.org/join-the-movement/"
+      },
+      {
+        "label": "Events",
+        "url": "https://techequitycollaborative.org/events/"
+      }
+    ],
+    "secondColumn":
+    [
+      {
+        "label": "Resources",
+        "url": "https://techequitycollaborative.org/resources/"
+      },
+      {
+        "label": "Contact Us",
+        "url": "https://techequitycollaborative.org/contact-us/"
+      },
+      {
+        "label": "Code of Conduct",
+        "url": "https://techequitycollaborative.org/code-of-conduct/"
+      },
+      {
+        "label": "Privacy Policy",
+        "url": "https://techequitycollaborative.org/privacy-policy/"
+      }
+    ]
+  },
+  "bottomBanner": {
+    "privacyPolicy": {
+      "label": "Privacy Policy",
+      "url": "https://techequitycollaborative.org/privacy-policy/"
     },
-    {
-      "label": "A Broken Career Ladder",
-      "url": "https://techequitycollaborative.org/2021/08/18/a-broken-career-ladder-how-contract-work-hurts-and-helps-worker-advancement/"
+    "termsOfUse": {
+      "label": "Terms of Use",
+      "url": "https://techequitycollaborative.org/code-of-conduct/"
     },
-    {
-      "label": "Contracting Agency Operations",
-      "url": "https://techequitycollaborative.org/2021/06/16/the-murky-middleman-how-contracting-agencies-exploit-workers-in-tech/"
+    "telephone": {
+      "label": "Phone: (510) 239-7472‬ ",
+      "url": "tel:5102397472"
     },
-    {
-      "label": "Working Conditions for Contract Workers",
-      "url": "https://techequitycollaborative.org/2021/05/19/contract-working-conditions-in-tech-whats-it-really-like/"
+    "email": {
+      "label": "Email: info@techequitycollaborative.org",
+      "url": "mailto:info@techequitycollaborative.org"
+    },
+    "copyright": {
+      "label": "© 2021 TechEquity Collaborative. All Rights Reserved."
     }
-  ]
+  }
 }

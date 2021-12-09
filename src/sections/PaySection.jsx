@@ -1,6 +1,6 @@
 /** @jsxImportSource @emotion/react */
 import { paySectionCopy, contractorBadgeSvg, fullTimeEmployeeBadge } from 'assets';
-import { ScrollSnapSection, VerticalSplit } from 'components';
+import { ContentSection, VerticalSplit } from 'components';
 import { themeStyles } from 'theme';
 
 const styles = {
@@ -46,7 +46,7 @@ const infoPane = (header, benefits, badgeSvg) => (
 );
 
 const PaySection = () => (
-  <ScrollSnapSection title={paySectionCopy.title} background="dark">
+  <ContentSection title={paySectionCopy.title} background="dark">
     <VerticalSplit
       left={infoPane(
         paySectionCopy.contract.header,
@@ -60,7 +60,7 @@ const PaySection = () => (
       )}
       hasDivider
     />
-  </ScrollSnapSection>
+  </ContentSection>
 );
 
 export default PaySection;

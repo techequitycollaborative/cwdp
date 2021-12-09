@@ -4,43 +4,79 @@ import {
   facebookLogoSvg,
   instagramLogoSvg,
   twitterLogoSvg,
-  linkedinLogoSvg
+  linkedinLogoSvg,
+  techEquityLogoSquareSvg
 } from 'assets';
-import { ScrollSnapSection } from 'components';
+import { Button } from 'components';
+import { themeStyles } from 'theme';
 
 const styles = {
   footerContainer: {
     display: 'flex',
     flex: 1,
+    flexDirection: 'column',
+    padding: 30
+  },
+  techEquityLogo: {
+    height: 200,
+    width: 200
+  },
+  topBannerContainer: {
+    display: 'flex',
+    flex: 1,
     flexDirection: 'row',
-    alignSelf: 'stretch',
-    margin: '0px -100px',
+    justifyContent: 'space-between',
+    alignItems: 'center'
   },
-  footerSplit: {
-    padding: '0px 30px',
+  bottomBannerContainer: {
     display: 'flex',
-    flexDirection: 'column',
     flex: 1,
-    alignItems: 'flex-start',
-    justifyContent: 'flex-start'
-  },
-  conslusionContainer: {
-    display: 'flex',
-    flex: 2,
-    flexDirection: 'column',
-    justifyContent: 'center'
-  },
-  socialsContainer: {
-    padding: '20px 0px',
-    display: 'flex',
-    alignSelf: 'stretch',
-    flex: 1,
-    justifyContent: 'flex-start',
+    flexDirection: 'row',
+    flexWrap: 'wrap',
+    justifyContent: 'center',
+    marginTop: 20
   },
   logo: {
-    height: 20,
-    width: 20,
-    paddingRight: 30
+    height: 30,
+    width: 30,
+    paddingRight: 30,
+    paddingBottom: 10,
+  },
+  link: {
+    textDecoration: 'none',
+  },
+  columnLinkText: {
+    color: themeStyles.colors.brandNavy,
+    fontSize: 20,
+    lineHeight: '29px',
+    fontWeight: 700,
+    margin: 0
+  },
+  bottomBannerText: {
+    color: themeStyles.colors.blueGray,
+    fontSize: 17,
+    lineHeight: '21px',
+    margin: 0,
+    paddingRight: 8
+  },
+  bottomBannerTextBold: {
+    fontWeight: 700,
+    color: themeStyles.colors.darkBlueGray
+  },
+  verticalDivider: {
+    borderLeft: `1px solid ${themeStyles.colors.blueGray}`,
+    margin: 0,
+    marginRight: 8,
+  },
+  horizontalDivider: {
+    width: '20%',
+    borderColor: themeStyles.colors.brandNavy,
+    margin: '5px 0px'
+  },
+  socialDescription: {
+    margin: 0,
+    fontWeight: 300,
+    fontSize: 14
   }
 };
 
@@ -50,34 +86,61 @@ const renderSocial = (url, svg, altText) => (
   </a>
 );
 
+const renderClickabelText = (link, textStyle) => (
+  <a css={styles.link} href={link.url} target="_blank" rel="noopener noreferrer">
+    <p css={textStyle}>{link.label}</p>
+  </a>
+);
+
+const renderLinkColumn = (links) => (
+  <div>
+    <hr css={styles.horizontalDivider} />
+    {links.map((link) => (
+      renderClickabelText(link, styles.columnLinkText)
+    ))}
+  </div>
+);
+
+const renderVerticalDivider = () => (
+  <hr css={styles.verticalDivider} />
+);
+
 const FooterSection = () => (
-  <ScrollSnapSection>
-    <div css={styles.conslusionContainer}>
-      <h1>{footerSectionCopy.header}</h1>
-      <p>{footerSectionCopy.description}</p>
-    </div>
-    <div css={styles.footerContainer}>
-      <div css={styles.footerSplit}>
-        <h2>{footerSectionCopy.leftSubHeader}</h2>
-        <div>
-          <input placeholder={footerSectionCopy.input.placeholder} />
-          <button type="button">{footerSectionCopy.input.buttonText}</button>
-        </div>
-        <div css={styles.socialsContainer}>
-          {renderSocial(footerSectionCopy.socials.facebook, facebookLogoSvg, 'facebook')}
-          {renderSocial(footerSectionCopy.socials.instagram, instagramLogoSvg, 'instagram')}
-          {renderSocial(footerSectionCopy.socials.twitter, twitterLogoSvg, 'twitter')}
-          {renderSocial(footerSectionCopy.socials.linkedin, linkedinLogoSvg, 'linkedin')}
-        </div>
-      </div>
-      <div css={styles.footerSplit}>
-        <h2>{footerSectionCopy.rightSubHeader}</h2>
-        {footerSectionCopy.links.map((link) => (
-          <a key={`social-link-${link.label}`} href={link.url} target="_blank" rel="noopener noreferrer">{link.label}</a>
-        ))}
+  <div css={styles.footerContainer}>
+    <div css={styles.topBannerContainer}>
+      <img css={styles.techEquityLogo} src={techEquityLogoSquareSvg} alt="TEC Logo" />
+      {renderLinkColumn(footerSectionCopy.linkColumns.firstColumn)}
+      {renderLinkColumn(footerSectionCopy.linkColumns.secondColumn)}
+      <div>
+        {renderSocial(footerSectionCopy.socials.facebook, facebookLogoSvg, 'facebook')}
+        {renderSocial(footerSectionCopy.socials.instagram, instagramLogoSvg, 'instagram')}
+        {renderSocial(footerSectionCopy.socials.twitter, twitterLogoSvg, 'twitter')}
+        {renderSocial(footerSectionCopy.socials.linkedin, linkedinLogoSvg, 'linkedin')}
+        <p css={styles.socialDescription}>{footerSectionCopy.socialDescription}</p>
+        <Button
+          url={footerSectionCopy.button.url}
+          text={footerSectionCopy.button.label}
+          color={themeStyles.colors.brandNavy}
+        />
       </div>
     </div>
-  </ScrollSnapSection>
+    <div css={styles.bottomBannerContainer}>
+      {renderClickabelText(
+        footerSectionCopy.bottomBanner.privacyPolicy,
+        { ...styles.bottomBannerText, ...styles.bottomBannerTextBold }
+      )}
+      {renderVerticalDivider()}
+      {renderClickabelText(
+        footerSectionCopy.bottomBanner.termsOfUse,
+        { ...styles.bottomBannerText, ...styles.bottomBannerTextBold }
+      )}
+      {renderVerticalDivider()}
+      {renderClickabelText(footerSectionCopy.bottomBanner.telephone, styles.bottomBannerText)}
+      {renderVerticalDivider()}
+      {renderClickabelText(footerSectionCopy.bottomBanner.email, styles.bottomBannerText)}
+      <p css={styles.bottomBannerText}>{footerSectionCopy.bottomBanner.copyright.label}</p>
+    </div>
+  </div>
 );
 
 export default FooterSection;

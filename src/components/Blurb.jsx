@@ -9,18 +9,14 @@ const Blurb = ({ headline, description, button }) => (
   <div>
     <h1 css={[themeStyles.text.headline]}>{headline}</h1>
     <p css={themeStyles.text.description}>{description}</p>
-    {button && <Button text={button.text} color={button.color} onClick={button.onClick} /> }
+    {button && <Button text={button.text} color={button.color} url={button.url} /> }
   </div>
 );
 
 Blurb.propTypes = {
   headline: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,
-  button: PropTypes.shape({
-    color: PropTypes.string,
-    text: PropTypes.string.isRequired,
-    onClick: PropTypes.func
-  }),
+  button: Button.propTypes
 };
 
 Blurb.defaultProps = {
