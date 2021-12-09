@@ -16,7 +16,7 @@ const Blurb = ({ headline, description, button }) => (
 Blurb.propTypes = {
   headline: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,
-  button: Button.propTypes
+  button: PropTypes.shape(Button.propTypes)
 };
 
 Blurb.defaultProps = {

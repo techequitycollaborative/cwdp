@@ -88,7 +88,7 @@ const renderSocial = (url, svg, altText) => (
 );
 
 const renderClickabelText = (link, textStyle) => (
-  <a css={styles.link} href={link.url} target="_blank" rel="noopener noreferrer">
+  <a key={link.label} css={styles.link} href={link.url} target="_blank" rel="noopener noreferrer">
     <p css={textStyle}>{link.label}</p>
   </a>
 );
