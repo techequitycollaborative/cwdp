@@ -16,6 +16,9 @@ import contractorBadgeSvg from './svg/contractorBadge.svg';
 import fullTimeEmployeeBadge from './svg/fullTimeBadge.svg';
 import quoteSvg from './svg/quote.svg';
 import techEquityLogoSquareSvg from './svg/techEquityLogoSquare.svg';
+import playButtonSvg from './svg/playButton.svg';
+
+import shadowWorkforceImg from './img/shadowWorkforce.png';
 
 export {
   landingSectionCopy,
@@ -34,5 +37,7 @@ export {
   contractorBadgeSvg,
   fullTimeEmployeeBadge,
   quoteSvg,
-  techEquityLogoSquareSvg
+  techEquityLogoSquareSvg,
+  shadowWorkforceImg,
+  playButtonSvg
 };

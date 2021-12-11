@@ -54,6 +54,7 @@ module.exports = {
     '@emotion/syntax-preference': [2, 'object'],
     'react/jsx-uses-react': 'off',
     'react/react-in-jsx-scope': 'off',
+    'object-curly-newline': 'off',
     'no-unused-vars': 'warn'
   },
 };

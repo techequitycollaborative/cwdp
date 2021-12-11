@@ -5,6 +5,7 @@ import Blurb from './Blurb';
 import Quote from './Quote';
 import SectionIndicator from './SectionIndicator';
 import Footer from './Footer';
+import Video from './Video';
 
 export {
   ContentSection,
@@ -13,5 +14,6 @@ export {
   Blurb,
   Quote,
   SectionIndicator,
-  Footer
+  Footer,
+  Video
 };
