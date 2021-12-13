@@ -30,7 +30,7 @@ const styles = {
   indicator: {
     width: INDICATOR_SIZE,
     height: INDICATOR_SIZE,
-    borderRadius: INDICATOR_SIZE / 2,
+    borderRadius: '50%',
     background: '#000000',
     margin: '15px auto',
     opacity: '.2',
@@ -40,7 +40,7 @@ const styles = {
     opacity: '1',
     width: ACTIVE_INDICATOR_SIZE,
     height: ACTIVE_INDICATOR_SIZE,
-    borderRadius: ACTIVE_INDICATOR_SIZE / 2,
+    borderRadius: '50%',
     background: '#E08585',
   }
 };

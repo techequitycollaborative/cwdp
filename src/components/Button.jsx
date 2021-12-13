@@ -8,7 +8,10 @@ const styles = {
     color: '#FFFFFF',
     fontSize: 20,
     margin: '20px 0',
-    fontWeight: 700
+    fontWeight: 700,
+    '&:active': {
+      opacity: '.5'
+    }
   }
 };
 
@@ -24,9 +27,6 @@ const Button = ({ color, url, text }) => (
             background: '#FFFFFF',
             color
           },
-          '&:active': {
-            opacity: '.5'
-          }
         }]}
       type="button"
     >
