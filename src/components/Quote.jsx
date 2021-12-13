@@ -18,56 +18,42 @@ const styles = {
   },
   container: {
     margin: '0% 15%',
-  },
-  horiztonalBorderContainer: {
-    display: 'flex',
-    flex: 1,
-    flexDirection: 'row',
-    alignItems: 'center',
-    borderLeft: '2px solid#E5E5E5',
-    borderRight: '2px solid#E5E5E5',
-  },
-  horizontalBorder: {
-    border: 'hidden',
-    padding: 0,
-    margin: 0,
-    borderTop: '2px solid#E5E5E5',
-    flex: 1,
-  },
-  longHorizontalBorder: {
-    flex: 8,
-  },
-  quoteSvg: {
-    margin: '0px 10px',
-    height: 25
-  },
-  contractorSvg: {
-    margin: '0px 10px',
-    height: 75,
-    transform: 'rotate(10deg)'
+    border: '2px solid #E5E5E5',
+    position: 'relative'
   },
   textContainer: {
-    borderLeft: '2px solid#E5E5E5',
-    borderRight: '2px solid#E5E5E5',
-    padding: '60px 30px'
-  }
+    padding: '70px 40px',
+  },
+  quoteSvg: {
+    position: 'absolute',
+    margin: '0px 30px',
+    top: -40,
+    left: 0
+  },
+  contractorSvgContainer: {
+    background: '#FFFFFF',
+    position: 'absolute',
+    bottom: -50,
+    right: 0,
+    margin: '0px 40px',
+    display: 'inline-block',
+    paddingRight: 10,
+    paddingLeft: 18
+  },
+  contractorSvg: {
+    transform: 'rotate(10deg)'
+  },
 };
 
 const Quote = ({ text, author }) => (
   <div css={styles.container}>
-    <div css={styles.horiztonalBorderContainer}>
-      <hr css={styles.horizontalBorder} />
-      <img css={styles.quoteSvg} src={quoteSvg} alt="Quote" />
-      <hr css={[styles.horizontalBorder, styles.longHorizontalBorder]} />
-    </div>
+    <img css={styles.quoteSvg} src={quoteSvg} alt="Quote" />
     <div css={styles.textContainer}>
       <p css={styles.quoteText}>{text}</p>
       {author && <p css={styles.authorText}>{author}</p>}
     </div>
-    <div css={styles.horiztonalBorderContainer}>
-      <hr css={[styles.horizontalBorder, styles.longHorizontalBorder]} />
+    <div css={styles.contractorSvgContainer}>
       <img css={styles.contractorSvg} src={contractorBadgeSvg} alt="Contractor Badge" />
-      <hr css={styles.horizontalBorder} />
     </div>
   </div>
 );
