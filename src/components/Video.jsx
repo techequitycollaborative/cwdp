@@ -5,6 +5,8 @@ import youTubePlayer from 'youtube-player';
 
 import { playButtonSvg } from 'assets';
 
+const ANIMATION_DURATION = 200;
+
 const styles = {
   container: {
     width: '80%',
@@ -17,9 +19,9 @@ const styles = {
   // Making iframe responsive - https://www.smashingmagazine.com/2014/02/making-embedded-content-work-in-responsive-design/#the-css
   videoContainer: {
     flex: 1,
+    zIndex: 0,
     position: 'relative',
     height: 0,
-    overflow: 'hidden',
     paddingBottom: '56.25%', // Equals 16:9
   },
   video: {
@@ -28,24 +30,47 @@ const styles = {
     left: 0,
     width: '100%',
     height: '100%',
-    zIndex: 0,
-  },
-  coverContainer: {
-    position: 'relative',
+    cursor: 'pointer'
   },
   coverImg: {
-    height: 'auto',
-    width: '100%'
-  },
-  coverButton: {
+    width: '100%',
+    height: '100%',
+    opacity: 1,
+    zIndex: 20,
     position: 'absolute',
     top: '50%',
     left: '50%',
     transform: 'translate(-50%, -50%)',
-    cursor: 'pointer',
-    border: 'none',
-    background: 'transparent'
   },
+  coverPlayButton: {
+    position: 'absolute',
+    opacity: 1,
+    top: '50%',
+    left: '50%',
+    transform: 'translate(-50%, -50%)',
+    border: 'none',
+    background: 'transparent',
+    zIndex: 30,
+    '&:active': {
+      opacity: '.8'
+    }
+  },
+  coverFadeOut: {
+    transition: `opacity ${ANIMATION_DURATION}ms linear`,
+    opacity: 0,
+  },
+  coverFadeIn: {
+    transition: `opacity ${ANIMATION_DURATION}ms linear`,
+    opacity: 1,
+  },
+  coverHidePointers: {
+    pointerEvents: 'none',
+    cursor: 'none',
+  },
+  coverShowPointers: {
+    pointerEvents: 'auto',
+    cursor: 'pointer'
+  }
 };
 
 const playerOptions = {};
@@ -85,15 +110,17 @@ const Video = ({ title, source, coverImg }) => {
 
   return (
     <div css={styles.container}>
-      {showCover && (
-        <div css={styles.coverContainer}>
-          <img css={styles.coverImg} src={coverImg} alt={title} />
-          <button css={styles.coverButton} type="button" onClick={onPlay}>
-            <img src={playButtonSvg} alt="Disparity" />
-          </button>
-        </div>
-      )}
       <div css={styles.videoContainer}>
+        <button type="button" onClick={onPlay} css={showCover ? styles.coverShowPointers : styles.coverHidePointers}>
+          <img
+            css={[styles.coverImg, showCover ? styles.coverFadeIn : styles.coverFadeOut]}
+            src={coverImg}
+            alt={title}
+          />
+          <div css={styles.coverPlayButton}>
+            <img css={showCover ? styles.coverFadeIn : styles.coverFadeOut} src={playButtonSvg} alt="Disparity" />
+          </div>
+        </button>
         <iframe
           ref={iframeRef}
           css={styles.video}
