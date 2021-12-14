@@ -1,5 +1,6 @@
 /** @jsxImportSource @emotion/react */
 import PropTypes from 'prop-types';
+import { mediaQueries, breakpoints } from 'theme';
 
 const styles = {
   container: {
@@ -7,7 +8,11 @@ const styles = {
     flex: 1,
     alignSelf: 'stretch',
     flexDirection: 'row',
-    padding: '0px 40px'
+    padding: '0px 40px',
+    [mediaQueries(breakpoints.mobile)]: {
+      flexDirection: 'column',
+      padding: '40px 40px',
+    },
   },
   split: {
     display: 'flex',
@@ -15,6 +20,9 @@ const styles = {
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
+    [mediaQueries(breakpoints.mobile)]: {
+      paddingBottom: '5%'
+    },
   },
   divider: {
     alignSelf: 'center',

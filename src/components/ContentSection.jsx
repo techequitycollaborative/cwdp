@@ -2,15 +2,19 @@
 import { forwardRef } from 'react';
 import PropTypes from 'prop-types';
 
-import { themeStyles } from 'theme';
+import { breakpoints, mediaQueries, themeStyles } from 'theme';
 
 const styles = {
   section: {
-    height: '100vh',
+    minHeight: '100vh',
     display: 'flex',
     flexDirection: 'column',
     color: 'black',
     scrollSnapAlign: 'start',
+    [mediaQueries(breakpoints.mobile)]: {
+      flexDirection: 'column',
+      minHeight: 'auto'
+    },
   },
   dark: {
     background: themeStyles.colors.dark.background,
@@ -21,7 +25,11 @@ const styles = {
   titleContainer: {
     background: '#112353',
     padding: '16px 38px',
-    alignSelf: 'flex-start'
+    alignSelf: 'flex-start',
+    marginBottom: 15,
+    [mediaQueries(breakpoints.mobile)]: {
+      marginBottom: 0
+    },
   },
 };
 

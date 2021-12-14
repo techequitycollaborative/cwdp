@@ -2,13 +2,17 @@
 import PropTypes from 'prop-types';
 
 import { quoteSvg, contractorBadgeSvg } from 'assets';
+import { breakpoints, mediaQueries } from 'theme';
 
 const styles = {
   quoteText: {
     color: '#000000',
     fontSize: 24,
-    lineHeight: '34px',
-    margin: 0
+    lineHeight: 'normal',
+    margin: 0,
+    [mediaQueries(breakpoints.mobile)]: {
+      fontSize: 20
+    },
   },
   authorText: {
     color: '#000000',
@@ -19,16 +23,27 @@ const styles = {
   container: {
     margin: '0% 15%',
     border: '2px solid #E5E5E5',
-    position: 'relative'
+    position: 'relative',
+    marginBottom: 60,
+    [mediaQueries(breakpoints.mobile)]: {
+      margin: '0% 3%',
+    },
   },
   textContainer: {
     padding: '70px 40px',
+    [mediaQueries(breakpoints.mobile)]: {
+      padding: '50px 20px',
+    },
   },
   quoteSvg: {
     position: 'absolute',
     margin: '0px 30px',
     top: -40,
-    left: 0
+    left: 0,
+    [mediaQueries(breakpoints.mobile)]: {
+      height: 55,
+      top: -28,
+    },
   },
   contractorSvgContainer: {
     background: '#FFFFFF',
@@ -38,10 +53,16 @@ const styles = {
     margin: '0px 40px',
     display: 'inline-block',
     paddingRight: 10,
-    paddingLeft: 18
+    paddingLeft: 18,
+    [mediaQueries(breakpoints.mobile)]: {
+      bottom: -35,
+    },
   },
   contractorSvg: {
-    transform: 'rotate(10deg)'
+    transform: 'rotate(10deg)',
+    [mediaQueries(breakpoints.mobile)]: {
+      height: 65,
+    },
   },
 };
 
