@@ -1,7 +1,7 @@
 /** @jsxImportSource @emotion/react */
 import { paySectionCopy, contractorBadgeSvg, fullTimeEmployeeBadge } from 'assets';
 import { VerticalSplit } from 'components';
-import { themeStyles } from 'theme';
+import { breakpoints, mediaQueries, themeStyles } from 'theme';
 
 const styles = {
   container: {
@@ -13,7 +13,10 @@ const styles = {
   },
   badge: {
     height: 100,
-    margin: 25
+    margin: 25,
+    [mediaQueries(breakpoints.mobile)]: {
+      height: 80
+    }
   },
   header: {
     display: 'flex',
@@ -24,10 +27,17 @@ const styles = {
     background: '#FFFFFF',
     padding: 30,
     margin: '0px 15%',
+    [mediaQueries(breakpoints.mobile)]: {
+      margin: '0px 3%',
+    }
   },
   paneHeaderText: {
     fontSize: 32,
-    lineHeight: '50px',
+    lineHeight: 'normal',
+    textAlign: 'center',
+    [mediaQueries(breakpoints.mobile)]: {
+      fontSize: 25,
+    }
   }
 };
 

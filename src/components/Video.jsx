@@ -4,8 +4,10 @@ import { useEffect, useRef, useState } from 'react';
 import youTubePlayer from 'youtube-player';
 
 import { playButtonSvg } from 'assets';
+import { breakpoints, mediaQueries } from 'theme';
 
 const ANIMATION_DURATION = 200;
+const BORDER_RADIUS = 15;
 
 const styles = {
   container: {
@@ -14,7 +16,10 @@ const styles = {
     display: 'flex',
     flex: 1,
     alignItems: 'center',
-    justifyContent: 'center'
+    justifyContent: 'center',
+    [mediaQueries(breakpoints.mobile)]: {
+      width: '100%',
+    },
   },
   // Making iframe responsive - https://www.smashingmagazine.com/2014/02/making-embedded-content-work-in-responsive-design/#the-css
   videoContainer: {
@@ -22,7 +27,7 @@ const styles = {
     zIndex: 0,
     position: 'relative',
     height: 0,
-    paddingBottom: '56.25%', // Equals 16:9
+    paddingBottom: '56.25%', // Equals 16:9,
   },
   video: {
     position: 'absolute',
@@ -30,11 +35,13 @@ const styles = {
     left: 0,
     width: '100%',
     height: '100%',
-    cursor: 'pointer'
+    cursor: 'pointer',
+    borderRadius: BORDER_RADIUS,
   },
   coverImg: {
     width: '100%',
     height: '100%',
+    borderRadius: BORDER_RADIUS,
     opacity: 1,
     zIndex: 20,
     position: 'absolute',

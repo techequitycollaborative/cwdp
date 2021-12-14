@@ -8,6 +8,8 @@ import {
 } from 'react';
 import PropTypes from 'prop-types';
 
+import { breakpoints, mediaQueries } from 'theme';
+
 const INDICATOR_SIZE = 12;
 const ACTIVE_INDICATOR_SIZE = INDICATOR_SIZE + 2;
 
@@ -20,12 +22,15 @@ const styles = {
     marginRight: 10,
     position: 'fixed',
     top: 0,
-    right: 20,
+    right: '2%',
     height: '100vh',
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'center',
-    alignItems: 'center'
+    alignItems: 'center',
+    [mediaQueries(breakpoints.mobile)]: {
+      right: 0,
+    }
   },
   indicator: {
     width: INDICATOR_SIZE,

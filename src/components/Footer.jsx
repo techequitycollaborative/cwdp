@@ -7,7 +7,7 @@ import {
   linkedinLogoSvg,
   techEquityLogoSquareSvg
 } from 'assets';
-import { themeStyles } from 'theme';
+import { breakpoints, mediaQueries, themeStyles } from 'theme';
 
 import Button from './Button';
 
@@ -20,14 +20,26 @@ const styles = {
   },
   techEquityLogo: {
     height: 200,
-    width: 200
+    width: 200,
   },
   topBannerContainer: {
     display: 'flex',
     flex: 1,
     flexDirection: 'row',
     justifyContent: 'space-between',
-    alignItems: 'center'
+    alignItems: 'center',
+    [mediaQueries(breakpoints.mobile)]: {
+      flexDirection: 'column',
+    },
+  },
+  linkColumnContainer: {
+    [mediaQueries(breakpoints.mobile)]: {
+      display: 'flex',
+      flexDirection: 'column',
+      alignItems: 'center',
+      justifyContent: 'center',
+      paddingBottom: 15,
+    },
   },
   bottomBannerContainer: {
     display: 'flex',
@@ -37,7 +49,7 @@ const styles = {
     justifyContent: 'center',
     marginTop: 20
   },
-  logo: {
+  socialLogo: {
     height: 30,
     width: 30,
     paddingRight: 30,
@@ -58,7 +70,8 @@ const styles = {
     fontSize: 17,
     lineHeight: '21px',
     margin: 0,
-    paddingRight: 8
+    paddingRight: 8,
+    textAlign: 'center'
   },
   bottomBannerTextBold: {
     fontWeight: 700,
@@ -72,18 +85,30 @@ const styles = {
   horizontalDivider: {
     width: '20%',
     borderColor: themeStyles.colors.brandNavy,
-    margin: '5px 0px'
+    margin: '5px 0px',
+    [mediaQueries(breakpoints.mobile)]: {
+      marginBottom: 10
+    },
   },
   socialDescription: {
     margin: 0,
     fontWeight: 300,
     fontSize: 14
+  },
+  socialsContainer: {
+    [mediaQueries(breakpoints.mobile)]: {
+      display: 'flex',
+      flexDirection: 'column',
+      alignItems: 'center',
+      justifyContent: 'center',
+      padding: '20 0',
+    },
   }
 };
 
 const renderSocial = (url, svg, altText) => (
   <a href={url} target="_blank" rel="noopener noreferrer">
-    <img key={altText} css={styles.logo} src={svg} alt={altText} />
+    <img key={altText} css={styles.socialLogo} src={svg} alt={altText} />
   </a>
 );
 
@@ -94,7 +119,7 @@ const renderClickabelText = (link, textStyle) => (
 );
 
 const renderLinkColumn = (links) => (
-  <div>
+  <div css={styles.linkColumnContainer}>
     <hr css={styles.horizontalDivider} />
     {links.map((link) => (
       renderClickabelText(link, styles.columnLinkText)
@@ -112,11 +137,13 @@ const Footer = () => (
       <img css={styles.techEquityLogo} src={techEquityLogoSquareSvg} alt="TEC Logo" />
       {renderLinkColumn(footerSectionCopy.linkColumns.firstColumn)}
       {renderLinkColumn(footerSectionCopy.linkColumns.secondColumn)}
-      <div>
-        {renderSocial(footerSectionCopy.socials.facebook, facebookLogoSvg, 'facebook')}
-        {renderSocial(footerSectionCopy.socials.instagram, instagramLogoSvg, 'instagram')}
-        {renderSocial(footerSectionCopy.socials.twitter, twitterLogoSvg, 'twitter')}
-        {renderSocial(footerSectionCopy.socials.linkedin, linkedinLogoSvg, 'linkedin')}
+      <div css={styles.socialsContainer}>
+        <div>
+          {renderSocial(footerSectionCopy.socials.facebook, facebookLogoSvg, 'facebook')}
+          {renderSocial(footerSectionCopy.socials.instagram, instagramLogoSvg, 'instagram')}
+          {renderSocial(footerSectionCopy.socials.twitter, twitterLogoSvg, 'twitter')}
+          {renderSocial(footerSectionCopy.socials.linkedin, linkedinLogoSvg, 'linkedin')}
+        </div>
         <p css={styles.socialDescription}>{footerSectionCopy.socialDescription}</p>
         <Button
           url={footerSectionCopy.button.url}

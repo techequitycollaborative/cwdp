@@ -1,3 +1,5 @@
+import { breakpoints, mediaQueries } from './mediaQueries';
+
 const themeStyles = {
   colors: {
     light: {
@@ -17,19 +19,29 @@ const themeStyles = {
       color: '#112353',
       fontSize: 52,
       fontWeight: 600,
-      lineHeight: '58px',
-      marginTop: 0
+      lineHeight: 'normal',
+      marginTop: 0,
+      [mediaQueries(breakpoints.mobile)]: {
+        fontSize: 32,
+      }
     },
     sectionTitle: {
       color: '#FFFFFF',
+      lineHeight: 'normal',
       fontSize: 28,
       margin: 0,
+      [mediaQueries(breakpoints.mobile)]: {
+        fontSize: 24,
+      }
     },
     description: {
       color: '#000000',
       fontSize: 20,
       fontWeight: 400,
-      lineHeight: '28px'
+      lineHeight: '28px',
+      [mediaQueries(breakpoints.mobile)]: {
+        fontSize: 18,
+      }
     }
   },
 };
