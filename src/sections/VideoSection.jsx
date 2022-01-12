@@ -1,5 +1,5 @@
 /** @jsxImportSource @emotion/react */
-import { videoSectionCopy, shadowWorkforceImg } from 'assets';
+import { workplaceProtectionsCopy, shadowWorkforceImg } from 'assets';
 import {
   VerticalSplit,
   Blurb,
@@ -10,14 +10,14 @@ const VideoSection = () => (
   <VerticalSplit
     left={(
       <Blurb
-        headline={videoSectionCopy.headline}
-        description={videoSectionCopy.description}
+        headline={workplaceProtectionsCopy.headline}
+        description={workplaceProtectionsCopy.description}
       />
     )}
     right={(
       <Video
-        title={videoSectionCopy.video.title}
-        source={videoSectionCopy.video.source}
+        title={workplaceProtectionsCopy.video.title}
+        source={workplaceProtectionsCopy.video.source}
         coverImg={shadowWorkforceImg}
       />
     )}
