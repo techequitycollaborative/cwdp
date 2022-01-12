@@ -18,7 +18,7 @@ import quoteSvg from './svg/quote.svg';
 import techEquityLogoSquareSvg from './svg/techEquityLogoSquare.svg';
 import playButtonSvg from './svg/playButton.svg';
 
-import shadowWorkforceImg from './img/shadowWorkforce.png';
+import shadowWorkforceImg from './img/desk.png';
 
 export {
   landingSectionCopy,
