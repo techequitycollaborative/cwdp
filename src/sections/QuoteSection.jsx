@@ -1,5 +1,5 @@
 /** @jsxImportSource @emotion/react */
-import { quoteSectionCopy } from 'assets';
+import { mobilityAdvancementCopy } from 'assets';
 import {
   VerticalSplit,
   Blurb,
@@ -10,14 +10,14 @@ const QuoteSection = () => (
   <VerticalSplit
     left={(
       <Blurb
-        headline={quoteSectionCopy.headline}
-        description={quoteSectionCopy.description}
+        headline={mobilityAdvancementCopy.headline}
+        description={mobilityAdvancementCopy.description}
       />
     )}
     right={(
       <Quote
-        text={quoteSectionCopy.quote.text}
-        author={quoteSectionCopy.quote.author}
+        text={mobilityAdvancementCopy.quote.text}
+        author={mobilityAdvancementCopy.quote.author}
       />
     )}
   />

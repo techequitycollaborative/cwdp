@@ -1,7 +1,9 @@
 {
   "title": "Contract Terms",
   "headline": "Headline lorem ipsum dolor sit amet consectetur.",
-  "description": "Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Donec sed odio dui. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.",
+  "description": [
+    "Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Donec sed odio dui. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus."
+  ],
   "quote": {
     "text": "Ambiguous jobs aren’t uncommon even for direct employees. For Louisa, however, this haziness threatened her livelihood.",
     "author": "TECollab"
