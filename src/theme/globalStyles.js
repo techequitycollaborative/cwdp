@@ -2,7 +2,7 @@ const globalStyles = {
   body: {
     margin: 0,
     // eslint-disable-next-line  max-len
-    fontFamily: ['-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', 'sans-serif'],
+    fontFamily: ['sans-serif', 'Source Sans Pro', 'freight-sans-pro'],
     webkitFontSmoothing: 'antialiased',
     mozOsxFontSmoothing: 'grayscale',
   },

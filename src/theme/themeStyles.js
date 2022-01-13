@@ -29,6 +29,7 @@ const themeStyles = {
       color: '#FFFFFF',
       lineHeight: 'normal',
       fontSize: 28,
+      fontWeight: 600,
       margin: 0,
       [mediaQueries(breakpoints.mobile)]: {
         fontSize: 24,
