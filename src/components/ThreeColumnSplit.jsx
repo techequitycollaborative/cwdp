@@ -2,6 +2,8 @@
 import PropTypes from 'prop-types';
 import { mediaQueries, breakpoints } from 'theme';
 
+// Very similar to VerticalSplit.jsx
+
 const styles = {
   container: {
     display: 'flex',
@@ -31,26 +33,24 @@ const styles = {
   }
 };
 
-const VerticalSplit = ({ left, right, hasDivider }) => (
+const ThreeColumnSplit = ({ left, center, right }) => (
   <div css={styles.container}>
     <div css={styles.split}>
       {left}
     </div>
-    { hasDivider && <hr css={styles.divider} />}
+    <div css={styles.split}>
+      {center}
+    </div>
     <div css={styles.split}>
       {right}
     </div>
   </div>
 );
 
-VerticalSplit.propTypes = {
+ThreeColumnSplit.propTypes = {
   left: PropTypes.node.isRequired,
+  center: PropTypes.node.isRequired,
   right: PropTypes.node.isRequired,
-  hasDivider: PropTypes.bool
 };
 
-VerticalSplit.defaultProps = {
-  hasDivider: false
-};
-
-export default VerticalSplit;
+export default ThreeColumnSplit;

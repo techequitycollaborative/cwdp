@@ -42,6 +42,13 @@ const themeStyles = {
       [mediaQueries(breakpoints.mobile)]: {
         fontSize: 18,
       }
+    },
+    subHeading: {
+      color: '#172F6E', // brand navy
+      fontWeight: 600,
+      fontSize: 28,
+      margin: 0,
+      marginTop: 20,
     }
   },
 };

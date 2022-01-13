@@ -6,7 +6,7 @@ import {
   Video
 } from 'components';
 
-const VideoSection = () => (
+const WorkplaceProtections = () => (
   <VerticalSplit
     left={(
       <Blurb
@@ -24,4 +24,4 @@ const VideoSection = () => (
   />
 );
 
-export default VideoSection;
+export default WorkplaceProtections;
