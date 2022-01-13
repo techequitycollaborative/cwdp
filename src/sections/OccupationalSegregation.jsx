@@ -3,7 +3,6 @@ import { occupationalSegregationCopy, segregationImg } from 'assets';
 import {
   VerticalSplit,
   Blurb,
-  Video,
   Image
 } from 'components';
 
