@@ -8,7 +8,9 @@ import Button from './Button';
 const Blurb = ({ headline, description, button }) => (
   <div>
     <h1 css={[themeStyles.text.headline]}>{headline}</h1>
-    <p css={themeStyles.text.description}>{description}</p>
+    {description.map((paragraph) => (
+      <p css={themeStyles.text.description}>{paragraph}</p>
+    ))}
     {button && <Button text={button.text} color={button.color} url={button.url} /> }
   </div>
 );

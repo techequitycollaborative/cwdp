@@ -1,0 +1,25 @@
+{
+  "title": "Policy Solutions",
+  "headline": "Building Public Policy Support",
+  "description": [
+    "Improving working conditions and ending wage disparities will require policy and regulatory reform. Throughout the Contract Worker Disparity Project, workers have been consistent about what needs to change: equal pay for equal work, greater stability, and better working conditions. Download the full set of policy recommendations to learn more."
+  ],
+  "button": {
+    "label": "Download the public policy recommendations",
+    "url": "https://techequitycollaborative.org/wp-content/uploads/2020/10/November-2020-Ballot-Voter-Guide-1.pdf"
+  },
+  "items": [
+    {
+      "heading": "Compensate Contract Workers with Equal Pay for Equal Work",
+      "description": "Workers doing similar jobs for the same company should earn the same wages. The federal Equal Pay Act of 1963 requires that people of different genders, race, and other characteristics must earn equal pay for equal work; it should be updated to include language to protect workers doing similar jobs at the same workplace. Amending federal and state Equal Pay Acts is one way to close the wage gap between contract and directly-employed workers."
+    },
+    {
+      "heading": "Ensure Safe and Secure Employment",
+      "description": "Existing labor laws don't adequately protect contract workers from exploitation or poor working conditions. Contract workers must have written information about their job assignments, clear personnel policies and protections, clear contract terms, formal contract extension and cancellation processes, written and accessible pathways to conversion to direct employment, the ability to speak plainly and openly about their work histories, and more."
+    },
+    {
+      "heading": "Bring Transparency to the Contract Workforce",
+      "description": "Measures that create public data and give workers the ability to combat pay disparities are critical. Right now, the relationships between tech companies and contracting agencies are a black box; even the tech companies don’t know exactly how much contract workers earn. Public agencies should require that parent companies report contracting data from their staffing agencies and disrupt the “don’t ask don’t tell” arrangement that lets corporations deny responsibility for wage and demographic disparities."
+    }
+  ]
+}

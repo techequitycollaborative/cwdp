@@ -1,0 +1,57 @@
+{
+  "pay": {
+    "contract": {
+      "salary": "$xx,xxxx",
+      "type": "Average Salary",
+      "description": "for contract software developers"
+    },
+    "fte": {
+      "salary": "$xx,xxxx",
+      "type": "Average Salary",
+      "description": "for directly employed software developers"
+    }
+  },
+  "benefits": {
+    "contract": {
+      "title": "Benefits",
+      "items": [
+        [15, "Health Insurance"],
+        [0, "Paid Time Off"],
+        [0, "401k Contributions"],
+        [0, "Stock Options"],
+        [0, "Disability Benefits"],
+        [0, "Paid Parental Leave"]
+      ]
+    },
+    "fte": {
+      "title": "Benefits",
+      "items": [
+        [100, "Health Insurance"],
+        [100, "Paid Time Off"],
+        [100, "401k Contributions"],
+        [100, "Stock Options"],
+        [100, "Disability Benefits"],
+        [100, "Paid Parental Leave"]
+      ]
+    }
+  },
+  "raceGap": {
+    "title": "Converting to Full-Time",
+    "stats": {
+      "white": [43, "White contractors"],
+      "bipoc": [33, "BIPOC contractors"]
+    }
+  },
+  "mobility": {
+    "contract": {
+      "description": "Limited mobility and high job insecurity"
+    },
+    "fte": {
+      "description": "Clear career pathways with upward mobility"
+    }
+  },
+  "quote": {
+    "text": "Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Donec sed odio dui. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.",
+    "author": "Byline if appropriate"
+  }
+}
