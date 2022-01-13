@@ -16,12 +16,6 @@ const styles = {
       minHeight: 'auto'
     },
   },
-  dark: {
-    background: themeStyles.colors.dark.background,
-  },
-  light: {
-    background: themeStyles.colors.light.background,
-  },
   titleContainer: {
     background: '#112353',
     padding: '16px 38px',
@@ -37,14 +31,17 @@ const ContentSection = forwardRef(({
   content,
   background,
   title,
-  id
+  id,
+  overrideBackground
 }, ref) => (
   <section
     ref={ref}
     id={id}
     css={[
       styles.section,
-      background === 'dark' ? styles.dark : styles.light
+      {
+        background: overrideBackground || (background === 'dark' ? themeStyles.colors.dark.background : themeStyles.colors.light.background)
+      }
     ]}
   >
     { title
@@ -56,6 +53,7 @@ const ContentSection = forwardRef(({
 ContentSection.propTypes = {
   content: PropTypes.node.isRequired,
   background: PropTypes.oneOf(['light', 'dark']),
+  overrideBackground: PropTypes.string,
   title: PropTypes.string,
   id: PropTypes.string,
 };
@@ -63,7 +61,8 @@ ContentSection.propTypes = {
 ContentSection.defaultProps = {
   background: 'light',
   title: '',
-  id: undefined
+  id: undefined,
+  overrideBackground: ''
 };
 
 export default ContentSection;

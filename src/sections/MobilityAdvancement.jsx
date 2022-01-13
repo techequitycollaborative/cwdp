@@ -6,7 +6,7 @@ import {
   Quote
 } from 'components';
 
-const QuoteSection = () => (
+const MobilityAdvancement = () => (
   <VerticalSplit
     left={(
       <Blurb
@@ -23,4 +23,4 @@ const QuoteSection = () => (
   />
 );
 
-export default QuoteSection;
+export default MobilityAdvancement;

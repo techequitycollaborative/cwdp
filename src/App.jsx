@@ -1,18 +1,26 @@
 import { Global } from '@emotion/react';
 
-import { paySectionCopy, mobilityAdvancementCopy, workplaceProtectionsCopy } from 'assets';
-import { globalStyles } from 'theme';
+import { paySectionCopy, mobilityAdvancementCopy, workplaceProtectionsCopy, closingGapCopy, joinCampaignCopy, policySolutionsCopy, glassDivideCopy } from 'assets';
+import { globalStyles, themeStyles } from 'theme';
 import { ContentSection, SectionIndicator, Footer } from 'components';
-import { LandingSection, PaySection, QuoteSection, VideoSection } from 'sections';
+import { LandingSection, AtGlance, MobilityAdvancement, WorkplaceProtections, ResponsibleContractingStandard, JoinCampaign, PolicySolutions, GlassDivide } from 'sections';
 
 const App = () => (
   <>
     <Global styles={globalStyles} />
     <SectionIndicator>
       <ContentSection content={LandingSection()} />
-      <ContentSection content={PaySection()} title={paySectionCopy.title} background="dark" />
-      <ContentSection content={QuoteSection()} title={mobilityAdvancementCopy.title} />
-      <ContentSection content={VideoSection()} title={workplaceProtectionsCopy.title} background="dark" />
+      <ContentSection content={AtGlance()} title={paySectionCopy.title} background="dark" />
+      <ContentSection content={ResponsibleContractingStandard()} title={closingGapCopy.title} />
+      <ContentSection
+        content={JoinCampaign()}
+        title={joinCampaignCopy.title}
+        overrideBackground={themeStyles.colors.callToActionRed}
+      />
+      <ContentSection content={PolicySolutions()} title={policySolutionsCopy.title} />
+      <ContentSection content={MobilityAdvancement()} title={mobilityAdvancementCopy.title} />
+      <ContentSection content={WorkplaceProtections()} title={workplaceProtectionsCopy.title} background="dark" />
+      <ContentSection content={GlassDivide()} title={glassDivideCopy.title} />
     </SectionIndicator>
     <Footer />
   </>

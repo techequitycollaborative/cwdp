@@ -27,6 +27,25 @@ import techEquityLogoSquareSvg from './svg/techEquityLogoSquare.svg';
 import playButtonSvg from './svg/playButton.svg';
 
 import shadowWorkforceImg from './img/desk.png';
+import equalityImg from './img/equality.png';
+import rcsSalaryImg from './img/rcs-salary.png';
+import rcsShieldImg from './img/rcs-shield.png';
+import rcsPathImg from './img/rcs-path.png';
+import rcsBalanceImg from './img/rcs-balance.png';
+import rcsProcurementImg from './img/rcs-procurement.png';
+import rcsTransparencyImg from './img/rcs-transparency.png';
+import joinImg from './img/join.png';
+import scalesImg from './img/scales.png';
+
+// Note: These map in order to the items in closingTheGap
+const standardItemIcons = [
+  rcsSalaryImg,
+  rcsShieldImg,
+  rcsPathImg,
+  rcsBalanceImg,
+  rcsProcurementImg,
+  rcsTransparencyImg
+];
 
 export {
   landingSectionCopy,
@@ -54,5 +73,9 @@ export {
   quoteSvg,
   techEquityLogoSquareSvg,
   shadowWorkforceImg,
-  playButtonSvg
+  playButtonSvg,
+  equalityImg,
+  standardItemIcons,
+  joinImg,
+  scalesImg
 };

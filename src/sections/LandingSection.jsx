@@ -6,7 +6,7 @@ import {
   landingSvg
 } from 'assets';
 import { breakpoints, mediaQueries, themeStyles } from 'theme';
-import { VerticalSplit, Blurb } from 'components';
+import { VerticalSplit, Blurb, Image } from 'components';
 
 const styles = {
   headerContainer: {
@@ -42,22 +42,7 @@ const styles = {
   badges: {
     paddingRight: 15,
   },
-  disparityImage: {
-    width: '100%',
-  },
-  contentRight: {
-    flex: 1,
-    display: 'flex',
-    flexDirection: 'column',
-    justifyContent: 'flex-end'
-  }
 };
-
-const right = () => (
-  <div css={styles.contentRight}>
-    <img css={styles.disparityImage} src={landingSvg} alt="Disparity" />
-  </div>
-);
 
 const LandingSection = () => (
   <>
@@ -76,7 +61,7 @@ const LandingSection = () => (
           button={{ text: landingSectionCopy.button.label, url: landingSectionCopy.button.url }}
         />
       )}
-      right={right()}
+      right={(<Image source={landingSvg} altText="Disparity" />)}
     />
   </>
 );

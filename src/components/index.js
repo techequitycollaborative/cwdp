@@ -6,6 +6,8 @@ import Quote from './Quote';
 import SectionIndicator from './SectionIndicator';
 import Footer from './Footer';
 import Video from './Video';
+import Image from './Image';
+import ThreeColumnSplit from './ThreeColumnSplit';
 
 export {
   ContentSection,
@@ -15,5 +17,7 @@ export {
   Quote,
   SectionIndicator,
   Footer,
-  Video
+  Video,
+  Image,
+  ThreeColumnSplit
 };

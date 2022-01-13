@@ -55,7 +55,7 @@ const infoPane = (header, benefits, badgeSvg) => (
   </div>
 );
 
-const PaySection = () => (
+const AtGlance = () => (
   <VerticalSplit
     left={infoPane(
       paySectionCopy.contract.header,
@@ -71,4 +71,4 @@ const PaySection = () => (
   />
 );
 
-export default PaySection;
+export default AtGlance;

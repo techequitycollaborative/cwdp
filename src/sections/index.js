@@ -1,13 +1,19 @@
 import LandingSection from './LandingSection';
-import VideoSection from './VideoSection';
-import PaySection from './PaySection';
-import QuoteSection from './QuoteSection';
-import PrevalenceSection from './PrevalenceSection';
+import WorkplaceProtections from './WorkplaceProtections';
+import AtGlance from './AtGlance';
+import MobilityAdvancement from './MobilityAdvancement';
+import ResponsibleContractingStandard from './ResponsibleContractingStandard';
+import JoinCampaign from './JoinCampaign';
+import PolicySolutions from './PolicySolutions';
+import GlassDivide from './GlassDivide';
 
 export {
   LandingSection,
-  VideoSection,
-  PaySection,
-  QuoteSection,
-  PrevalenceSection,
+  WorkplaceProtections,
+  AtGlance,
+  MobilityAdvancement,
+  ResponsibleContractingStandard,
+  JoinCampaign,
+  PolicySolutions,
+  GlassDivide,
 };
