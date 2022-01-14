@@ -8,6 +8,7 @@ import Footer from './Footer';
 import Video from './Video';
 import Image from './Image';
 import ThreeColumnSplit from './ThreeColumnSplit';
+import FloatingButton from './FloatingButton';
 
 export {
   ContentSection,
@@ -19,5 +20,6 @@ export {
   Footer,
   Video,
   Image,
-  ThreeColumnSplit
+  ThreeColumnSplit,
+  FloatingButton
 };
