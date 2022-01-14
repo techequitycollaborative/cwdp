@@ -50,6 +50,9 @@ const themeStyles = {
       fontSize: 24,
       margin: 0,
       marginTop: 20,
+      [mediaQueries(breakpoints.mobile)]: {
+        fontSize: 28,
+      }
     }
   },
 };

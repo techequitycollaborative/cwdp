@@ -54,7 +54,7 @@ const styles = {
     display: 'flex',
     flexDirection: 'row',
     justifyContent: 'flex-start',
-    alignSelf: 'flex-start',
+    alignItems: 'center',
   },
   benefitText: {
     margin: '15px 0px',
@@ -135,10 +135,12 @@ const visualAssets = {
 const renderRaceGapRow = (handCount, handSvg, altText, stats) => (
   <div css={styles.raceGapRow}>
     { maxHandCount > handCount // render hidden hands to make the spacing line up
-      && [...Array(maxHandCount - handCount)].map(
-        () => (<img css={[styles.handSvg, styles.hiddenHand]} src={handSvg} alt={altText} />)
+      && Array.from(Array(maxHandCount - handCount).keys()).map(
+        (index) => (<img key={`hidden-${index}-${altText}`} css={[styles.handSvg, styles.hiddenHand]} src={handSvg} alt={altText} />)
       )}
-    {[...Array(handCount)].map(() => (<img css={styles.handSvg} src={handSvg} alt={altText} />))}
+    {Array.from(Array(handCount).keys()).map(
+      (index) => (<img key={`${altText}-${index}`} css={styles.handSvg} src={handSvg} alt={altText} />)
+    )}
     <p css={[themeStyles.text.subHeading, styles.raceGapText]}>{`${stats[0]}%`}</p>
     <p css={[themeStyles.text.description, styles.raceGapText]}>{stats[1]}</p>
   </div>
@@ -189,7 +191,7 @@ const infoPane = (copy, color, assets) => (
   </div>
 );
 
-const AtGlance = () => (
+const AtGlanceDesktop = () => (
   <>
     <VerticalSplit
       left={infoPane(
@@ -208,4 +210,4 @@ const AtGlance = () => (
   </>
 );
 
-export default AtGlance;
+export default AtGlanceDesktop;
