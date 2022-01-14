@@ -1,6 +1,6 @@
 import LandingSection from './LandingSection';
 import WorkplaceProtections from './WorkplaceProtections';
-import AtGlance from './AtGlance';
+import AtGlance from './at-glance/AtGlance';
 import MobilityAdvancement from './MobilityAdvancement';
 import ResponsibleContractingStandard from './ResponsibleContractingStandard';
 import JoinCampaign from './JoinCampaign';

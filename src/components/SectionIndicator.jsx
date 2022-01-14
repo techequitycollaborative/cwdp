@@ -14,7 +14,7 @@ const INDICATOR_SIZE = 12;
 const ACTIVE_INDICATOR_SIZE = INDICATOR_SIZE + 2;
 
 const intersectionObserverOptions = {
-  threshold: 0.5
+  threshold: 0.2 // Keep this number low
 };
 
 const styles = {

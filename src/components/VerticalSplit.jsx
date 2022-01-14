@@ -28,6 +28,8 @@ const styles = {
     alignSelf: 'center',
     borderLeft: '2px solid #E5E5E5',
     height: '70%',
+    width: '5px',
+    background: 'black'
   }
 };
 
@@ -36,7 +38,7 @@ const VerticalSplit = ({ left, right, hasDivider }) => (
     <div css={styles.split}>
       {left}
     </div>
-    { hasDivider && <hr css={styles.divider} />}
+    { hasDivider && <div css={styles.divider} />}
     <div css={styles.split}>
       {right}
     </div>

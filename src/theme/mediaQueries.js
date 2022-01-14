@@ -1,8 +1,8 @@
 export const breakpoints = {
-  mobile: '500px',
-  tablet: '768px',
-  laptop: '1024px',
+  mobile: 500,
+  tablet: 775,
+  laptop: 1024,
 };
 
 // Usage: mediaQueries(breakpoints.mobile)
-export const mediaQueries = (breakpoint) => `@media (max-width: ${breakpoint})`;
+export const mediaQueries = (breakpoint) => `@media (max-width: ${breakpoint}px)`;
