@@ -11,6 +11,9 @@ const styles = {
     fontWeight: 700,
     '&:active': {
       opacity: '.5'
+    },
+    '&:hover': {
+      cursor: 'pointer'
     }
   }
 };

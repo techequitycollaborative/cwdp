@@ -25,6 +25,7 @@ import fullTimeEmployeeBadge from './svg/fullTimeBadge.svg';
 import quoteSvg from './svg/quote.svg';
 import techEquityLogoSquareSvg from './svg/techEquityLogoSquare.svg';
 import playButtonSvg from './svg/playButton.svg';
+import downloadSvg from './svg/download.svg';
 
 import shadowWorkforceImg from './img/desk.png';
 import equalityImg from './img/equality.png';
@@ -76,6 +77,7 @@ export {
   techEquityLogoSquareSvg,
   shadowWorkforceImg,
   playButtonSvg,
+  downloadSvg,
   equalityImg,
   standardItemIcons,
   joinImg,
