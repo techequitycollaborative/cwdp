@@ -26,6 +26,10 @@ import quoteSvg from './svg/quote.svg';
 import techEquityLogoSquareSvg from './svg/techEquityLogoSquare.svg';
 import playButtonSvg from './svg/playButton.svg';
 import downloadSvg from './svg/download.svg';
+import contractorRaceSvg from './svg/contractorRace.svg';
+import fullTimeRaceSvg from './svg/fullTimeRace.svg';
+import bipocHandSvg from './svg/bipocHand.svg';
+import whiteHandSvg from './svg/whiteHand.svg';
 
 import shadowWorkforceImg from './img/desk.png';
 import equalityImg from './img/equality.png';
@@ -39,6 +43,8 @@ import joinImg from './img/join.png';
 import scalesImg from './img/scales.png';
 import segregationImg from './img/segregation.png';
 import heroImg from './img/hero.png';
+import contractorLadderImg from './img/ladder-red.png';
+import fullTimeLadderImg from './img/ladder-blue.png';
 
 // Note: These map in order to the items in closingTheGap
 const standardItemIcons = [
@@ -83,5 +89,11 @@ export {
   joinImg,
   scalesImg,
   segregationImg,
-  heroImg
+  heroImg,
+  contractorRaceSvg,
+  fullTimeRaceSvg,
+  contractorLadderImg,
+  fullTimeLadderImg,
+  whiteHandSvg,
+  bipocHandSvg
 };

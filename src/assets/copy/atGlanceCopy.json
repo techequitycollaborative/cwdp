@@ -1,18 +1,12 @@
 {
-  "pay": {
-    "contract": {
-      "salary": "$xx,xxxx",
+  "contractor": {
+    "header": "Contract Workers",
+    "pay": {
+      "salary": "$80,340",
       "type": "Average Salary",
       "description": "for contract software developers"
     },
-    "fte": {
-      "salary": "$xx,xxxx",
-      "type": "Average Salary",
-      "description": "for directly employed software developers"
-    }
-  },
-  "benefits": {
-    "contract": {
+    "benefits": {
       "title": "Benefits",
       "items": [
         [15, "Health Insurance"],
@@ -23,7 +17,18 @@
         [0, "Paid Parental Leave"]
       ]
     },
-    "fte": {
+    "raceTitle": "Race",
+    "raceGap": "true",
+    "mobilityDescription": "Limited mobility and high job insecurity"
+  },
+  "fullTime": {
+    "header": "Full-Time Employees",
+    "pay": {
+      "salary": "$100,340",
+      "type": "Average Salary",
+      "description": "for directly employed software developers"
+    },
+    "benefits": {
       "title": "Benefits",
       "items": [
         [100, "Health Insurance"],
@@ -33,21 +38,15 @@
         [100, "Disability Benefits"],
         [100, "Paid Parental Leave"]
       ]
-    }
+    },
+    "raceTitle": "Race",
+    "mobilityDescription":  "Clear career pathways with upward mobility"
   },
   "raceGap": {
     "title": "Converting to Full-Time",
     "stats": {
       "white": [43, "White contractors"],
       "bipoc": [33, "BIPOC contractors"]
-    }
-  },
-  "mobility": {
-    "contract": {
-      "description": "Limited mobility and high job insecurity"
-    },
-    "fte": {
-      "description": "Clear career pathways with upward mobility"
     }
   },
   "quote": {
