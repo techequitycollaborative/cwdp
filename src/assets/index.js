@@ -26,6 +26,7 @@ import quoteSvg from './svg/quote.svg';
 import techEquityLogoSquareSvg from './svg/techEquityLogoSquare.svg';
 import playButtonSvg from './svg/playButton.svg';
 import downloadSvg from './svg/download.svg';
+import downloadAltSvg from './svg/downloadAlt.svg';
 import contractorRaceSvg from './svg/contractorRace.svg';
 import fullTimeRaceSvg from './svg/fullTimeRace.svg';
 import bipocHandSvg from './svg/bipocHand.svg';
@@ -84,6 +85,7 @@ export {
   shadowWorkforceImg,
   playButtonSvg,
   downloadSvg,
+  downloadAltSvg,
   equalityImg,
   standardItemIcons,
   joinImg,
