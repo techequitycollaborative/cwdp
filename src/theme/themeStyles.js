@@ -45,9 +45,9 @@ const themeStyles = {
       }
     },
     subHeading: {
-      color: '#172F6E', // brand navy
+      color: '#112353',
       fontWeight: 600,
-      fontSize: 28,
+      fontSize: 24,
       margin: 0,
       marginTop: 20,
     }
