@@ -4,8 +4,9 @@ import {
   equalityImg,
   standardItemIcons
 } from 'assets';
-import { VerticalSplit, Blurb, Image, Button } from 'components';
-import { themeStyles } from 'theme';
+import { VerticalSplit, Accordion, Blurb, Image, Button } from 'components';
+import { useViewPort } from 'hooks';
+import { breakpoints, mediaQueries, themeStyles } from 'theme';
 
 const styles = {
   standardContainer: {
@@ -33,11 +34,28 @@ const styles = {
     margin: '70px 0px',
     display: 'flex',
     flex: 1,
-    flexDirection: 'column'
+    flexDirection: 'column',
+    [mediaQueries(breakpoints.mobile)]: {
+      margin: 0
+    },
   }
 };
 
-const renderStandard = (item, imgSource) => (
+const renderMobileStandards = () => (
+  <>
+    {closingGapCopy.items.map(
+      (item, index) => (
+        <Accordion
+          title={item.heading}
+          content={item.description}
+          icon={standardItemIcons[index]}
+        />
+      )
+    )}
+  </>
+);
+
+const renderDesktopStandard = (item, imgSource) => (
   <div css={styles.standardContainer}>
     <img css={styles.standardIcon} src={imgSource} alt={imgSource} />
     <div>
@@ -47,44 +65,53 @@ const renderStandard = (item, imgSource) => (
   </div>
 );
 
-const ResponsibleContractingStandard = () => (
+const renderDesktopStandards = () => (
   <>
-    <VerticalSplit
-      left={(
-        <Blurb
-          headline={closingGapCopy.headline}
-          description={closingGapCopy.description}
-          button={{
-            text: closingGapCopy.button.label,
-            url: closingGapCopy.button.url,
-            color: themeStyles.colors.brandBlue
-          }}
+    {[...Array(closingGapCopy.items.length / 2)].map((_, index) => {
+      const leftItem = closingGapCopy.items[index];
+      const rightIndex = (closingGapCopy.items.length / 2) + index;
+      const rightItem = closingGapCopy.items[rightIndex];
+      return (
+        <VerticalSplit
+          key={leftItem.heading}
+          left={renderDesktopStandard(leftItem, standardItemIcons[index])}
+          right={renderDesktopStandard(rightItem, standardItemIcons[rightIndex])}
         />
-      )}
-      right={(<Image source={equalityImg} altText="Equality" />)}
-    />
-    <div css={styles.standardsContainer}>
-      {[...Array(closingGapCopy.items.length / 2)].map((_, index) => {
-        const leftItem = closingGapCopy.items[index];
-        const rightIndex = (closingGapCopy.items.length / 2) + index;
-        const rightItem = closingGapCopy.items[rightIndex];
-        return (
-          <VerticalSplit
-            key={leftItem.heading}
-            left={renderStandard(leftItem, standardItemIcons[index])}
-            right={renderStandard(rightItem, standardItemIcons[rightIndex])}
-          />
-        );
-      })}
-      <div css={styles.buttonContainer}>
-        <Button
-          url={closingGapCopy.button2.url}
-          text={closingGapCopy.button2.label}
-          color={themeStyles.colors.brandBlue}
-        />
-      </div>
-    </div>
+      );
+    })}
   </>
 );
+
+const ResponsibleContractingStandard = () => {
+  const { width } = useViewPort();
+  return (
+    <>
+      <VerticalSplit
+        left={(
+          <Blurb
+            headline={closingGapCopy.headline}
+            description={closingGapCopy.description}
+            button={{
+              text: closingGapCopy.button.label,
+              url: closingGapCopy.button.url,
+              color: themeStyles.colors.brandBlue
+            }}
+          />
+        )}
+        right={(<Image source={equalityImg} altText="Equality" />)}
+      />
+      <div css={styles.standardsContainer}>
+        { width < breakpoints.mobile ? renderMobileStandards() : renderDesktopStandards()}
+        <div css={styles.buttonContainer}>
+          <Button
+            url={closingGapCopy.button2.url}
+            text={closingGapCopy.button2.label}
+            color={themeStyles.colors.brandBlue}
+          />
+        </div>
+      </div>
+    </>
+  );
+};
 
 export default ResponsibleContractingStandard;

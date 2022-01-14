@@ -9,6 +9,7 @@ import Video from './Video';
 import Image from './Image';
 import ThreeColumnSplit from './ThreeColumnSplit';
 import FloatingButton from './FloatingButton';
+import Accordion from './Accordion';
 
 export {
   ContentSection,
@@ -21,5 +22,6 @@ export {
   Video,
   Image,
   ThreeColumnSplit,
-  FloatingButton
+  FloatingButton,
+  Accordion
 };
