@@ -240,7 +240,7 @@ const AtGlanceMobile = () => (
       {renderMobilityColumn(fullTimeLadderImg, atGlanceCopy.fullTime.mobilityDescription)}
     </div>
     <hr css={styles.divider} />
-    <Quote author={atGlanceCopy.quote.author} text={atGlanceCopy.quote.text} />
+    <Quote author={atGlanceCopy.quote.author} text={atGlanceCopy.quote.text} background="dark" />
   </div>
 );
 

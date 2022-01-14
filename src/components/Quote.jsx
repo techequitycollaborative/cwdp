@@ -2,7 +2,7 @@
 import PropTypes from 'prop-types';
 
 import { quoteSvg, contractorBadgeSvg } from 'assets';
-import { breakpoints, mediaQueries } from 'theme';
+import { breakpoints, mediaQueries, themeStyles } from 'theme';
 
 const styles = {
   quoteText: {
@@ -35,7 +35,7 @@ const styles = {
       padding: '50px 20px',
     },
   },
-  quoteSvg: {
+  quoteSvgContainer: {
     position: 'absolute',
     margin: '0px 30px',
     top: -40,
@@ -46,7 +46,6 @@ const styles = {
     },
   },
   contractorSvgContainer: {
-    background: '#FFFFFF',
     position: 'absolute',
     bottom: -50,
     right: 0,
@@ -66,14 +65,26 @@ const styles = {
   },
 };
 
-const Quote = ({ text, author }) => (
+const Quote = ({ text, author, background }) => (
   <div css={styles.container}>
-    <img css={styles.quoteSvg} src={quoteSvg} alt="Quote" />
+    <div
+      css={[
+        styles.quoteSvgContainer,
+        { background: (background === 'light' ? themeStyles.colors.light.background : themeStyles.colors.dark.background) }
+      ]}
+    >
+      <img src={quoteSvg} alt="Quote" />
+    </div>
     <div css={styles.textContainer}>
       <p css={styles.quoteText}>{text}</p>
       {author && <p css={styles.authorText}>{author}</p>}
     </div>
-    <div css={styles.contractorSvgContainer}>
+    <div
+      css={[
+        styles.contractorSvgContainer,
+        { background: (background === 'light' ? themeStyles.colors.light.background : themeStyles.colors.dark.background) }
+      ]}
+    >
       <img css={styles.contractorSvg} src={contractorBadgeSvg} alt="Contractor Badge" />
     </div>
   </div>
@@ -82,10 +93,12 @@ const Quote = ({ text, author }) => (
 Quote.propTypes = {
   text: PropTypes.string.isRequired,
   author: PropTypes.string,
+  background: PropTypes.oneOf(['light', 'dark']),
 };
 
 Quote.defaultProps = {
-  author: undefined
+  author: undefined,
+  background: 'light',
 };
 
 export default Quote;

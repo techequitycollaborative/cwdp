@@ -206,7 +206,7 @@ const AtGlanceDesktop = () => (
       )}
       hasDivider
     />
-    <Quote author={atGlanceCopy.quote.author} text={atGlanceCopy.quote.text} />
+    <Quote author={atGlanceCopy.quote.author} text={atGlanceCopy.quote.text} background="dark" />
   </>
 );
 
