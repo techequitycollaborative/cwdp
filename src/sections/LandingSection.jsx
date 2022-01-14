@@ -3,7 +3,7 @@ import {
   landingSectionCopy,
   techEquityLogoSvg,
   badgesSvg,
-  landingSvg
+  heroImg
 } from 'assets';
 import { breakpoints, mediaQueries, themeStyles } from 'theme';
 import { VerticalSplit, Blurb, Image } from 'components';
@@ -61,7 +61,7 @@ const LandingSection = () => (
           button={{ text: landingSectionCopy.button.label, url: landingSectionCopy.button.url }}
         />
       )}
-      right={(<Image source={landingSvg} altText="Disparity" />)}
+      right={(<Image source={heroImg} altText="Disparity" />)}
     />
   </>
 );

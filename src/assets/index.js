@@ -37,6 +37,8 @@ import rcsProcurementImg from './img/rcs-procurement.png';
 import rcsTransparencyImg from './img/rcs-transparency.png';
 import joinImg from './img/join.png';
 import scalesImg from './img/scales.png';
+import segregationImg from './img/segregation.png';
+import heroImg from './img/hero.png';
 
 // Note: These map in order to the items in closingTheGap
 const standardItemIcons = [
@@ -79,5 +81,7 @@ export {
   equalityImg,
   standardItemIcons,
   joinImg,
-  scalesImg
+  scalesImg,
+  segregationImg,
+  heroImg
 };
