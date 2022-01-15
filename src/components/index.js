@@ -10,6 +10,7 @@ import Image from './Image';
 import ThreeColumnSplit from './ThreeColumnSplit';
 import FloatingButton from './FloatingButton';
 import Accordion from './Accordion';
+import VideoPlaceholder from './VideoPlaceholder';
 
 export {
   ContentSection,
@@ -23,5 +24,6 @@ export {
   Image,
   ThreeColumnSplit,
   FloatingButton,
-  Accordion
+  Accordion,
+  VideoPlaceholder
 };

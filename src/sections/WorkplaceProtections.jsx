@@ -3,7 +3,7 @@ import { workplaceProtectionsCopy, shadowWorkforceImg } from 'assets';
 import {
   VerticalSplit,
   Blurb,
-  Video
+  VideoPlaceholder
 } from 'components';
 
 const WorkplaceProtections = () => (
@@ -14,13 +14,7 @@ const WorkplaceProtections = () => (
         description={workplaceProtectionsCopy.description}
       />
     )}
-    right={(
-      <Video
-        title={workplaceProtectionsCopy.video.title}
-        source={workplaceProtectionsCopy.video.source}
-        coverImg={shadowWorkforceImg}
-      />
-    )}
+    right={(<VideoPlaceholder source={shadowWorkforceImg} altText="Silencing Worker Voices" />)}
   />
 );
 

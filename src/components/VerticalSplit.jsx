@@ -8,7 +8,7 @@ const styles = {
     flex: 1,
     alignSelf: 'stretch',
     flexDirection: 'row',
-    padding: '0px 40px',
+    padding: '0px 80px',
     [mediaQueries(breakpoints.mobile)]: {
       flexDirection: 'column',
       padding: '40px 40px',

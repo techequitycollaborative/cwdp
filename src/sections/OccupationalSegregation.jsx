@@ -3,7 +3,7 @@ import { occupationalSegregationCopy, segregationImg } from 'assets';
 import {
   VerticalSplit,
   Blurb,
-  Image
+  VideoPlaceholder
 } from 'components';
 
 const OccupationalSegregation = () => (
@@ -14,7 +14,7 @@ const OccupationalSegregation = () => (
         description={occupationalSegregationCopy.description}
       />
     )}
-    right={(<Image source={segregationImg} altText="Occupational Segregation" />)}
+    right={(<VideoPlaceholder source={segregationImg} altText="Occupational Segregation" />)}
   />
 );
 

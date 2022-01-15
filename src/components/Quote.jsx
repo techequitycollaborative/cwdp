@@ -76,7 +76,10 @@ const Quote = ({ text, author, background }) => (
       <img src={quoteSvg} alt="Quote" />
     </div>
     <div css={styles.textContainer}>
-      <p css={styles.quoteText}>{text}</p>
+      <p css={styles.quoteText}>
+        {text}
+        &quot;
+      </p>
       {author && <p css={styles.authorText}>{author}</p>}
     </div>
     <div

@@ -20,7 +20,9 @@ const styles = {
   standardIcon: {
     width: 'auto',
     height: 'auto',
-    alignSelf: 'flex-start'
+    alignSelf: 'flex-start',
+    transform: 'translateY(30%)',
+    maxWidth: '50px'
   },
   standardText: {
     margin: 0,

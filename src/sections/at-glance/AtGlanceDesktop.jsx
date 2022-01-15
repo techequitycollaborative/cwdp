@@ -16,12 +16,17 @@ import { breakpoints, mediaQueries, themeStyles } from 'theme';
 const maxHandCount = 4;
 
 const styles = {
+  sectionContainer: {
+    marginBottom: '60px'
+  },
   container: {
     display: 'flex',
     flex: 1,
     flexDirection: 'column',
     justifyContent: 'center',
-    alignSelf: 'stretch'
+    alignSelf: 'stretch',
+    width: '80%',
+    margin: 'auto',
   },
   badge: {
     height: 100,
@@ -57,7 +62,7 @@ const styles = {
     alignItems: 'center',
   },
   benefitText: {
-    margin: '15px 0px',
+    margin: '6px 12px',
   },
   salaryText: {
     fontWeight: 600,
@@ -89,7 +94,9 @@ const styles = {
   },
   mobilityDescription: {
     fontSize: 40,
-    padding: '0px 30px'
+    padding: '0px 30px',
+    wordSpacing: '10em',
+    width: '100%'
   },
   mobilityContainer: {
     display: 'flex',
@@ -192,7 +199,7 @@ const infoPane = (copy, color, assets) => (
 );
 
 const AtGlanceDesktop = () => (
-  <>
+  <div css={styles.sectionContainer}>
     <VerticalSplit
       left={infoPane(
         atGlanceCopy.contractor,
@@ -207,7 +214,7 @@ const AtGlanceDesktop = () => (
       hasDivider
     />
     <Quote author={atGlanceCopy.quote.author} text={atGlanceCopy.quote.text} background="dark" />
-  </>
+  </div>
 );
 
 export default AtGlanceDesktop;

@@ -6,7 +6,7 @@ import {
   heroImg
 } from 'assets';
 import { breakpoints, mediaQueries, themeStyles } from 'theme';
-import { VerticalSplit, Blurb, Image } from 'components';
+import { VerticalSplit, Blurb, VideoPlaceholder } from 'components';
 
 const styles = {
   headerContainer: {
@@ -51,7 +51,9 @@ const LandingSection = () => (
         <img css={styles.badges} src={badgesSvg} alt="Badges" />
         <h1 css={[themeStyles.text.headline, styles.title]}>{landingSectionCopy.header}</h1>
       </div>
-      <img css={styles.logo} src={techEquityLogoSvg} alt="TEC Logo" />
+      <a href="https://techequitycollaborative.org" target="_blank" rel="noopener noreferrer">
+        <img css={styles.logo} src={techEquityLogoSvg} alt="TEC Logo" />
+      </a>
     </div>
     <VerticalSplit
       left={(
@@ -61,7 +63,7 @@ const LandingSection = () => (
           button={{ text: landingSectionCopy.button.label, url: landingSectionCopy.button.url }}
         />
       )}
-      right={(<Image source={heroImg} altText="Disparity" />)}
+      right={(<VideoPlaceholder source={heroImg} altText="Disparity" />)}
     />
   </>
 );

@@ -7,7 +7,7 @@ import { playButtonSvg } from 'assets';
 import { breakpoints, mediaQueries } from 'theme';
 
 const ANIMATION_DURATION = 200;
-const BORDER_RADIUS = 15;
+const BORDER_RADIUS = 0;
 
 const styles = {
   container: {
