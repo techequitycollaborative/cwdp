@@ -14,7 +14,7 @@ const INDICATOR_SIZE = 12;
 const ACTIVE_INDICATOR_SIZE = INDICATOR_SIZE + 2;
 
 const intersectionObserverOptions = {
-  threshold: 0.2 // Keep this number low
+  threshold: [0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9] // Check for rerender on every 10%
 };
 
 const styles = {
@@ -61,12 +61,24 @@ const SectionIndicator = ({ children }) => {
   // https://dev.to/maciekgrzybek/create-section-navigation-with-react-and-intersection-observer-fg0
   useEffect(() => {
     const handleIntersection = (entries) => {
+      let maxIntersection = 0;
+      let viewportHeight = 0;
+      let updateActive = 0;
       entries.forEach((entry) => {
+        // Keep track of which section has most of the viewport height. Update later.
+        viewportHeight = entry.rootBounds.height;
         const entryIdInteger = parseInt(entry.target.id, 10);
-        if (entryIdInteger !== activeSectionIndex && entry.isIntersecting) {
-          setActiveSectionIndex(entryIdInteger);
+        if (entry.intersectionRect.height > maxIntersection && entry.isIntersecting) {
+          maxIntersection = entry.intersectionRect.height;
+          updateActive = entryIdInteger;
         }
       });
+      if (activeSectionIndex !== updateActive && maxIntersection >= viewportHeight / 2) {
+        // Only update active if the new section is at least 50% of viewport height.
+        // This is necessary to prevent flickering because the observer fires for only
+        // one element when only one of the two in view crosses a 0.X threshold.
+        setActiveSectionIndex(updateActive);
+      }
     };
     const observer = new IntersectionObserver(handleIntersection, intersectionObserverOptions);
     if (childrenRefs.current) {
