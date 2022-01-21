@@ -13,7 +13,7 @@ const OccupationalSegregation = () => (
     right={(
       <Video
         title={occupationalSegregationCopy.video.title}
-        source={occupationalSegregationCopy.video.source}
+        videoId={occupationalSegregationCopy.video.id}
         coverImg={segregationImg}
         background="dark"
       />

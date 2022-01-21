@@ -13,7 +13,8 @@ const styles = {
     scrollSnapAlign: 'start',
     [mediaQueries(breakpoints.mobile)]: {
       flexDirection: 'column',
-      minHeight: 'auto'
+      minHeight: 'auto',
+      marginRight: 10
     },
   },
   titleContainer: {

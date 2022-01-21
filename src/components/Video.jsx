@@ -17,7 +17,8 @@ const styles = {
     alignItems: 'center',
     justifyContent: 'center',
     [mediaQueries(breakpoints.mobile)]: {
-      width: '100%',
+      width: '90%',
+      margin: '35% 0px'
     },
   },
   // Making iframe responsive - https://www.smashingmagazine.com/2014/02/making-embedded-content-work-in-responsive-design/#the-css
@@ -36,12 +37,15 @@ const styles = {
     height: '100%',
     cursor: 'pointer',
   },
-  coverButton: {
-    borderWidth: 0,
-    padding: 0,
+  cover: {
+    position: 'absolute',
+    transform: 'translate(-50%, -50%)',
+    width: '110%',
+    top: '50%',
+    left: '50%',
     border: 'none',
     background: 'none',
-    position: 'relative'
+    zIndex: 10,
   },
   coverImg: {
     width: '100%',
@@ -60,7 +64,15 @@ const styles = {
     zIndex: 30,
     '&:active': {
       opacity: '.8'
-    }
+    },
+    [mediaQueries(breakpoints.mobile)]: {
+      top: '55%',
+    },
+  },
+  coverPlayButtonImg: {
+    [mediaQueries(breakpoints.mobile)]: {
+      width: '70%',
+    },
   },
   coverFadeOut: {
     transition: `opacity ${ANIMATION_DURATION}ms linear`,
@@ -90,7 +102,7 @@ const opts = {
   },
 };
 
-const Video = ({ title, source, coverImg, background }) => {
+const Video = ({ title, videoId, coverImg, background }) => {
   const playerRef = useRef(null);
   const [showCover, setShowCover] = useState(true);
 
@@ -117,24 +129,24 @@ const Video = ({ title, source, coverImg, background }) => {
 
   return (
     <div css={styles.container}>
-      <button type="button" onClick={onPlay} css={[styles.coverButton, showCover ? styles.coverShowPointers : styles.coverHidePointers]}>
-        <img
-          css={[
-            styles.coverImg,
-            showCover && { background: (background === 'light' ? themeStyles.colors.light.background : themeStyles.colors.dark.background) },
-            showCover ? styles.coverFadeIn : styles.coverFadeOut
-          ]}
-          src={coverImg}
-          alt={title}
-        />
-        <div css={styles.coverPlayButton}>
-          <img css={showCover ? styles.coverFadeIn : styles.coverFadeOut} src={playButtonSvg} alt="Disparity" />
-        </div>
-      </button>
       <div css={styles.videoContainer}>
+        <button type="button" onClick={onPlay} css={[styles.cover, showCover ? styles.coverShowPointers : styles.coverHidePointers]}>
+          <img
+            css={[
+              styles.coverImg,
+              { background: (background === 'light' ? themeStyles.colors.light.background : themeStyles.colors.dark.background) },
+              showCover ? styles.coverFadeIn : styles.coverFadeOut
+            ]}
+            src={coverImg}
+            alt={title}
+          />
+          <div css={styles.coverPlayButton}>
+            <img css={[showCover ? styles.coverFadeIn : styles.coverFadeOut, styles.coverPlayButtonImg]} src={playButtonSvg} alt="Disparity" />
+          </div>
+        </button>
         <YouTube
           ref={playerRef}
-          videoId={source}
+          videoId={videoId}
           css={styles.video}
           opts={opts}
           title={title}
@@ -147,7 +159,7 @@ const Video = ({ title, source, coverImg, background }) => {
 
 Video.propTypes = {
   title: PropTypes.string.isRequired,
-  source: PropTypes.string.isRequired,
+  videoId: PropTypes.string.isRequired,
   // eslint-disable-next-line react/forbid-prop-types
   coverImg: PropTypes.any.isRequired,
   background: PropTypes.oneOf(['light', 'dark']),

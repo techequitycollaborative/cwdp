@@ -12,12 +12,12 @@ const App = () => (
       <ContentSection content={LandingSection()} />
       <ContentSection content={AtGlance()} title={atGlanceCopy.title} background="dark" />
       <ContentSection content={ResponsibleContractingStandard()} title={closingGapCopy.title} />
+      <ContentSection content={PolicySolutions()} title={policySolutionsCopy.title} background="dark" />
       <ContentSection
         content={JoinCampaign()}
         title={joinCampaignCopy.title}
         overrideBackground={themeStyles.colors.callToActionRed}
       />
-      <ContentSection content={PolicySolutions()} title={policySolutionsCopy.title} />
       <ContentSection content={MobilityAdvancement()} title={mobilityAdvancementCopy.title} />
       <ContentSection content={WorkplaceProtections()} title={workplaceProtectionsCopy.title} background="dark" />
       <ContentSection content={GlassDivide()} title={glassDivideCopy.title} />

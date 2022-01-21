@@ -38,7 +38,8 @@ const styles = {
     flex: 1,
     flexDirection: 'column',
     [mediaQueries(breakpoints.mobile)]: {
-      margin: 0
+      margin: 0,
+      marginRight: 10
     },
   }
 };
@@ -48,6 +49,7 @@ const renderMobileStandards = () => (
     {closingGapCopy.items.map(
       (item, index) => (
         <Accordion
+          key={item.heading}
           title={item.heading}
           content={item.description}
           icon={standardItemIcons[index]}
