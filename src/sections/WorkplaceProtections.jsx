@@ -16,7 +16,7 @@ const WorkplaceProtections = () => (
     )}
     right={(
       <Video
-        source={workplaceProtectionsCopy.video.source}
+        videoId={workplaceProtectionsCopy.video.id}
         title={workplaceProtectionsCopy.video.title}
         coverImg={shadowWorkforceImg}
         background="dark"

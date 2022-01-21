@@ -65,7 +65,7 @@ const LandingSection = () => (
       )}
       right={(
         <Video
-          source={landingSectionCopy.video.source}
+          videoId={landingSectionCopy.video.id}
           coverImg={heroImg}
           title={landingSectionCopy.video.title}
         />
