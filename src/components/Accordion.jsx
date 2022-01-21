@@ -10,9 +10,9 @@ const styles = {
   container: {
     border: '1px solid #E5E5E5',
     borderRadius: 10,
-    margin: '10px 35px',
+    margin: '20px 35px',
     paddingTop: 20,
-    paddingBottom: 10
+    paddingBottom: 10,
   },
   titleContainer: {
     display: 'flex',

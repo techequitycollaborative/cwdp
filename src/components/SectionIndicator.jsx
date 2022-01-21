@@ -13,6 +13,9 @@ import { breakpoints, mediaQueries } from 'theme';
 const INDICATOR_SIZE = 12;
 const ACTIVE_INDICATOR_SIZE = INDICATOR_SIZE + 2;
 
+const MOBILE_INDICATOR_SIZE = 15;
+const MOBILE_ACTIVE_INDICATOR_SIZE = MOBILE_INDICATOR_SIZE + 5;
+
 const intersectionObserverOptions = {
   threshold: [0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9] // Check for rerender on every 10%
 };
@@ -29,12 +32,16 @@ const styles = {
     justifyContent: 'center',
     alignItems: 'center',
     [mediaQueries(breakpoints.mobile)]: {
-      right: 0,
+      right: 10,
     }
   },
   indicator: {
     width: INDICATOR_SIZE,
     height: INDICATOR_SIZE,
+    [mediaQueries(breakpoints.mobile)]: {
+      width: MOBILE_INDICATOR_SIZE,
+      height: MOBILE_INDICATOR_SIZE,
+    },
     borderRadius: '50%',
     background: '#000000',
     margin: '15px auto',
@@ -45,6 +52,10 @@ const styles = {
     opacity: '1',
     width: ACTIVE_INDICATOR_SIZE,
     height: ACTIVE_INDICATOR_SIZE,
+    [mediaQueries(breakpoints.mobile)]: {
+      width: MOBILE_ACTIVE_INDICATOR_SIZE,
+      height: MOBILE_ACTIVE_INDICATOR_SIZE,
+    },
     borderRadius: '50%',
     background: '#E08585',
   }

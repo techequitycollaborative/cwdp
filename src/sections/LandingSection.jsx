@@ -16,7 +16,7 @@ const styles = {
     alignItems: 'center',
     padding: 20,
     [mediaQueries(breakpoints.mobile)]: {
-      flexDirection: 'column',
+      flexDirection: 'column-reverse',
       flex: 1,
       paddingBottom: 0
     },
@@ -28,7 +28,12 @@ const styles = {
   logo: {
     [mediaQueries(breakpoints.mobile)]: {
       marginTop: 20,
+      width: '80%',
     }
+  },
+  logoLink: {
+    display: 'flex',
+    justifyContent: 'center'
   },
   title: {
     lineHeight: 'normal',
@@ -36,7 +41,7 @@ const styles = {
     margin: 0,
     alignSelf: 'center',
     [mediaQueries(breakpoints.mobile)]: {
-      fontSize: 25,
+      fontSize: 22,
     }
   },
   badges: {
@@ -51,7 +56,7 @@ const LandingSection = () => (
         <img css={styles.badges} src={badgesSvg} alt="Badges" />
         <h1 css={[themeStyles.text.headline, styles.title]}>{landingSectionCopy.header}</h1>
       </div>
-      <a href="https://techequitycollaborative.org" target="_blank" rel="noopener noreferrer">
+      <a css={styles.logoLink} href="https://techequitycollaborative.org" target="_blank" rel="noopener noreferrer">
         <img css={styles.logo} src={techEquityLogoSvg} alt="TEC Logo" />
       </a>
     </div>

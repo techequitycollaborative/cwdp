@@ -1,29 +1,17 @@
 /** @jsxImportSource @emotion/react */
-import { scalesImg, policySolutionsCopy, insideDisparitiesCopy } from 'assets';
-import { VerticalSplit, Accordion, Blurb, Image, ThreeColumnSplit, Button } from 'components';
-import { themeStyles, breakpoints } from 'theme';
+import { scalesImg, policySolutionsCopy } from 'assets';
+import { VerticalSplit, Accordion, Blurb, Image, ThreeColumnSplit } from 'components';
+import { themeStyles, breakpoints, mediaQueries } from 'theme';
 import { useViewPort } from 'hooks';
 
 const styles = {
   miniBlurb: {
     paddingRight: '10%'
   },
-  blueBox: {
-    background: '#00CEE1',
-    padding: '5% 10%',
-    marginTop: 40
-  },
-  borderBox: {
-    border: 'solid white 1px',
-    display: 'flex',
-    flex: 1,
-    flexDirection: 'column',
-    justifyContent: 'center',
-    alignItems: 'center',
-    padding: '2% 10%'
-  },
-  disparitiesText: {
-    textAlign: 'center',
+  solutionsContainer: {
+    [mediaQueries(breakpoints.mobile)]: {
+      marginRight: 10
+    },
   }
 };
 
@@ -54,31 +42,19 @@ const PolicySolutions = () => {
         right={(<Image source={scalesImg} altText="Scales" />)}
         reverseOnMobile
       />
-      {width < breakpoints.mobile
-        ? (policySolutionsCopy.items.map((item) => (
-          <Accordion title={item.heading} content={item.description} />
-        ))) : (
-          <ThreeColumnSplit
-            left={renderMiniBlurb(policySolutionsCopy.items[0])}
-            center={renderMiniBlurb(policySolutionsCopy.items[1])}
-            right={renderMiniBlurb(policySolutionsCopy.items[2])}
-          />
-        )}
-      <div css={styles.blueBox}>
-        <div css={styles.borderBox}>
-          <p css={[themeStyles.text.subHeading, styles.disparitiesText]}>
-            {insideDisparitiesCopy.headline}
-          </p>
-          <p css={[themeStyles.text.description, styles.disparitiesText]}>
-            {insideDisparitiesCopy.description}
-          </p>
-          <Button
-            text={insideDisparitiesCopy.button.label}
-            url={insideDisparitiesCopy.button.url}
-            color={themeStyles.colors.brandBlue}
-          />
-        </div>
+      <div css={styles.solutionsContainer}>
+        {width < breakpoints.mobile
+          ? (policySolutionsCopy.items.map((item) => (
+            <Accordion key={item.heading} title={item.heading} content={item.description} />
+          ))) : (
+            <ThreeColumnSplit
+              left={renderMiniBlurb(policySolutionsCopy.items[0])}
+              center={renderMiniBlurb(policySolutionsCopy.items[1])}
+              right={renderMiniBlurb(policySolutionsCopy.items[2])}
+            />
+          )}
       </div>
+
     </>
   );
 };
