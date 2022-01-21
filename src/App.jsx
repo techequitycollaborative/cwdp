@@ -1,6 +1,6 @@
 import { Global } from '@emotion/react';
 
-import { paySectionCopy, mobilityAdvancementCopy, workplaceProtectionsCopy, closingGapCopy, joinCampaignCopy, policySolutionsCopy, glassDivideCopy, occupationalSegregationCopy } from 'assets';
+import { atGlanceCopy, mobilityAdvancementCopy, workplaceProtectionsCopy, closingGapCopy, joinCampaignCopy, policySolutionsCopy, glassDivideCopy, occupationalSegregationCopy } from 'assets';
 import { globalStyles, themeStyles } from 'theme';
 import { ContentSection, SectionIndicator, FloatingButton, Footer } from 'components';
 import { LandingSection, AtGlance, MobilityAdvancement, WorkplaceProtections, ResponsibleContractingStandard, JoinCampaign, PolicySolutions, GlassDivide, OccupationalSegregation } from 'sections';
@@ -10,7 +10,7 @@ const App = () => (
     <Global styles={globalStyles} />
     <SectionIndicator>
       <ContentSection content={LandingSection()} />
-      <ContentSection content={AtGlance()} title={paySectionCopy.title} background="dark" />
+      <ContentSection content={AtGlance()} title={atGlanceCopy.title} background="dark" />
       <ContentSection content={ResponsibleContractingStandard()} title={closingGapCopy.title} />
       <ContentSection
         content={JoinCampaign()}

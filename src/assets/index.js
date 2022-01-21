@@ -10,9 +10,6 @@ import glassDivideCopy from './copy/glassDivideCopy.json';
 import occupationalSegregationCopy from './copy/occupationalSegregationCopy.json';
 import footerSectionCopy from './copy/footerSectionCopy.json';
 
-import paySectionCopy from './copy/paySectionCopy.json';
-import prevalenceSectionCopy from './copy/prevalenceSectionCopy.json';
-
 import facebookLogoSvg from './svg/facebook.svg';
 import instagramLogoSvg from './svg/instagram.svg';
 import twitterLogoSvg from './svg/twitter.svg';
@@ -70,8 +67,6 @@ export {
   glassDivideCopy,
   occupationalSegregationCopy,
   footerSectionCopy,
-  paySectionCopy,
-  prevalenceSectionCopy,
   facebookLogoSvg,
   twitterLogoSvg,
   instagramLogoSvg,
