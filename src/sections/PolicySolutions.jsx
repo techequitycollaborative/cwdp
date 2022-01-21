@@ -52,6 +52,7 @@ const PolicySolutions = () => {
           />
         )}
         right={(<Image source={scalesImg} altText="Scales" />)}
+        reverseOnMobile
       />
       {width < breakpoints.mobile
         ? (policySolutionsCopy.items.map((item) => (

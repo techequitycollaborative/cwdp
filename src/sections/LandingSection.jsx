@@ -64,6 +64,7 @@ const LandingSection = () => (
         />
       )}
       right={(<VideoPlaceholder source={heroImg} altText="Disparity" />)}
+      reverseOnMobile
     />
   </>
 );
