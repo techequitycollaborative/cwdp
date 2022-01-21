@@ -6,7 +6,7 @@ import {
   heroImg
 } from 'assets';
 import { breakpoints, mediaQueries, themeStyles } from 'theme';
-import { VerticalSplit, Blurb, VideoPlaceholder } from 'components';
+import { VerticalSplit, Blurb, Video } from 'components';
 
 const styles = {
   headerContainer: {
@@ -63,7 +63,13 @@ const LandingSection = () => (
           button={{ text: landingSectionCopy.button.label, url: landingSectionCopy.button.url }}
         />
       )}
-      right={(<VideoPlaceholder source={heroImg} altText="Disparity" />)}
+      right={(
+        <Video
+          source={landingSectionCopy.video.source}
+          coverImg={heroImg}
+          title={landingSectionCopy.video.title}
+        />
+      )}
       reverseOnMobile
     />
   </>

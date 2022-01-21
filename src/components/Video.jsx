@@ -1,13 +1,12 @@
 /** @jsxImportSource @emotion/react */
 import PropTypes from 'prop-types';
-import { useEffect, useRef, useState } from 'react';
-import youTubePlayer from 'youtube-player';
+import { useRef, useState } from 'react';
+import YouTube from 'react-youtube';
 
 import { playButtonSvg } from 'assets';
-import { breakpoints, mediaQueries } from 'theme';
+import { breakpoints, mediaQueries, themeStyles } from 'theme';
 
 const ANIMATION_DURATION = 200;
-const BORDER_RADIUS = 0;
 
 const styles = {
   container: {
@@ -36,18 +35,19 @@ const styles = {
     width: '100%',
     height: '100%',
     cursor: 'pointer',
-    borderRadius: BORDER_RADIUS,
+  },
+  coverButton: {
+    borderWidth: 0,
+    padding: 0,
+    border: 'none',
+    background: 'none',
+    position: 'relative'
   },
   coverImg: {
     width: '100%',
     height: '100%',
-    borderRadius: BORDER_RADIUS,
     opacity: 1,
     zIndex: 20,
-    position: 'absolute',
-    top: '50%',
-    left: '50%',
-    transform: 'translate(-50%, -50%)',
   },
   coverPlayButton: {
     position: 'absolute',
@@ -80,26 +80,33 @@ const styles = {
   }
 };
 
-const playerOptions = {};
+const opts = {
+  playerVars: {
+    // https://developers.google.com/youtube/player_parameters
+    controls: 0,
+    modestbranding: 1,
+    rel: 0,
+    fs: 1,
+  },
+};
 
-const Video = ({ title, source, coverImg }) => {
-  const iframeRef = useRef(null);
-  const [player, setPlayer] = useState(null);
+const Video = ({ title, source, coverImg, background }) => {
+  const playerRef = useRef(null);
   const [showCover, setShowCover] = useState(true);
 
   const onPlay = () => {
-    player.playVideo();
+    playerRef.current.internalPlayer.playVideo();
   };
 
   const onPlayerStateChange = (event) => {
     // https://developers.google.com/youtube/iframe_api_reference#onStateChange
     switch (event.data) {
-      case 0: // ENDED
-      case 2: // PAUSE
+      case YouTube.PlayerState.ENDED:
+      case YouTube.PlayerState.PAUSED:
         setShowCover(true);
         break;
 
-      case 1: // PLAYING
+      case YouTube.PlayerState.PLAYING:
         setShowCover(false);
         break;
 
@@ -108,36 +115,30 @@ const Video = ({ title, source, coverImg }) => {
     }
   };
 
-  useEffect(() => {
-    // https://developers.google.com/youtube/iframe_api_reference
-    const tempPlayer = youTubePlayer(iframeRef.current, playerOptions);
-    tempPlayer.on('stateChange', onPlayerStateChange);
-    setPlayer(tempPlayer);
-  }, [iframeRef]);
-
   return (
     <div css={styles.container}>
+      <button type="button" onClick={onPlay} css={[styles.coverButton, showCover ? styles.coverShowPointers : styles.coverHidePointers]}>
+        <img
+          css={[
+            styles.coverImg,
+            showCover && { background: (background === 'light' ? themeStyles.colors.light.background : themeStyles.colors.dark.background) },
+            showCover ? styles.coverFadeIn : styles.coverFadeOut
+          ]}
+          src={coverImg}
+          alt={title}
+        />
+        <div css={styles.coverPlayButton}>
+          <img css={showCover ? styles.coverFadeIn : styles.coverFadeOut} src={playButtonSvg} alt="Disparity" />
+        </div>
+      </button>
       <div css={styles.videoContainer}>
-        <button type="button" onClick={onPlay} css={showCover ? styles.coverShowPointers : styles.coverHidePointers}>
-          <img
-            css={[styles.coverImg, showCover ? styles.coverFadeIn : styles.coverFadeOut]}
-            src={coverImg}
-            alt={title}
-          />
-          <div css={styles.coverPlayButton}>
-            <img css={showCover ? styles.coverFadeIn : styles.coverFadeOut} src={playButtonSvg} alt="Disparity" />
-          </div>
-        </button>
-        <iframe
-          ref={iframeRef}
+        <YouTube
+          ref={playerRef}
+          videoId={source}
           css={styles.video}
-          width="560"
-          height="315"
-          src={`${source}?controls=0&modestbranding=1&rel=0&fs=1&enablejsapi=1`}
+          opts={opts}
           title={title}
-          frameBorder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowFullScreen
+          onStateChange={onPlayerStateChange}
         />
       </div>
     </div>
@@ -148,7 +149,12 @@ Video.propTypes = {
   title: PropTypes.string.isRequired,
   source: PropTypes.string.isRequired,
   // eslint-disable-next-line react/forbid-prop-types
-  coverImg: PropTypes.any.isRequired
+  coverImg: PropTypes.any.isRequired,
+  background: PropTypes.oneOf(['light', 'dark']),
+};
+
+Video.defaultProps = {
+  background: 'light',
 };
 
 export default Video;

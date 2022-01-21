@@ -1,10 +1,6 @@
 /** @jsxImportSource @emotion/react */
 import { occupationalSegregationCopy, segregationImg } from 'assets';
-import {
-  VerticalSplit,
-  Blurb,
-  VideoPlaceholder
-} from 'components';
+import { VerticalSplit, Blurb, Video } from 'components';
 
 const OccupationalSegregation = () => (
   <VerticalSplit
@@ -14,7 +10,14 @@ const OccupationalSegregation = () => (
         description={occupationalSegregationCopy.description}
       />
     )}
-    right={(<VideoPlaceholder source={segregationImg} altText="Occupational Segregation" />)}
+    right={(
+      <Video
+        title={occupationalSegregationCopy.video.title}
+        source={occupationalSegregationCopy.video.source}
+        coverImg={segregationImg}
+        background="dark"
+      />
+    )}
   />
 );
 
