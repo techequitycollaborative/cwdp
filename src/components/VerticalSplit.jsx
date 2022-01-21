@@ -9,10 +9,6 @@ const styles = {
     alignSelf: 'stretch',
     flexDirection: 'row',
     padding: '0px 80px',
-    [mediaQueries(breakpoints.mobile)]: {
-      flexDirection: 'column',
-      padding: '40px 40px',
-    },
   },
   split: {
     display: 'flex',
@@ -33,12 +29,18 @@ const styles = {
   }
 };
 
-const VerticalSplit = ({ left, right, hasDivider }) => (
-  <div css={styles.container}>
+const VerticalSplit = ({ left, right, hasDivider, reverseOnMobile }) => (
+  <div css={[styles.container, {
+    [mediaQueries(breakpoints.mobile)]: {
+      flexDirection: reverseOnMobile ? 'column-reverse' : 'column',
+      padding: '40px 40px',
+    },
+  }]}
+  >
     <div css={styles.split}>
       {left}
     </div>
-    { hasDivider && <div css={styles.divider} />}
+    {hasDivider && <div css={styles.divider} />}
     <div css={styles.split}>
       {right}
     </div>
@@ -48,11 +50,13 @@ const VerticalSplit = ({ left, right, hasDivider }) => (
 VerticalSplit.propTypes = {
   left: PropTypes.node.isRequired,
   right: PropTypes.node.isRequired,
+  reverseOnMobile: PropTypes.bool,
   hasDivider: PropTypes.bool
 };
 
 VerticalSplit.defaultProps = {
-  hasDivider: false
+  hasDivider: false,
+  reverseOnMobile: false
 };
 
 export default VerticalSplit;

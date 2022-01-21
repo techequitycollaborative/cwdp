@@ -101,6 +101,7 @@ const ResponsibleContractingStandard = () => {
           />
         )}
         right={(<Image source={equalityImg} altText="Equality" />)}
+        reverseOnMobile
       />
       <div css={styles.standardsContainer}>
         { width < breakpoints.mobile ? renderMobileStandards() : renderDesktopStandards()}

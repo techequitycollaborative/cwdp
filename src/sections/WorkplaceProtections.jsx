@@ -15,6 +15,7 @@ const WorkplaceProtections = () => (
       />
     )}
     right={(<VideoPlaceholder source={shadowWorkforceImg} altText="Silencing Worker Voices" />)}
+    reverseOnMobile
   />
 );
 
