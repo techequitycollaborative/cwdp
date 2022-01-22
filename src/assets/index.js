@@ -26,6 +26,8 @@ import downloadSvg from './svg/download.svg';
 import downloadAltSvg from './svg/downloadAlt.svg';
 import contractorRaceSvg from './svg/contractorRace.svg';
 import fullTimeRaceSvg from './svg/fullTimeRace.svg';
+import contractorGenderSvg from './svg/contractorGender.svg';
+import fullTimeGenderSvg from './svg/fullTimeGender.svg';
 import bipocHandSvg from './svg/bipocHand.svg';
 import whiteHandSvg from './svg/whiteHand.svg';
 import arrowSvg from './svg/arrow.svg';
@@ -90,6 +92,8 @@ export {
   heroImg,
   contractorRaceSvg,
   fullTimeRaceSvg,
+  contractorGenderSvg,
+  fullTimeGenderSvg,
   contractorLadderImg,
   fullTimeLadderImg,
   whiteHandSvg,

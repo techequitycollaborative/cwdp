@@ -3,17 +3,15 @@ import {
   atGlanceCopy,
   contractorBadgeSvg,
   contractorRaceSvg,
+  contractorGenderSvg,
   fullTimeEmployeeBadge,
   fullTimeRaceSvg,
+  fullTimeGenderSvg,
   fullTimeLadderImg,
-  contractorLadderImg,
-  bipocHandSvg,
-  whiteHandSvg
+  contractorLadderImg
 } from 'assets';
 import { Quote, VerticalSplit } from 'components';
 import { breakpoints, mediaQueries, themeStyles } from 'theme';
-
-const maxHandCount = 4;
 
 const styles = {
   sectionContainer: {
@@ -76,20 +74,28 @@ const styles = {
     margin: '10px 0px',
     textAlign: 'center'
   },
+  subHeadingSubTitle: {
+    fontWeight: 400,
+    fontSize: '.8em'
+  },
   salaryDescriptionText: {
     margin: 0,
     marginTop: 10
   },
-  raceBreakdown: {
+  demographicsBreakdown: {
     margin: '20px 10%',
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'center',
   },
-  raceBreakdownTitle: {
+  demographicsBreakdownTitle: {
     color: 'black',
     alignSelf: 'center',
     marginBottom: 10,
+    textAlign: 'center'
+  },
+  demographicsSubtitle: {
+    color: '#112353',
     textAlign: 'center'
   },
   mobilityDescription: {
@@ -111,10 +117,6 @@ const styles = {
     width: '100%',
     objectFit: 'contain'
   },
-  raceGapRow: {
-    display: 'flex',
-    justifyContent: 'center'
-  },
   hiddenHand: {
     visibility: 'hidden',
   },
@@ -130,28 +132,16 @@ const visualAssets = {
   contractor: {
     badge: contractorBadgeSvg,
     race: contractorRaceSvg,
+    gender: contractorGenderSvg,
     ladder: contractorLadderImg
   },
   fullTime: {
     badge: fullTimeEmployeeBadge,
     race: fullTimeRaceSvg,
+    gender: fullTimeGenderSvg,
     ladder: fullTimeLadderImg
   }
 };
-
-const renderRaceGapRow = (handCount, handSvg, altText, stats) => (
-  <div css={styles.raceGapRow}>
-    { maxHandCount > handCount // render hidden hands to make the spacing line up
-      && Array.from(Array(maxHandCount - handCount).keys()).map(
-        (index) => (<img key={`hidden-${index}-${altText}`} css={[styles.handSvg, styles.hiddenHand]} src={handSvg} alt={altText} />)
-      )}
-    {Array.from(Array(handCount).keys()).map(
-      (index) => (<img key={`${altText}-${index}`} css={styles.handSvg} src={handSvg} alt={altText} />)
-    )}
-    <p css={[themeStyles.text.subHeading, styles.raceGapText]}>{`${stats[0]}%`}</p>
-    <p css={[themeStyles.text.description, styles.raceGapText]}>{stats[1]}</p>
-  </div>
-);
 
 const infoPane = (copy, color, assets) => (
   <div css={styles.container}>
@@ -166,12 +156,22 @@ const infoPane = (copy, color, assets) => (
         {copy.pay.description}
       </p>
     </div>
-    <div css={styles.raceBreakdown}>
+    <div css={styles.demographicsBreakdown}>
       <p css={styles.subHeading}>{atGlanceCopy.raceTitle}</p>
       <img src={assets.race} alt="Race breakdown" />
     </div>
+    <div css={styles.demographicsBreakdown}>
+      <p css={styles.subHeading}>{atGlanceCopy.genderTitle}</p>
+      <img src={assets.gender} alt="Gender breakdown" />
+    </div>
+    <div>
+      <p css={styles.demographicsSubtitle}>{copy.demographicsSubtitle}</p>
+    </div>
     <div css={styles.benefits}>
-      <p css={styles.subHeading}>{copy.benefits.title}</p>
+      <p css={styles.subHeading}>
+        {copy.benefits.title}
+        <span css={styles.subHeadingSubTitle}>{copy.benefits.subTitle}</span>
+      </p>
       {copy.benefits.items.map((benefit) => (
         <div key={benefit[1]} css={styles.benefit}>
           <p css={[themeStyles.text.subHeading, { paddingRight: 10, color }, styles.benefitText]}>{`${benefit[0]}%`}</p>
@@ -183,11 +183,6 @@ const infoPane = (copy, color, assets) => (
           </p>
         </div>
       ))}
-    </div>
-    <div css={copy.raceGap ? undefined : { visibility: 'hidden' }}>
-      <p css={styles.subHeading}>{atGlanceCopy.raceGap.title}</p>
-      {renderRaceGapRow(maxHandCount, whiteHandSvg, 'white hand', atGlanceCopy.raceGap.stats.white)}
-      {renderRaceGapRow(3, bipocHandSvg, 'BIPOC hand', atGlanceCopy.raceGap.stats.bipoc)}
     </div>
     <div css={styles.mobilityContainer}>
       <p css={[themeStyles.text.headline, styles.mobilityDescription]}>

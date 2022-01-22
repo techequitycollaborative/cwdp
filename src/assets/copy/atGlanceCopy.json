@@ -1,24 +1,26 @@
 {
+  "title": "At a Glance",
   "contractor": {
     "header": "Contract Workers",
     "pay": {
-      "salary": "$80,340",
+      "salary": "$86,000",
       "type": "Average Salary",
       "description": "for contract software developers"
     },
     "benefits": {
       "title": "Benefits",
+      "subTitle": "(on average)",
       "items": [
-        [15, "Health Insurance"],
-        [0, "Paid Time Off"],
-        [0, "401k Contributions"],
-        [0, "Stock Options"],
-        [0, "Disability Benefits"],
-        [0, "Paid Parental Leave"]
+        [42, "Paid time off/vacation"],
+        [59, "Basic health insurance"],
+        [40, "Dental insurance"],
+        [19, "Mental health support"],
+        [33, "No benefits"]
       ]
     },
     "raceTitle": "Race",
-    "raceGap": "true",
+    "genderTitle": "Gender",
+    "demographicsSubtitle": "Race and gender demographics are averaged across surveys, includes multiracial data",
     "mobilityDescription": "Limited mobility and high job insecurity"
   },
   "fullTime": {
@@ -30,16 +32,18 @@
     },
     "benefits": {
       "title": "Benefits",
+      "subTitle": "(on average)",
       "items": [
-        [100, "Health Insurance"],
-        [100, "Paid Time Off"],
-        [100, "401k Contributions"],
-        [100, "Stock Options"],
-        [100, "Disability Benefits"],
-        [100, "Paid Parental Leave"]
+        [100, "Paid time off/vacation"],
+        [100, "Basic health insurance"],
+        [100, "Dental insurance"],
+        [100, "Mental health support"],
+        [0, "No benefits"]
       ]
     },
     "raceTitle": "Race",
+    "genderTitle": "Gender",
+    "demographicsSubtitle": "Race and gender demographics are averaged across surveys, includes multiracial data",
     "mobilityDescription":  "Clear career pathways with upward mobility"
   },
   "raceGap": {
@@ -50,7 +54,7 @@
     }
   },
   "quote": {
-    "text": "Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Donec sed odio dui. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.",
-    "author": "Byline if appropriate"
+    "text": "It really is not a career path. There's no upward trajectory.",
+    "author": "Anonymous Contract Worker"
   }
 }
