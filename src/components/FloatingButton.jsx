@@ -1,9 +1,9 @@
 /** @jsxImportSource @emotion/react */
 import { useEffect, useState } from 'react';
-import { downloadSvg, downloadAltSvg } from 'assets';
+import { landingSectionCopy, downloadSvg, downloadAltSvg } from 'assets';
 
 const text = 'Download the report';
-const url = '';
+const downloadButton = landingSectionCopy.button;
 const color = '#CC3333';
 
 const scrollThreshold = 50;
@@ -113,7 +113,7 @@ const FloatingButton = () => {
   });
 
   return (
-    <a href={url} target="_blank" rel="noopener noreferrer">
+    <a href={downloadButton.url} target="_blank" rel="noopener noreferrer">
       <button
         css={[styles.button, scrollStyles.button]}
         type="button"
