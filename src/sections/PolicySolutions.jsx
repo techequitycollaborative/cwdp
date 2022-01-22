@@ -12,6 +12,7 @@ const styles = {
     [mediaQueries(breakpoints.mobile)]: {
       marginRight: 10
     },
+    paddingBottom: 40
   }
 };
 

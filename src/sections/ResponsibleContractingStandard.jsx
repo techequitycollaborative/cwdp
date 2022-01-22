@@ -72,8 +72,8 @@ const renderDesktopStandard = (item, imgSource) => (
 const renderDesktopStandards = () => (
   <>
     {[...Array(closingGapCopy.items.length / 2)].map((_, index) => {
-      const leftItem = closingGapCopy.items[index];
-      const rightIndex = (closingGapCopy.items.length / 2) + index;
+      const leftItem = closingGapCopy.items[index * 2];
+      const rightIndex = (index * 2) + 1;
       const rightItem = closingGapCopy.items[rightIndex];
       return (
         <VerticalSplit
