@@ -21,7 +21,6 @@ const styles = {
     flexDirection: 'column',
     flex: 1,
     alignItems: 'center',
-    justifyContent: 'center',
     [mediaQueries(breakpoints.mobile)]: {
       paddingBottom: '5%'
     },

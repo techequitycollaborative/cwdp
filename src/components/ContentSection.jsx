@@ -14,7 +14,7 @@ const styles = {
     [mediaQueries(breakpoints.mobile)]: {
       flexDirection: 'column',
       minHeight: 'auto',
-      marginRight: 10
+      paddingRight: 15
     },
   },
   titleContainer: {
