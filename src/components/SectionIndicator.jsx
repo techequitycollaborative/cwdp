@@ -41,6 +41,9 @@ const styles = {
     [mediaQueries(breakpoints.mobile)]: {
       width: MOBILE_INDICATOR_SIZE,
       height: MOBILE_INDICATOR_SIZE,
+      '&:focus': {
+        outline: 'none'
+      }
     },
     borderRadius: '50%',
     background: '#000000',

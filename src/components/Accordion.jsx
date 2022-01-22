@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import { useState } from 'react';
 import AnimateHeight from 'react-animate-height';
 
-import { themeStyles } from 'theme';
+import { breakpoints, mediaQueries, themeStyles } from 'theme';
 
 const styles = {
   container: {
@@ -34,7 +34,12 @@ const styles = {
     borderTop: '1px solid #E5E5E5',
     display: 'flex',
     justifyContent: 'center',
-    alignItems: 'center'
+    alignItems: 'center',
+    [mediaQueries(breakpoints.mobile)]: {
+      '&:focus': {
+        outline: 'none'
+      }
+    },
   },
   moreLessText: {
     fontWeight: 600,

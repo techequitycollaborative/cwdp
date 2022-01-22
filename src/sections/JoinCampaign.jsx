@@ -7,7 +7,8 @@ const styles = {
   blueBox: {
     background: '#00CEE1',
     padding: '5% 10%',
-    marginTop: 40
+    marginTop: 40,
+    marginRight: -15
   },
   borderBox: {
     border: 'solid white 1px',
