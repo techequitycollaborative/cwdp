@@ -28,8 +28,6 @@ import contractorRaceSvg from './svg/contractorRace.svg';
 import fullTimeRaceSvg from './svg/fullTimeRace.svg';
 import contractorGenderSvg from './svg/contractorGender.svg';
 import fullTimeGenderSvg from './svg/fullTimeGender.svg';
-import bipocHandSvg from './svg/bipocHand.svg';
-import whiteHandSvg from './svg/whiteHand.svg';
 import arrowSvg from './svg/arrow.svg';
 
 import shadowWorkforceImg from './img/desk.png';
@@ -96,7 +94,5 @@ export {
   fullTimeGenderSvg,
   contractorLadderImg,
   fullTimeLadderImg,
-  whiteHandSvg,
-  bipocHandSvg,
   arrowSvg
 };

@@ -7,8 +7,8 @@ import {
   fullTimeRaceSvg,
   fullTimeLadderImg,
   contractorLadderImg,
-  bipocHandSvg,
-  whiteHandSvg
+  contractorGenderSvg,
+  fullTimeGenderSvg
 } from 'assets';
 import { Quote } from 'components';
 import { themeStyles } from 'theme';
@@ -22,6 +22,13 @@ const styles = {
   container: {
     margin: '0px 30px',
     marginBottom: 60
+  },
+  salarySubtitle: {
+    color: '#112353',
+    fontWeight: 600,
+    fontSize: 24,
+    marginTop: 40,
+    marginBottom: 30
   },
   salariesContainer: {
     display: 'flex',
@@ -45,23 +52,24 @@ const styles = {
     marginTop: 10,
     padding: '0px 20px'
   },
-  raceBreakdown: {
+  breakdown: {
     padding: '0px 5%',
   },
-  raceBreakdownSvg: {
+  breakdownSvg: {
     width: '100%',
+    marginTop: 10,
     marginBottom: 15
   },
-  raceTitle: {
+  breakdownTitle: {
     textAlign: 'center'
   },
-  raceBreakdownTitles: {
+  breakdownTitles: {
     color: '#112353',
     fontWeight: 600,
     fontSize: 20,
     margin: '5px 0px',
   },
-  benefitsHeader: {
+  benefitRow: {
     display: 'flex',
     flex: 1,
     flexDirection: 'row',
@@ -84,35 +92,8 @@ const styles = {
     maxHeight: 60,
     ...benefitSharedPadding,
   },
-  raceGapTextRow: {
-    display: 'flex',
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-  raceGapText: {
-    margin: 0,
-    paddingRight: 10
-  },
-  raceRow: {
-    display: 'flex',
-    flexDirection: 'column',
-    alignItems: 'center',
-    justifyContent: 'center'
-  },
-  handSvg: {
-    paddingRight: 10,
-    paddingTop: 20
-  },
-  handRow: {
-    display: 'flex',
-    flexDirection: 'row',
-    justifyContent: 'flex-start'
-  },
   textAlign: {
     textAlign: 'center'
-  },
-  raceGapContainer: {
-    marginBottom: 30
   },
   ladderImg: {
     maxHeight: 200,
@@ -135,27 +116,19 @@ const styles = {
     width: '80%',
     margin: '40px auto',
     border: '1px solid #E5E5E5',
-  }
+  },
+  hiddenZero: {
+    visibility: 'hidden'
+  },
 };
 
-const renderRaceGapRow = (handCount, handSvg, altText, stats) => (
-  <div css={styles.raceRow}>
-    <div css={styles.handRow}>
-      {Array.from(Array(handCount).keys()).map(
-        (index) => (<img key={`${altText}-${index}`} css={styles.handSvg} src={handSvg} alt={altText} />)
-      )}
-    </div>
-    <div css={styles.raceGapTextRow}>
-      <p css={[themeStyles.text.subHeading, styles.raceGapText]}>{`${stats[0]}%`}</p>
-      <p css={[themeStyles.text.description, styles.raceGapText]}>{stats[1]}</p>
-    </div>
-  </div>
-);
-
 const renderBenefitRow = (contractorPercent, fullTimePercent, benefit) => (
-  <div key={benefit} css={styles.benefitsHeader}>
+  <div key={benefit} css={styles.benefitRow}>
     <p css={styles.contractorPercentText}>{`${contractorPercent}%`}</p>
-    <p css={styles.fullTimePercentText}>{`${fullTimePercent}%`}</p>
+    <p css={styles.fullTimePercentText}>
+      {(fullTimePercent === 0 ? <span aria-hidden css={styles.hiddenZero}>10</span> : null)}
+      <span>{`${fullTimePercent}%`}</span>
+    </p>
     <p css={[styles.benefitsText, themeStyles.text.description]}>{benefit}</p>
   </div>
 );
@@ -170,19 +143,19 @@ const renderSalary = (badgeSvg, salary, description) => (
   </div>
 );
 
-const renderRaceBreakdown = () => (
-  <div css={styles.raceBreakdown}>
-    <p css={[themeStyles.text.subHeading, styles.raceTitle]}>
-      {atGlanceCopy.contractor.raceTitle}
+const renderBreakdown = (title, contractor, fullTime) => (
+  <div css={styles.breakdown}>
+    <p css={[themeStyles.text.subHeading, styles.breakdownTitle]}>
+      {title}
     </p>
-    <p css={styles.raceBreakdownTitles}>
-      {atGlanceCopy.contractor.header}
+    <p css={styles.breakdownTitles}>
+      {contractor.header}
     </p>
-    <img css={styles.raceBreakdownSvg} src={contractorRaceSvg} alt="Race breakdown" />
-    <p css={styles.raceBreakdownTitles}>
-      {atGlanceCopy.fullTime.header}
+    <img css={styles.breakdownSvg} src={contractor.svg} alt="Breakdown" />
+    <p css={styles.breakdownTitles}>
+      {fullTime.header}
     </p>
-    <img css={styles.raceBreakdownSvg} src={fullTimeRaceSvg} alt="Race breakdown" />
+    <img css={styles.breakdownSvg} src={fullTime.svg} alt="Breakdown" />
   </div>
 );
 
@@ -191,7 +164,7 @@ const renderMobilityColumn = (img, description) => (
     <div>
       <img css={styles.ladderImg} src={img} alt="Employee Ladder" />
     </div>
-    <p css={[styles.raceBreakdownTitles, styles.textAlign]}>
+    <p css={[styles.breakdownTitles, styles.textAlign]}>
       {description}
     </p>
   </div>
@@ -200,7 +173,7 @@ const renderMobilityColumn = (img, description) => (
 const AtGlanceMobile = () => (
   <div css={styles.container}>
     <p css={[themeStyles.text.headline, styles.headerText]}>{`${atGlanceCopy.contractor.header} vs ${atGlanceCopy.fullTime.header}`}</p>
-    <p css={[themeStyles.text.subHeading, styles.headerText]}>{atGlanceCopy.contractor.pay.type}</p>
+    <p css={[styles.headerText, styles.salarySubtitle]}>{atGlanceCopy.contractor.pay.type}</p>
     <div css={styles.salariesContainer}>
       {renderSalary(
         contractorBadgeSvg,
@@ -214,10 +187,20 @@ const AtGlanceMobile = () => (
       )}
     </div>
     <hr css={styles.divider} />
-    {renderRaceBreakdown()}
+    {renderBreakdown(
+      atGlanceCopy.contractor.raceTitle,
+      { header: atGlanceCopy.contractor.header, svg: contractorRaceSvg },
+      { header: atGlanceCopy.fullTime.header, svg: fullTimeRaceSvg }
+    )}
     <hr css={styles.divider} />
-    <div>
-      <div css={styles.benefitsHeader}>
+    {renderBreakdown(
+      atGlanceCopy.contractor.genderTitle,
+      { header: atGlanceCopy.contractor.header, svg: contractorGenderSvg },
+      { header: atGlanceCopy.fullTime.header, svg: fullTimeGenderSvg }
+    )}
+    <hr css={styles.divider} />
+    <div css={styles.benefits}>
+      <div css={styles.benefitRow}>
         <img css={styles.benefitBadge} src={contractorBadgeSvg} alt="worker badge" />
         <img css={styles.benefitBadge} src={fullTimeEmployeeBadge} alt="worker badge" />
         <p css={[themeStyles.text.subHeading, { paddingLeft: '2%' }]}>
@@ -227,12 +210,6 @@ const AtGlanceMobile = () => (
       {atGlanceCopy.contractor.benefits.items.map((item, index) => (
         renderBenefitRow(item[0], atGlanceCopy.fullTime.benefits.items[index][0], item[1])
       ))}
-    </div>
-    <hr css={styles.divider} />
-    <div css={styles.raceGapContainer}>
-      <p css={[themeStyles.text.subHeading, styles.textAlign]}>{atGlanceCopy.raceGap.title}</p>
-      {renderRaceGapRow(4, whiteHandSvg, 'white hand', atGlanceCopy.raceGap.stats.white)}
-      {renderRaceGapRow(3, bipocHandSvg, 'BIPOC hand', atGlanceCopy.raceGap.stats.bipoc)}
     </div>
     <hr css={styles.divider} />
     <div css={styles.mobilityContainer}>

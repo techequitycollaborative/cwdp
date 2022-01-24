@@ -76,7 +76,8 @@ const styles = {
   },
   subHeadingSubTitle: {
     fontWeight: 400,
-    fontSize: '.8em'
+    fontSize: '.8em',
+    marginRight: 2
   },
   salaryDescriptionText: {
     margin: 0,
@@ -125,6 +126,9 @@ const styles = {
   },
   handSvg: {
     padding: 7,
+  },
+  hiddenZero: {
+    visibility: 'hidden'
   }
 };
 
@@ -157,12 +161,12 @@ const infoPane = (copy, color, assets) => (
       </p>
     </div>
     <div css={styles.demographicsBreakdown}>
-      <p css={styles.subHeading}>{atGlanceCopy.raceTitle}</p>
+      <p css={styles.subHeading}>{atGlanceCopy.contractor.raceTitle}</p>
       <img src={assets.race} alt="Race breakdown" />
     </div>
     <div css={styles.demographicsBreakdown}>
-      <p css={styles.subHeading}>{atGlanceCopy.genderTitle}</p>
-      <img src={assets.gender} alt="Gender breakdown" />
+      <p css={styles.subHeading}>{atGlanceCopy.contractor.genderTitle}</p>
+      <img css={copy.header === atGlanceCopy.fullTime.header ? { paddingBottom: 22 } : undefined} src={assets.gender} alt="Gender breakdown" />
     </div>
     <div>
       <p css={styles.demographicsSubtitle}>{copy.demographicsSubtitle}</p>
@@ -174,7 +178,10 @@ const infoPane = (copy, color, assets) => (
       </p>
       {copy.benefits.items.map((benefit) => (
         <div key={benefit[1]} css={styles.benefit}>
-          <p css={[themeStyles.text.subHeading, { paddingRight: 10, color }, styles.benefitText]}>{`${benefit[0]}%`}</p>
+          <p css={[themeStyles.text.subHeading, { paddingRight: 10, color }, styles.benefitText]}>
+            {(benefit[0] === 0 ? <span aria-hidden css={styles.hiddenZero}>10</span> : null)}
+            <span>{`${benefit[0]}%`}</span>
+          </p>
           <p
             css={[themeStyles.text.description, { fontSize: 22 }, styles.benefitText]}
             key={benefit}
