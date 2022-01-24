@@ -21,6 +21,7 @@ const benefitSharedPadding = {
 const styles = {
   container: {
     margin: '0px 30px',
+    marginBottom: 50
   },
   salarySubtitle: {
     color: '#112353',
