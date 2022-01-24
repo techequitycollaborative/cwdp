@@ -21,11 +21,7 @@ const styles = {
     },
   },
   divider: {
-    alignSelf: 'center',
     borderLeft: '2px solid #E5E5E5',
-    height: '70%',
-    width: '5px',
-    background: 'black'
   }
 };
 
@@ -43,8 +39,7 @@ const VerticalSplit = ({ left, right, hasDivider, reverseOnMobile }) => (
     <div css={styles.split}>
       {left}
     </div>
-    {hasDivider && <div css={styles.divider} />}
-    <div css={styles.split}>
+    <div css={[styles.split, hasDivider && styles.divider]}>
       {right}
     </div>
   </div>
