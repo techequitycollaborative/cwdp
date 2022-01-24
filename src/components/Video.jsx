@@ -16,6 +16,10 @@ const styles = {
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
+    [mediaQueries(breakpoints.tablet)]: {
+      width: '60%',
+      margin: '20% 0px'
+    },
     [mediaQueries(breakpoints.mobile)]: {
       width: '90%',
       margin: '35% 0px'

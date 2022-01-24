@@ -31,6 +31,9 @@ const styles = {
 
 const VerticalSplit = ({ left, right, hasDivider, reverseOnMobile }) => (
   <div css={[styles.container, {
+    [mediaQueries(breakpoints.tablet)]: {
+      flexDirection: 'column',
+    },
     [mediaQueries(breakpoints.mobile)]: {
       flexDirection: reverseOnMobile ? 'column-reverse' : 'column',
       padding: '40px 40px',

@@ -9,6 +9,9 @@ import { breakpoints, mediaQueries, themeStyles } from 'theme';
 import { VerticalSplit, Blurb, Video } from 'components';
 
 const styles = {
+  container: {
+    paddingBottom: 30,
+  },
   headerContainer: {
     display: 'flex',
     flexDirection: 'row',
@@ -26,6 +29,9 @@ const styles = {
     flexDirection: 'row'
   },
   logo: {
+    [mediaQueries(breakpoints.tablet)]: {
+      width: '95%',
+    },
     [mediaQueries(breakpoints.mobile)]: {
       marginTop: 20,
       width: '80%',
@@ -40,6 +46,10 @@ const styles = {
     fontSize: 32,
     margin: 0,
     alignSelf: 'center',
+    [mediaQueries(breakpoints.tablet)]: {
+      fontSize: 28,
+      paddingRight: 10
+    },
     [mediaQueries(breakpoints.mobile)]: {
       fontSize: 22,
     }
@@ -50,7 +60,7 @@ const styles = {
 };
 
 const LandingSection = () => (
-  <>
+  <div css={styles.container}>
     <div css={styles.headerContainer}>
       <div css={styles.headerLeft}>
         <img css={styles.badges} src={badgesSvg} alt="Badges" />
@@ -77,7 +87,7 @@ const LandingSection = () => (
       )}
       reverseOnMobile
     />
-  </>
+  </div>
 );
 
 export default LandingSection;

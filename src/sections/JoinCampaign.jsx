@@ -7,7 +7,7 @@ const styles = {
   blueBox: {
     background: '#00CEE1',
     padding: '5% 10%',
-    marginTop: 40,
+    marginTop: 0,
     marginRight: -15
   },
   borderBox: {
@@ -17,29 +17,36 @@ const styles = {
     flexDirection: 'column',
     justifyContent: 'center',
     alignItems: 'center',
-    padding: '2% 10%'
+    padding: '2% 8%',
+    margin: '0% 5%',
   },
   disparitiesText: {
     textAlign: 'center',
   },
+  blurbPadding: {
+    paddingBottom: 40
+  }
 };
 
 const JoinCampaign = () => (
   <>
     <VerticalSplit
       left={(
-        <Blurb
-          headline={joinCampaignCopy.headline}
-          description={joinCampaignCopy.description}
-          invertTextColors
-          button={{
-            text: joinCampaignCopy.button.label,
-            url: joinCampaignCopy.button.url,
-            color: themeStyles.colors.brandBlue
-          }}
-        />
+        <>
+          <Blurb
+            headline={joinCampaignCopy.headline}
+            description={joinCampaignCopy.description}
+            invertTextColors
+            button={{
+              text: joinCampaignCopy.button.label,
+              url: joinCampaignCopy.button.url,
+              color: themeStyles.colors.brandBlue
+            }}
+          />
+          <div css={styles.blurbPadding} />
+        </>
       )}
-      right={(<Image source={joinImg} altText="Join Campaign" />)}
+      right={(<Image bottomAlign source={joinImg} altText="Join Campaign" />)}
     />
     <div css={styles.blueBox}>
       <div css={styles.borderBox}>

@@ -11,7 +11,7 @@ import {
   fullTimeGenderSvg
 } from 'assets';
 import { Quote } from 'components';
-import { themeStyles } from 'theme';
+import { breakpoints, mediaQueries, themeStyles } from 'theme';
 
 const benefitSharedPadding = {
   paddingLeft: 20,
@@ -21,7 +21,6 @@ const benefitSharedPadding = {
 const styles = {
   container: {
     margin: '0px 30px',
-    marginBottom: 60
   },
   salarySubtitle: {
     color: '#112353',
@@ -54,11 +53,20 @@ const styles = {
   },
   breakdown: {
     padding: '0px 5%',
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'center'
   },
   breakdownSvg: {
-    width: '100%',
     marginTop: 10,
-    marginBottom: 15
+    marginBottom: 15,
+    alignSelf: 'center',
+    [mediaQueries(breakpoints.tablet)]: {
+      width: '80%',
+    },
+    [mediaQueries(breakpoints.mobile)]: {
+      width: '100%',
+    }
   },
   breakdownTitle: {
     textAlign: 'center'
@@ -81,7 +89,6 @@ const styles = {
     ...benefitSharedPadding,
     color: themeStyles.colors.callToActionRed
   },
-
   fullTimePercentText: {
     fontWeight: 600,
     fontSize: 24,
@@ -92,8 +99,9 @@ const styles = {
     maxHeight: 60,
     ...benefitSharedPadding,
   },
-  textAlign: {
-    textAlign: 'center'
+  mobilityText: {
+    textAlign: 'center',
+    padding: '0px 20px'
   },
   ladderImg: {
     maxHeight: 200,
@@ -119,6 +127,18 @@ const styles = {
   },
   hiddenZero: {
     visibility: 'hidden'
+  },
+  benefits: {
+    flex: 1,
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
+  },
+  allBenefitRows: {
+    flex: 1,
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'flex-start',
   },
 };
 
@@ -164,7 +184,7 @@ const renderMobilityColumn = (img, description) => (
     <div>
       <img css={styles.ladderImg} src={img} alt="Employee Ladder" />
     </div>
-    <p css={[styles.breakdownTitles, styles.textAlign]}>
+    <p css={[styles.breakdownTitles, styles.mobilityText]}>
       {description}
     </p>
   </div>
@@ -200,16 +220,20 @@ const AtGlanceMobile = () => (
     )}
     <hr css={styles.divider} />
     <div css={styles.benefits}>
-      <div css={styles.benefitRow}>
-        <img css={styles.benefitBadge} src={contractorBadgeSvg} alt="worker badge" />
-        <img css={styles.benefitBadge} src={fullTimeEmployeeBadge} alt="worker badge" />
-        <p css={[themeStyles.text.subHeading, { paddingLeft: '2%' }]}>
-          {atGlanceCopy.contractor.benefits.title}
-        </p>
+
+      <div css={styles.allBenefitRows}>
+        <div css={styles.benefitRow}>
+          <img css={styles.benefitBadge} src={contractorBadgeSvg} alt="worker badge" />
+          <img css={styles.benefitBadge} src={fullTimeEmployeeBadge} alt="worker badge" />
+          <p css={[themeStyles.text.subHeading, { paddingLeft: '2%' }]}>
+            {atGlanceCopy.contractor.benefits.title}
+          </p>
+        </div>
+        {atGlanceCopy.contractor.benefits.items.map((item, index) => (
+          renderBenefitRow(item[0], atGlanceCopy.fullTime.benefits.items[index][0], item[1])
+        ))}
       </div>
-      {atGlanceCopy.contractor.benefits.items.map((item, index) => (
-        renderBenefitRow(item[0], atGlanceCopy.fullTime.benefits.items[index][0], item[1])
-      ))}
+
     </div>
     <hr css={styles.divider} />
     <div css={styles.mobilityContainer}>
