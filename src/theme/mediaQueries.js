@@ -1,7 +1,7 @@
 export const breakpoints = {
   mobile: 500,
   tablet: 775,
-  laptop: 1024,
+  desktop: 1024,
 };
 
 // Usage: mediaQueries(breakpoints.mobile)

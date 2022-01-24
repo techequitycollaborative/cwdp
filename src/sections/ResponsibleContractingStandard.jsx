@@ -37,10 +37,14 @@ const styles = {
     display: 'flex',
     flex: 1,
     flexDirection: 'column',
-    [mediaQueries(breakpoints.mobile)]: {
+    [mediaQueries(breakpoints.tablet)]: {
       margin: 0,
-      marginRight: 10
+      marginRight: 10,
+      paddingBottom: 30
     },
+  },
+  tabletStandardContainer: {
+    paddingLeft: '8%',
   }
 };
 
@@ -69,6 +73,16 @@ const renderDesktopStandard = (item, imgSource) => (
   </div>
 );
 
+const renderTabletStandards = () => (
+  <>
+    {closingGapCopy.items.map((item, index) => (
+      <div key={item.heading} css={styles.tabletStandardContainer}>
+        {renderDesktopStandard(item, standardItemIcons[index])}
+      </div>
+    ))}
+  </>
+);
+
 const renderDesktopStandards = () => (
   <>
     {[...Array(closingGapCopy.items.length / 2)].map((_, index) => {
@@ -85,6 +99,18 @@ const renderDesktopStandards = () => (
     })}
   </>
 );
+
+const renderStandards = (width) => {
+  if (width < breakpoints.mobile) {
+    return renderMobileStandards();
+  }
+
+  if (width < breakpoints.tablet) {
+    return renderTabletStandards();
+  }
+
+  return renderDesktopStandards();
+};
 
 const ResponsibleContractingStandard = () => {
   const { width } = useViewPort();
@@ -106,7 +132,7 @@ const ResponsibleContractingStandard = () => {
         reverseOnMobile
       />
       <div css={styles.standardsContainer}>
-        { width < breakpoints.mobile ? renderMobileStandards() : renderDesktopStandards()}
+        {renderStandards(width)}
         <div css={styles.buttonContainer}>
           <Button
             url={closingGapCopy.button2.url}

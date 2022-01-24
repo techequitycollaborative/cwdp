@@ -25,6 +25,11 @@ const styles = {
     border: '2px solid #E5E5E5',
     position: 'relative',
     marginBottom: 60,
+    [mediaQueries(breakpoints.tablet)]: {
+      margin: '0% 5%',
+      marginBottom: '18%',
+      marginTop: '10%',
+    },
     [mediaQueries(breakpoints.mobile)]: {
       margin: '0% 3%',
     },

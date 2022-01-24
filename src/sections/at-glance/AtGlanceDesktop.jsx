@@ -39,8 +39,7 @@ const styles = {
     flexDirection: 'column',
   },
   benefits: {
-    padding: 30,
-    margin: '0px 15%',
+    padding: 20,
     [mediaQueries(breakpoints.mobile)]: {
       margin: '0px 3%',
     }
@@ -77,9 +76,10 @@ const styles = {
   subHeadingSubTitle: {
     fontWeight: 400,
     fontSize: '.8em',
-    marginRight: 2
+    marginLeft: 4
   },
   salaryDescriptionText: {
+    fontSize: '1.2em',
     margin: 0,
     marginTop: 10
   },
@@ -100,7 +100,7 @@ const styles = {
     textAlign: 'center'
   },
   mobilityDescription: {
-    fontSize: 40,
+    fontSize: '1.7em',
     padding: '0px 30px',
     wordSpacing: '10em',
     width: '100%'
@@ -118,17 +118,12 @@ const styles = {
     width: '100%',
     objectFit: 'contain'
   },
-  hiddenHand: {
-    visibility: 'hidden',
-  },
-  raceGapText: {
-    paddingLeft: 15
-  },
-  handSvg: {
-    padding: 7,
-  },
   hiddenZero: {
     visibility: 'hidden'
+  },
+  breakdownImg: {
+    width: '100%',
+    objectFit: 'contain'
   }
 };
 
@@ -162,11 +157,11 @@ const infoPane = (copy, color, assets) => (
     </div>
     <div css={styles.demographicsBreakdown}>
       <p css={styles.subHeading}>{atGlanceCopy.contractor.raceTitle}</p>
-      <img src={assets.race} alt="Race breakdown" />
+      <img css={styles.breakdownImg} src={assets.race} alt="Race breakdown" />
     </div>
     <div css={styles.demographicsBreakdown}>
       <p css={styles.subHeading}>{atGlanceCopy.contractor.genderTitle}</p>
-      <img css={copy.header === atGlanceCopy.fullTime.header ? { paddingBottom: 22 } : undefined} src={assets.gender} alt="Gender breakdown" />
+      <img css={[styles.breakdownImg, copy.header === atGlanceCopy.fullTime.header ? { paddingBottom: 20 } : undefined]} src={assets.gender} alt="Gender breakdown" />
     </div>
     <div>
       <p css={styles.demographicsSubtitle}>{copy.demographicsSubtitle}</p>

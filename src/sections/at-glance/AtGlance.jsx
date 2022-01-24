@@ -7,7 +7,7 @@ import AtGlanceMobile from './AtGlanceMobile';
 
 const AtGlance = () => {
   const { width } = useViewPort();
-  return width < breakpoints.mobile ? <AtGlanceMobile /> : <AtGlanceDesktop />;
+  return width < breakpoints.tablet ? <AtGlanceMobile /> : <AtGlanceDesktop />;
 };
 
 export default AtGlance;

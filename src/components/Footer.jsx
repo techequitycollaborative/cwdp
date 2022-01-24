@@ -7,6 +7,7 @@ import {
   linkedinLogoSvg,
   techEquityLogoSquareSvg
 } from 'assets';
+import { useViewPort } from 'hooks';
 import { breakpoints, mediaQueries, themeStyles } from 'theme';
 
 import Button from './Button';
@@ -21,6 +22,7 @@ const styles = {
   techEquityLogo: {
     height: 200,
     width: 200,
+    alignSelf: 'center'
   },
   topBannerContainer: {
     display: 'flex',
@@ -28,12 +30,13 @@ const styles = {
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
-    [mediaQueries(breakpoints.mobile)]: {
+    [mediaQueries(breakpoints.tablet)]: {
       flexDirection: 'column',
+      alignItems: 'stretch'
     },
   },
   linkColumnContainer: {
-    [mediaQueries(breakpoints.mobile)]: {
+    [mediaQueries(breakpoints.tablet)]: {
       display: 'flex',
       flexDirection: 'column',
       alignItems: 'center',
@@ -54,6 +57,9 @@ const styles = {
     width: 30,
     paddingRight: 30,
     paddingBottom: 10,
+    [mediaQueries(breakpoints.tablet)]: {
+      padding: 0,
+    },
   },
   link: {
     textDecoration: 'none',
@@ -96,12 +102,25 @@ const styles = {
     fontSize: 14
   },
   socialsContainer: {
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center'
+  },
+  tabletLayoutRow: {
+    display: 'flex',
+    flex: 1,
+    flexDirection: 'row',
+    alignItems: 'flex-end',
+    justifyContent: 'space-around',
+  },
+  allSocialIcons: {
+    display: 'flex',
+    flex: 1,
+    flexDirection: 'row',
+    justifyContent: 'space-around',
+    width: '100%',
     [mediaQueries(breakpoints.mobile)]: {
-      display: 'flex',
-      flexDirection: 'column',
-      alignItems: 'center',
-      justifyContent: 'center',
-      padding: '20 0',
+      marginTop: 10
     },
   }
 };
@@ -131,44 +150,71 @@ const renderVerticalDivider = () => (
   <hr css={styles.verticalDivider} />
 );
 
-const Footer = () => (
-  <div css={styles.footerContainer}>
-    <div css={styles.topBannerContainer}>
+const renderAllSocials = () => (
+  <div css={styles.socialsContainer}>
+    <div css={styles.allSocialIcons}>
+      {renderSocial(footerSectionCopy.socials.facebook, facebookLogoSvg, 'facebook')}
+      {renderSocial(footerSectionCopy.socials.instagram, instagramLogoSvg, 'instagram')}
+      {renderSocial(footerSectionCopy.socials.twitter, twitterLogoSvg, 'twitter')}
+      {renderSocial(footerSectionCopy.socials.linkedin, linkedinLogoSvg, 'linkedin')}
+    </div>
+    <p css={styles.socialDescription}>{footerSectionCopy.socialDescription}</p>
+    <Button
+      url={footerSectionCopy.button.url}
+      text={footerSectionCopy.button.label}
+      color={themeStyles.colors.brandNavy}
+    />
+  </div>
+);
+
+const renderMobileAndDesktop = () => (
+  <>
+    <img css={styles.techEquityLogo} src={techEquityLogoSquareSvg} alt="TEC Logo" />
+    {renderLinkColumn(footerSectionCopy.linkColumns.firstColumn)}
+    {renderLinkColumn(footerSectionCopy.linkColumns.secondColumn)}
+    {renderAllSocials()}
+  </>
+);
+
+const renderTablet = () => (
+  <div>
+    <div css={styles.tabletLayoutRow}>
       <img css={styles.techEquityLogo} src={techEquityLogoSquareSvg} alt="TEC Logo" />
+      {renderAllSocials()}
+    </div>
+    <div css={styles.tabletLayoutRow}>
       {renderLinkColumn(footerSectionCopy.linkColumns.firstColumn)}
       {renderLinkColumn(footerSectionCopy.linkColumns.secondColumn)}
-      <div css={styles.socialsContainer}>
-        <div>
-          {renderSocial(footerSectionCopy.socials.facebook, facebookLogoSvg, 'facebook')}
-          {renderSocial(footerSectionCopy.socials.instagram, instagramLogoSvg, 'instagram')}
-          {renderSocial(footerSectionCopy.socials.twitter, twitterLogoSvg, 'twitter')}
-          {renderSocial(footerSectionCopy.socials.linkedin, linkedinLogoSvg, 'linkedin')}
-        </div>
-        <p css={styles.socialDescription}>{footerSectionCopy.socialDescription}</p>
-        <Button
-          url={footerSectionCopy.button.url}
-          text={footerSectionCopy.button.label}
-          color={themeStyles.colors.brandNavy}
-        />
-      </div>
-    </div>
-    <div css={styles.bottomBannerContainer}>
-      {renderClickabelText(
-        footerSectionCopy.bottomBanner.privacyPolicy,
-        { ...styles.bottomBannerText, ...styles.bottomBannerTextBold }
-      )}
-      {renderVerticalDivider()}
-      {renderClickabelText(
-        footerSectionCopy.bottomBanner.termsOfUse,
-        { ...styles.bottomBannerText, ...styles.bottomBannerTextBold }
-      )}
-      {renderVerticalDivider()}
-      {renderClickabelText(footerSectionCopy.bottomBanner.telephone, styles.bottomBannerText)}
-      {renderVerticalDivider()}
-      {renderClickabelText(footerSectionCopy.bottomBanner.email, styles.bottomBannerText)}
-      <p css={styles.bottomBannerText}>{footerSectionCopy.bottomBanner.copyright.label}</p>
     </div>
   </div>
 );
+
+const Footer = () => {
+  const { width } = useViewPort();
+  return (
+    <div css={styles.footerContainer}>
+      <div css={styles.topBannerContainer}>
+        {width >= breakpoints.mobile && width < breakpoints.desktop
+          ? renderTablet() : renderMobileAndDesktop()}
+      </div>
+      <div css={styles.bottomBannerContainer}>
+        {renderClickabelText(
+          footerSectionCopy.bottomBanner.privacyPolicy,
+          { ...styles.bottomBannerText, ...styles.bottomBannerTextBold }
+        )}
+        {renderVerticalDivider()}
+        {renderClickabelText(
+          footerSectionCopy.bottomBanner.termsOfUse,
+          { ...styles.bottomBannerText, ...styles.bottomBannerTextBold }
+        )}
+        {renderVerticalDivider()}
+        {renderClickabelText(footerSectionCopy.bottomBanner.telephone, styles.bottomBannerText)}
+        {renderVerticalDivider()}
+        {renderClickabelText(footerSectionCopy.bottomBanner.email, styles.bottomBannerText)}
+        <p css={styles.bottomBannerText}>{footerSectionCopy.bottomBanner.copyright.label}</p>
+      </div>
+    </div>
+  );
+};
 
 export default Footer;

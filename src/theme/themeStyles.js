@@ -17,10 +17,13 @@ const themeStyles = {
   text: {
     headline: {
       color: '#112353',
-      fontSize: 52,
+      fontSize: 48,
       fontWeight: 600,
       lineHeight: 'normal',
       marginTop: 0,
+      [mediaQueries(breakpoints.tablet)]: {
+        fontSize: 36,
+      },
       [mediaQueries(breakpoints.mobile)]: {
         fontSize: 32,
       }
@@ -31,7 +34,7 @@ const themeStyles = {
       fontSize: 28,
       fontWeight: 600,
       margin: 0,
-      [mediaQueries(breakpoints.mobile)]: {
+      [mediaQueries(breakpoints.tablet)]: {
         fontSize: 24,
       }
     },
@@ -40,7 +43,7 @@ const themeStyles = {
       fontSize: 20,
       fontWeight: 400,
       lineHeight: '28px',
-      [mediaQueries(breakpoints.mobile)]: {
+      [mediaQueries(breakpoints.tablet)]: {
         fontSize: 18,
       }
     },

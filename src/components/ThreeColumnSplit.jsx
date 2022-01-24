@@ -11,7 +11,7 @@ const styles = {
     alignSelf: 'stretch',
     flexDirection: 'row',
     padding: '0px 80px',
-    [mediaQueries(breakpoints.mobile)]: {
+    [mediaQueries(breakpoints.tablet)]: {
       flexDirection: 'column',
       padding: '40px 40px',
     },

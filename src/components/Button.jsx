@@ -1,5 +1,6 @@
 /** @jsxImportSource @emotion/react */
 import PropTypes from 'prop-types';
+import { breakpoints, mediaQueries } from 'theme';
 
 const styles = {
   button: {
@@ -9,6 +10,10 @@ const styles = {
     fontSize: 20,
     margin: '20px 0',
     fontWeight: 700,
+    maxWidth: 400,
+    [mediaQueries(breakpoints.tablet)]: {
+      fontSize: 18,
+    },
     '&:active': {
       opacity: '.5'
     },

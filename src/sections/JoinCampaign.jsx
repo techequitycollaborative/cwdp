@@ -17,7 +17,8 @@ const styles = {
     flexDirection: 'column',
     justifyContent: 'center',
     alignItems: 'center',
-    padding: '2% 10%'
+    padding: '2% 8%',
+    margin: '0% 5%',
   },
   disparitiesText: {
     textAlign: 'center',
@@ -39,7 +40,7 @@ const JoinCampaign = () => (
           }}
         />
       )}
-      right={(<Image source={joinImg} altText="Join Campaign" />)}
+      right={(<Image bottomAlign source={joinImg} altText="Join Campaign" />)}
     />
     <div css={styles.blueBox}>
       <div css={styles.borderBox}>
