@@ -11,6 +11,9 @@ import { VerticalSplit, Blurb, Video } from 'components';
 const styles = {
   container: {
     paddingBottom: 30,
+    [mediaQueries(breakpoints.mobile)]: {
+      paddingBottom: 0
+    },
   },
   headerContainer: {
     display: 'flex',
@@ -33,7 +36,7 @@ const styles = {
       width: '95%',
     },
     [mediaQueries(breakpoints.mobile)]: {
-      marginTop: 20,
+      margin: '20px 0px',
       width: '80%',
     }
   },
