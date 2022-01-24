@@ -124,6 +124,9 @@ const styles = {
   breakdownImg: {
     width: '100%',
     objectFit: 'contain'
+  },
+  dividerHack: {
+    marginBottom: 60
   }
 };
 
@@ -197,19 +200,21 @@ const infoPane = (copy, color, assets) => (
 
 const AtGlanceDesktop = () => (
   <div css={styles.sectionContainer}>
-    <VerticalSplit
-      left={infoPane(
-        atGlanceCopy.contractor,
-        themeStyles.colors.callToActionRed,
-        visualAssets.contractor
-      )}
-      right={infoPane(
-        atGlanceCopy.fullTime,
-        themeStyles.colors.brandBlue,
-        visualAssets.fullTime
-      )}
-      hasDivider
-    />
+    <div css={styles.dividerHack}>
+      <VerticalSplit
+        left={infoPane(
+          atGlanceCopy.contractor,
+          themeStyles.colors.callToActionRed,
+          visualAssets.contractor
+        )}
+        right={infoPane(
+          atGlanceCopy.fullTime,
+          themeStyles.colors.brandBlue,
+          visualAssets.fullTime
+        )}
+        hasDivider
+      />
+    </div>
     <Quote author={atGlanceCopy.quote.author} text={atGlanceCopy.quote.text} background="dark" />
   </div>
 );
