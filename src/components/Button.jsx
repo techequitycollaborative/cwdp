@@ -7,9 +7,10 @@ const styles = {
     padding: '16px 38px',
     borderRadius: 50,
     color: '#FFFFFF',
-    fontSize: 20,
+    fontSize: 22,
     margin: '20px 0',
-    fontWeight: 700,
+    fontWeight: 600,
+    fontFamily: 'freight-sans-pro',
     [mediaQueries(breakpoints.tablet)]: {
       fontSize: 18,
     },
