@@ -97,7 +97,9 @@ const styles = {
   },
   demographicsSubtitle: {
     color: '#112353',
-    textAlign: 'center'
+    textAlign: 'center',
+    maxWidth: '400px',
+    margin: '16px auto'
   },
   mobilityDescription: {
     fontSize: '1.7em',
@@ -123,7 +125,8 @@ const styles = {
   },
   breakdownImg: {
     width: '100%',
-    objectFit: 'contain'
+    objectFit: 'contain',
+    marginLeft: '10%'
   },
   dividerHack: {
     marginBottom: 60
@@ -164,7 +167,7 @@ const infoPane = (copy, color, assets) => (
     </div>
     <div css={styles.demographicsBreakdown}>
       <p css={styles.subHeading}>{atGlanceCopy.contractor.genderTitle}</p>
-      <img css={[styles.breakdownImg, copy.header === atGlanceCopy.fullTime.header ? { paddingBottom: 20 } : undefined]} src={assets.gender} alt="Gender breakdown" />
+      <img css={styles.breakdownImg} src={assets.gender} alt="Gender breakdown" />
     </div>
     <div>
       <p css={styles.demographicsSubtitle}>{copy.demographicsSubtitle}</p>

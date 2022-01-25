@@ -10,7 +10,6 @@ const styles = {
     fontSize: 20,
     margin: '20px 0',
     fontWeight: 700,
-    maxWidth: 400,
     [mediaQueries(breakpoints.tablet)]: {
       fontSize: 18,
     },

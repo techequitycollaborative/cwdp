@@ -1,14 +1,16 @@
 /** @jsxImportSource @emotion/react */
 import { joinImg, joinCampaignCopy, insideDisparitiesCopy } from 'assets';
 import { VerticalSplit, Blurb, Image, Button } from 'components';
-import { themeStyles } from 'theme';
+import { breakpoints, mediaQueries, themeStyles } from 'theme';
 
 const styles = {
   blueBox: {
     background: '#00CEE1',
     padding: '5% 10%',
     marginTop: 0,
-    marginRight: -15
+    [mediaQueries(breakpoints.mobile)]: {
+      marginRight: -15
+    }
   },
   borderBox: {
     border: 'solid white 1px',
