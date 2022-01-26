@@ -31,7 +31,7 @@ const styles = {
     zIndex: 0,
     position: 'relative',
     height: 0,
-    paddingBottom: '56.25%', // Equals 16:9,
+    paddingBottom: '75%', // Equals 16:9,
   },
   video: {
     position: 'absolute',
@@ -99,7 +99,7 @@ const styles = {
 const opts = {
   playerVars: {
     // https://developers.google.com/youtube/player_parameters
-    controls: 0,
+    controls: 1,
     modestbranding: 1,
     rel: 0,
     fs: 1,
@@ -118,8 +118,10 @@ const Video = ({ title, videoId, coverImg, background }) => {
     // https://developers.google.com/youtube/iframe_api_reference#onStateChange
     switch (event.data) {
       case YouTube.PlayerState.ENDED:
-      case YouTube.PlayerState.PAUSED:
         setShowCover(true);
+        break;
+
+      case YouTube.PlayerState.PAUSED:
         break;
 
       case YouTube.PlayerState.PLAYING:

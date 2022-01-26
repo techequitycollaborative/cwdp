@@ -24,6 +24,7 @@ const styles = {
   },
   disparitiesText: {
     textAlign: 'center',
+    margin: 12
   },
   blurbPadding: {
     paddingBottom: 40
@@ -32,27 +33,29 @@ const styles = {
 
 const JoinCampaign = () => (
   <>
-    <VerticalSplit
-      left={(
-        <>
-          <Blurb
-            headline={joinCampaignCopy.headline}
-            description={joinCampaignCopy.description}
-            invertTextColors
-            button={{
-              text: joinCampaignCopy.button.label,
-              url: joinCampaignCopy.button.url,
-              color: themeStyles.colors.brandBlue
-            }}
-          />
-          <div css={styles.blurbPadding} />
-        </>
-      )}
-      right={(<Image bottomAlign source={joinImg} altText="Join Campaign" />)}
-    />
+    <div css={styles.joinContainer}>
+      <VerticalSplit
+        left={(
+          <>
+            <Blurb
+              headline={joinCampaignCopy.headline}
+              description={joinCampaignCopy.description}
+              invertTextColors
+              button={{
+                text: joinCampaignCopy.button.label,
+                url: joinCampaignCopy.button.url,
+                color: themeStyles.colors.brandBlue
+              }}
+            />
+            <div css={styles.blurbPadding} />
+          </>
+        )}
+        right={(<Image bottomAlign source={joinImg} altText="Join Campaign" />)}
+      />
+    </div>
     <div css={styles.blueBox}>
       <div css={styles.borderBox}>
-        <p css={[themeStyles.text.subHeading, styles.disparitiesText]}>
+        <p css={[themeStyles.text.headline, styles.disparitiesText]}>
           {insideDisparitiesCopy.headline}
         </p>
         <p css={[themeStyles.text.description, styles.disparitiesText]}>

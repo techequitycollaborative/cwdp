@@ -21,7 +21,7 @@ const styles = {
     width: 'auto',
     height: 'auto',
     alignSelf: 'flex-start',
-    transform: 'translateY(30%)',
+    transform: 'translate(-15%, 30%)',
     maxWidth: '50px'
   },
   standardText: {
@@ -86,13 +86,14 @@ const renderTabletStandards = () => (
 const renderDesktopStandards = () => (
   <>
     {[...Array(closingGapCopy.items.length / 2)].map((_, index) => {
-      const leftItem = closingGapCopy.items[index * 2];
+      const leftIndex = index * 2;
+      const leftItem = closingGapCopy.items[leftIndex];
       const rightIndex = (index * 2) + 1;
       const rightItem = closingGapCopy.items[rightIndex];
       return (
         <VerticalSplit
           key={leftItem.heading}
-          left={renderDesktopStandard(leftItem, standardItemIcons[index])}
+          left={renderDesktopStandard(leftItem, standardItemIcons[leftIndex])}
           right={renderDesktopStandard(rightItem, standardItemIcons[rightIndex])}
         />
       );

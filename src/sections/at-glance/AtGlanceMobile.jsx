@@ -2,13 +2,16 @@
 import {
   atGlanceCopy,
   contractorBadgeSvg,
-  contractorRaceSvg,
-  fullTimeEmployeeBadge,
-  fullTimeRaceSvg,
-  fullTimeLadderImg,
-  contractorLadderImg,
+  contractorBadgesSmSvg,
+  contractorBadgesMdSvg,
+  contractorBadgesLgSvg,
+  contractorWageImg,
   contractorGenderSvg,
-  fullTimeGenderSvg
+  fullTimeEmployeeBadge,
+  fullTimeWageImg,
+  fullTimeGenderSvg,
+  fullTimeLadderImg,
+  contractorLadderImg
 } from 'assets';
 import { Quote } from 'components';
 import { breakpoints, mediaQueries, themeStyles } from 'theme';
@@ -61,6 +64,7 @@ const styles = {
   breakdownSvg: {
     marginTop: 10,
     marginBottom: 15,
+    marginLeft: 60,
     alignSelf: 'center',
     [mediaQueries(breakpoints.tablet)]: {
       width: '80%',
@@ -83,22 +87,76 @@ const styles = {
     flex: 1,
     flexDirection: 'row',
     alignItems: 'center',
+    margin: '8px 0'
+  },
+  wagesContainer: {
+    display: 'flex',
+    flexDirection: 'row',
+    flex: 1,
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  wageBreakdown: {
+    textAlign: 'center',
+    margin: '0 16px'
+  },
+  wageImg: {
+    maxWidth: 120
+  },
+  comparisonTextWrapper: {
+    height: '2em',
+    marginBottom: '1.6em'
+  },
+  comparisonText: {
+    textAlign: 'center',
+    margin: '0'
+  },
+  boldNumber: {
+    fontSize: '1.6em',
+    fontWeight: 600
+  },
+  badgesContainer: {
+    display: 'flex',
+    flexDirection: 'row',
+    flex: 1,
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  raceColumn: {
+    textAlign: 'center',
+    margin: '0 16px',
+    maxWidth: '50%'
+  },
+  raceBadgesImg: {
+    maxHeight: 40,
+    display: 'inline-block',
+    marginTop: 30
   },
   contractorPercentText: {
     fontWeight: 600,
+    maxWidth: 42,
     fontSize: 24,
     ...benefitSharedPadding,
-    color: themeStyles.colors.callToActionRed
+    color: themeStyles.colors.callToActionRed,
+    paddingRight: 0,
+    margin: 0
   },
   fullTimePercentText: {
     fontWeight: 600,
     fontSize: 24,
     ...benefitSharedPadding,
-    color: themeStyles.colors.brandBlue
+    color: themeStyles.colors.brandBlue,
+    margin: 0
+  },
+  benefitsText: {
+    margin: 0
   },
   benefitBadge: {
     maxHeight: 60,
     ...benefitSharedPadding,
+  },
+  contractorBadge: {
+    paddingRight: 0
   },
   mobilityText: {
     textAlign: 'center',
@@ -154,13 +212,45 @@ const renderBenefitRow = (contractorPercent, fullTimePercent, benefit) => (
   </div>
 );
 
-const renderSalary = (badgeSvg, salary, description) => (
-  <div css={styles.salaryContainer}>
-    <img src={badgeSvg} alt="worker badge" />
-    <p css={themeStyles.text.subHeading}>{salary}</p>
-    <p css={[themeStyles.text.description, styles.salaryDescriptionText]}>
-      {description}
-    </p>
+const renderSalary = (wageImg, copy) => (
+  <div css={styles.wageBreakdown}>
+    <img css={styles.wageImg} src={wageImg} alt="Wages" />
+    <div css={styles.comparisonTextWrapper}>
+      <p css={styles.comparisonText}>
+        {copy.wagesText[0]}
+        <span css={styles.boldNumber}>{copy.wagesText[1]}</span>
+        {copy.wagesText[2]}
+      </p>
+    </div>
+  </div>
+);
+
+const renderRaceBadges = (badgeBlack, badgeLatinx, badgeNative, copy) => (
+  <div css={styles.raceColumn}>
+    <img css={styles.raceBadgesImg} src={badgeBlack} alt="Badges 1" />
+    <div css={styles.comparisonTextWrapper}>
+      <p css={styles.comparisonText}>
+        {copy.race.black[0]}
+        <span css={styles.boldNumber}>{copy.race.black[1]}</span>
+        {copy.race.black[2]}
+      </p>
+    </div>
+    <img css={styles.raceBadgesImg} src={badgeLatinx} alt="Badges 2" />
+    <div css={styles.comparisonTextWrapper}>
+      <p css={styles.comparisonText}>
+        {copy.race.latinx[0]}
+        <span css={styles.boldNumber}>{copy.race.latinx[1]}</span>
+        {copy.race.latinx[2]}
+      </p>
+    </div>
+    <img css={styles.raceBadgesImg} src={badgeNative} alt="Badges 3" />
+    <div css={styles.comparisonTextWrapper}>
+      <p css={styles.comparisonText}>
+        {copy.race.native[0]}
+        <span css={styles.boldNumber}>{copy.race.native[1]}</span>
+        {copy.race.native[2]}
+      </p>
+    </div>
   </div>
 );
 
@@ -194,26 +284,35 @@ const renderMobilityColumn = (img, description) => (
 const AtGlanceMobile = () => (
   <div css={styles.container}>
     <p css={[themeStyles.text.headline, styles.headerText]}>{`${atGlanceCopy.contractor.header} vs ${atGlanceCopy.fullTime.header}`}</p>
-    <p css={[styles.headerText, styles.salarySubtitle]}>{atGlanceCopy.contractor.pay.type}</p>
-    <div css={styles.salariesContainer}>
+    <p css={[styles.headerText, styles.salarySubtitle]}>{atGlanceCopy.wageTitle}</p>
+    <div css={styles.wagesContainer}>
       {renderSalary(
-        contractorBadgeSvg,
-        atGlanceCopy.contractor.pay.salary,
-        atGlanceCopy.contractor.pay.description
+        contractorWageImg,
+        atGlanceCopy.contractor
       )}
       {renderSalary(
-        fullTimeEmployeeBadge,
-        atGlanceCopy.fullTime.pay.salary,
-        atGlanceCopy.fullTime.pay.description
+        fullTimeWageImg,
+        atGlanceCopy.fullTime
       )}
     </div>
     <hr css={styles.divider} />
-    {renderBreakdown(
-      atGlanceCopy.contractor.raceTitle,
-      { header: atGlanceCopy.contractor.header, svg: contractorRaceSvg },
-      { header: atGlanceCopy.fullTime.header, svg: fullTimeRaceSvg }
-    )}
+    <p css={[styles.headerText, styles.salarySubtitle]}>{atGlanceCopy.raceTitle}</p>
+    <div css={styles.badgesContainer}>
+      {renderRaceBadges(
+        contractorBadgesSmSvg,
+        contractorBadgesMdSvg,
+        contractorBadgesLgSvg,
+        atGlanceCopy.contractor
+      )}
+      {renderRaceBadges(
+        fullTimeEmployeeBadge,
+        fullTimeEmployeeBadge,
+        fullTimeEmployeeBadge,
+        atGlanceCopy.fullTime
+      )}
+    </div>
     <hr css={styles.divider} />
+    <p css={[styles.headerText, styles.salarySubtitle]}>{atGlanceCopy.genderTitle}</p>
     {renderBreakdown(
       atGlanceCopy.contractor.genderTitle,
       { header: atGlanceCopy.contractor.header, svg: contractorGenderSvg },
@@ -224,7 +323,7 @@ const AtGlanceMobile = () => (
 
       <div css={styles.allBenefitRows}>
         <div css={styles.benefitRow}>
-          <img css={styles.benefitBadge} src={contractorBadgeSvg} alt="worker badge" />
+          <img css={[styles.benefitBadge, styles.contractorBadge]} src={contractorBadgeSvg} alt="worker badge" />
           <img css={styles.benefitBadge} src={fullTimeEmployeeBadge} alt="worker badge" />
           <p css={[themeStyles.text.subHeading, { paddingLeft: '2%' }]}>
             {atGlanceCopy.contractor.benefits.title}

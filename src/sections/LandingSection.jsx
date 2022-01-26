@@ -13,7 +13,7 @@ const styles = {
     paddingBottom: 30,
     [mediaQueries(breakpoints.mobile)]: {
       paddingBottom: 0
-    },
+    }
   },
   headerContainer: {
     display: 'flex',
@@ -21,6 +21,7 @@ const styles = {
     justifyContent: 'space-between',
     alignItems: 'center',
     padding: 20,
+    paddingBottom: '5%',
     [mediaQueries(breakpoints.mobile)]: {
       flexDirection: 'column-reverse',
       flex: 1,
@@ -79,6 +80,7 @@ const LandingSection = () => (
           headline={landingSectionCopy.headline}
           description={landingSectionCopy.description}
           button={{ text: landingSectionCopy.button.label, url: landingSectionCopy.button.url }}
+          textColumn
         />
       )}
       right={(

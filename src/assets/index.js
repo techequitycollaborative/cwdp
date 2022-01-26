@@ -18,6 +18,9 @@ import techEquityLogoSvg from './svg/techEquityLogo.svg';
 import badgesSvg from './svg/badges.svg';
 import landingSvg from './svg/landing.svg';
 import contractorBadgeSvg from './svg/contractorBadge.svg';
+import contractorBadgesSmSvg from './svg/contractorBadges1.4.svg';
+import contractorBadgesMdSvg from './svg/contractorBadges1.9.svg';
+import contractorBadgesLgSvg from './svg/contractorBadges4.svg';
 import fullTimeEmployeeBadge from './svg/fullTimeBadge.svg';
 import quoteSvg from './svg/quote.svg';
 import techEquityLogoSquareSvg from './svg/techEquityLogoSquare.svg';
@@ -44,14 +47,16 @@ import segregationImg from './img/segregation.png';
 import heroImg from './img/hero.png';
 import contractorLadderImg from './img/ladder-red.png';
 import fullTimeLadderImg from './img/ladder-blue.png';
+import contractorWageImg from './img/contractor-wage.png';
+import fullTimeWageImg from './img/fulltime-wage.png';
 
 // Note: These map in order to the items in closingTheGap
 const standardItemIcons = [
   rcsSalaryImg,
-  rcsShieldImg,
-  rcsPathImg,
   rcsBalanceImg,
+  rcsShieldImg,
   rcsProcurementImg,
+  rcsPathImg,
   rcsTransparencyImg
 ];
 
@@ -75,6 +80,9 @@ export {
   badgesSvg,
   landingSvg,
   contractorBadgeSvg,
+  contractorBadgesSmSvg,
+  contractorBadgesMdSvg,
+  contractorBadgesLgSvg,
   fullTimeEmployeeBadge,
   quoteSvg,
   techEquityLogoSquareSvg,
@@ -94,5 +102,7 @@ export {
   fullTimeGenderSvg,
   contractorLadderImg,
   fullTimeLadderImg,
+  contractorWageImg,
+  fullTimeWageImg,
   arrowSvg
 };

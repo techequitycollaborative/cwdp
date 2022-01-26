@@ -35,8 +35,9 @@ const PolicySolutions = () => {
             description={policySolutionsCopy.description}
           />
         )}
-        right={(<Image source={scalesImg} altText="Scales" />)}
+        right={(<Image narrow source={scalesImg} altText="Scales" />)}
         reverseOnMobile
+        verticalFix
       />
       <div css={styles.solutionsContainer}>
         {width < breakpoints.mobile

@@ -20,6 +20,7 @@ const GlassDivide = () => (
         author={glassDivideCopy.quote.author}
       />
     )}
+    verticalFix
   />
 );
 

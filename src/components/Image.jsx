@@ -18,14 +18,18 @@ const styles = {
     padding: '10%',
     paddingBottom: 0,
   },
+  narrow: {
+    maxWidth: '70%',
+    transform: 'translateY(-10%)'
+  },
   bottomAlign: {
     justifyContent: 'flex-end',
     alignSelf: 'flex-end'
   }
 };
 
-const Image = ({ source, altText, bottomAlign }) => (
-  <div css={[styles.container, bottomAlign && styles.bottomAlign]}>
+const Image = ({ source, altText, bottomAlign, narrow }) => (
+  <div css={[styles.container, bottomAlign && styles.bottomAlign, narrow && styles.narrow]}>
     <img css={styles.disparityImage} src={source} alt={altText} />
   </div>
 );
@@ -33,11 +37,13 @@ const Image = ({ source, altText, bottomAlign }) => (
 Image.propTypes = {
   source: PropTypes.string.isRequired,
   altText: PropTypes.string.isRequired,
-  bottomAlign: PropTypes.bool
+  bottomAlign: PropTypes.bool,
+  narrow: PropTypes.bool
 };
 
 Image.defaultProps = {
   bottomAlign: false,
+  narrow: false
 };
 
 export default Image;

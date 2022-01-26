@@ -18,6 +18,7 @@ const OccupationalSegregation = () => (
         background="dark"
       />
     )}
+    verticalFix
   />
 );
 

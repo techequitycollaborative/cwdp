@@ -24,6 +24,7 @@ const styles = {
     [mediaQueries(breakpoints.mobile)]: {
       paddingBottom: '5%'
     },
+    padding: '16px'
   },
   divider: {
     alignSelf: 'center',

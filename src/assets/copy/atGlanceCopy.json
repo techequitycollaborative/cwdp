@@ -1,7 +1,20 @@
 {
   "title": "At a Glance",
+  "wageTitle": "Wages",
+  "raceTitle": "Race",
+  "genderTitle": "Gender",
   "contractor": {
     "header": "Contract Workers",
+    "wagesText": [
+      "Contract workers make ",
+      "$0.75",
+      ""
+    ],
+    "race": {
+      "black": ["There are ", "1.4X", " Black contract workers"],
+      "latinx": ["There are ", "1.9X", " Latinx contract workers"],
+      "native": ["There are ", "4X", " Native contract workers"]
+    },
     "pay": {
       "salary": "$86,000",
       "type": "Average Salary",
@@ -9,7 +22,6 @@
     },
     "benefits": {
       "title": "Benefits",
-      "subTitle": "(on average)",
       "items": [
         [42, "Paid time off/vacation"],
         [59, "Basic health insurance"],
@@ -18,13 +30,21 @@
         [33, "No benefits"]
       ]
     },
-    "raceTitle": "Race",
-    "genderTitle": "Gender",
-    "demographicsSubtitle": "Race and gender demographics are averaged across surveys, includes multiracial data",
+    "comparisonSubTitle": "(contract workers)",
     "mobilityDescription": "Limited mobility and high job insecurity"
   },
   "fullTime": {
-    "header": "Full-Time Employees",
+    "header": "Direct Employees",
+    "wagesText": [
+      "For every ",
+      "$1.00",
+      " direct employees make"
+    ],
+    "race": {
+      "black": ["For every ", "1", " Black direct employee"],
+      "latinx": ["For every ", "1", " Latinx direct employee"],
+      "native": ["For every ", "1", " Native direct employee"]
+    },
     "pay": {
       "salary": "$100,340",
       "type": "Average Salary",
@@ -32,7 +52,6 @@
     },
     "benefits": {
       "title": "Benefits",
-      "subTitle": "(on average)",
       "items": [
         [100, "Paid time off/vacation"],
         [100, "Basic health insurance"],
@@ -41,17 +60,8 @@
         [0, "No benefits"]
       ]
     },
-    "raceTitle": "Race",
-    "genderTitle": "Gender",
-    "demographicsSubtitle": "Race and gender demographics are averaged across surveys, includes multiracial data",
+    "comparisonSubTitle": "(direct employees)",
     "mobilityDescription":  "Clear career pathways with upward mobility"
-  },
-  "raceGap": {
-    "title": "Converting to Full-Time",
-    "stats": {
-      "white": [43, "White contractors"],
-      "bipoc": [33, "BIPOC contractors"]
-    }
   },
   "quote": {
     "text": "It really is not a career path. There's no upward trajectory.",

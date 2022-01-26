@@ -20,6 +20,7 @@ const MobilityAdvancement = () => (
         author={mobilityAdvancementCopy.quote.author}
       />
     )}
+    verticalFix
   />
 );
 

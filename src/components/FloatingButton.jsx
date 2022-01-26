@@ -6,8 +6,6 @@ const text = 'Download the report';
 const downloadButton = landingSectionCopy.button;
 const color = '#CC3333';
 
-const scrollThreshold = 50;
-
 const styles = {
   button: {
     padding: '16px 24px 16px 24px',
@@ -62,7 +60,7 @@ const downloadIconHoverStyles = {
   }
 };
 
-const scrollTopStyles = {
+const expandedStyles = {
   button: {
     minWidth: '200px'
   },
@@ -71,7 +69,7 @@ const scrollTopStyles = {
   }
 };
 
-const scrollDownStyles = {
+const minimizedStyles = {
   button: {
     minWidth: '50px',
     boxShadow: 'none'
@@ -83,17 +81,21 @@ const scrollDownStyles = {
 
 const FloatingButton = () => {
   const [scrollTop, setScrollTop] = useState(0);
-  const [scrollStyles, setScrollStyles] = useState(scrollTopStyles);
+  const [scrollStyles, setScrollStyles] = useState(minimizedStyles);
   const [downloadIconToggle, setDownoloadIconToggle] = useState(downloadIconDefaultStyles);
 
   const handleMouseOver = () => {
-    setScrollStyles(scrollTopStyles);
+    setScrollStyles(expandedStyles);
     setDownoloadIconToggle(downloadIconHoverStyles);
   };
 
   const handleMouseLeave = () => {
-    if (scrollTop > scrollThreshold) {
-      setScrollStyles(scrollDownStyles);
+    if (scrollTop < window.innerHeight) {
+      setScrollStyles(minimizedStyles);
+    } else if (scrollTop < window.innerHeight * 2) {
+      setScrollStyles(expandedStyles);
+    } else {
+      setScrollStyles(minimizedStyles);
     }
     setDownoloadIconToggle(downloadIconDefaultStyles);
   };
@@ -102,10 +104,12 @@ const FloatingButton = () => {
     const onScroll = (e) => {
       setScrollTop(e.target.documentElement.scrollTop);
 
-      if (scrollTop > scrollThreshold) {
-        setScrollStyles(scrollDownStyles);
+      if (scrollTop < window.innerHeight) {
+        setScrollStyles(minimizedStyles);
+      } else if (scrollTop < window.innerHeight * 2) {
+        setScrollStyles(expandedStyles);
       } else {
-        setScrollStyles(scrollTopStyles);
+        setScrollStyles(minimizedStyles);
       }
     };
     window.addEventListener('scroll', onScroll);

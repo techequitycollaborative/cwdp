@@ -68,10 +68,18 @@ const styles = {
       height: 65,
     },
   },
+  fullWidthContainer: {
+    maxWidth: '60%',
+    margin: '30px auto'
+  },
+  fullWidthText: {
+    marginLeft: 30,
+    marginRight: 30
+  }
 };
 
-const Quote = ({ text, author, background }) => (
-  <div css={styles.container}>
+const Quote = ({ text, author, background, fullWidth }) => (
+  <div css={[styles.container, fullWidth && styles.fullWidthContainer]}>
     <div
       css={[
         styles.quoteSvgContainer,
@@ -80,7 +88,7 @@ const Quote = ({ text, author, background }) => (
     >
       <img src={quoteSvg} alt="Quote" />
     </div>
-    <div css={styles.textContainer}>
+    <div css={[styles.textContainer, fullWidth && styles.fullWidthText]}>
       <p css={styles.quoteText}>
         {text}
         &quot;
@@ -102,11 +110,13 @@ Quote.propTypes = {
   text: PropTypes.string.isRequired,
   author: PropTypes.string,
   background: PropTypes.oneOf(['light', 'dark']),
+  fullWidth: PropTypes.bool
 };
 
 Quote.defaultProps = {
   author: undefined,
   background: 'light',
+  fullWidth: false
 };
 
 export default Quote;

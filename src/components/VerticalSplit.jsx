@@ -20,12 +20,15 @@ const styles = {
       paddingBottom: '5%'
     },
   },
+  verticalFix: {
+    paddingBottom: '10vh'
+  },
   divider: {
     borderLeft: '2px solid #E5E5E5',
   }
 };
 
-const VerticalSplit = ({ left, right, hasDivider, reverseOnMobile }) => (
+const VerticalSplit = ({ left, right, hasDivider, reverseOnMobile, verticalFix }) => (
   <div css={[styles.container, {
     [mediaQueries(breakpoints.tablet)]: {
       flexDirection: 'column',
@@ -36,7 +39,7 @@ const VerticalSplit = ({ left, right, hasDivider, reverseOnMobile }) => (
     },
   }]}
   >
-    <div css={styles.split}>
+    <div css={[styles.split, styles.splitLeft, verticalFix && styles.verticalFix]}>
       {left}
     </div>
     <div css={[styles.split, hasDivider && styles.divider]}>
@@ -49,12 +52,14 @@ VerticalSplit.propTypes = {
   left: PropTypes.node.isRequired,
   right: PropTypes.node.isRequired,
   reverseOnMobile: PropTypes.bool,
-  hasDivider: PropTypes.bool
+  hasDivider: PropTypes.bool,
+  verticalFix: PropTypes.bool
 };
 
 VerticalSplit.defaultProps = {
   hasDivider: false,
-  reverseOnMobile: false
+  reverseOnMobile: false,
+  verticalFix: false
 };
 
 export default VerticalSplit;

@@ -23,6 +23,7 @@ const WorkplaceProtections = () => (
       />
     )}
     reverseOnMobile
+    verticalFix
   />
 );
 
