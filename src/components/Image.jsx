@@ -4,7 +4,8 @@ import { breakpoints, mediaQueries } from 'theme';
 
 const styles = {
   disparityImage: {
-    width: '100%'
+    width: '100%',
+    height: 'auto'
   },
   container: {
     flex: 1,
