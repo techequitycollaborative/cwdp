@@ -4,10 +4,7 @@ import { breakpoints, mediaQueries } from 'theme';
 
 const styles = {
   disparityImage: {
-    width: '100%',
-    [mediaQueries(breakpoints.tablet)]: {
-      width: '80%',
-    }
+    width: '100%'
   },
   container: {
     flex: 1,
@@ -24,7 +21,10 @@ const styles = {
   },
   bottomAlign: {
     justifyContent: 'flex-end',
-    alignSelf: 'flex-end'
+    alignSelf: 'flex-end',
+    [mediaQueries(breakpoints.mobile)]: {
+      marginBottom: -56
+    }
   }
 };
 

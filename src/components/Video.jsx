@@ -31,7 +31,10 @@ const styles = {
     zIndex: 0,
     position: 'relative',
     height: 0,
-    paddingBottom: '75%', // Equals 16:9,
+    paddingBottom: '75%',
+    [mediaQueries(breakpoints.mobile)]: {
+      paddingBottom: '70%',
+    }
   },
   video: {
     position: 'absolute',
