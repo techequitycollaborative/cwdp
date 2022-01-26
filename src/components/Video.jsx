@@ -31,6 +31,7 @@ const styles = {
     zIndex: 0,
     position: 'relative',
     height: 0,
+    maxWidth: 680,
     paddingBottom: '75%',
     [mediaQueries(breakpoints.mobile)]: {
       paddingBottom: '70%',
@@ -59,6 +60,7 @@ const styles = {
     height: '100%',
     opacity: 1,
     zIndex: 20,
+    maxWidth: 680
   },
   coverPlayButton: {
     position: 'absolute',

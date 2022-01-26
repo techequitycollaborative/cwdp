@@ -111,6 +111,11 @@ const styles = {
     textAlign: 'center',
     margin: '0'
   },
+  footnote: {
+    color: '#112353',
+    textAlign: 'center',
+    margin: '-10px 0 0 0'
+  },
   boldNumber: {
     fontSize: '1.6em',
     fontWeight: 600
@@ -265,8 +270,10 @@ const renderBreakdown = (title, contractor, fullTime) => (
     <img css={styles.breakdownSvg} src={contractor.svg} alt="Breakdown" />
     <p css={styles.breakdownTitles}>
       {fullTime.header}
+      *
     </p>
     <img css={styles.breakdownSvg} src={fullTime.svg} alt="Breakdown" />
+    <p css={styles.footnote}>{fullTime.genderFootnote}</p>
   </div>
 );
 
@@ -316,7 +323,11 @@ const AtGlanceMobile = () => (
     {renderBreakdown(
       atGlanceCopy.contractor.genderTitle,
       { header: atGlanceCopy.contractor.header, svg: contractorGenderSvg },
-      { header: atGlanceCopy.fullTime.header, svg: fullTimeGenderSvg }
+      {
+        header: atGlanceCopy.fullTime.header,
+        svg: fullTimeGenderSvg,
+        genderFootnote: atGlanceCopy.fullTime.genderFootnote
+      }
     )}
     <hr css={styles.divider} />
     <div css={styles.benefits}>

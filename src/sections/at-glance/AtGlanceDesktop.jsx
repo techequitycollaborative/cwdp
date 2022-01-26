@@ -83,6 +83,7 @@ const styles = {
   subHeading: {
     ...themeStyles.text.subHeading,
     margin: '10px 0px 20px 0',
+    paddingTop: '40px',
     textAlign: 'center',
     fontSize: '2.6em'
   },
@@ -167,13 +168,19 @@ const styles = {
     fontSize: '1.4em',
     margin: '0'
   },
+  footnote: {
+    color: '#112353',
+    textAlign: 'center',
+    margin: '-10px 0 0 0',
+    fontSize: '1.2em'
+  },
   boldNumber: {
     fontSize: '1.6em',
     fontWeight: 600
   },
   divider: {
     width: '80%',
-    margin: '20px auto',
+    margin: '20px auto -20px auto',
     border: '1px solid #E5E5E5',
   },
 };
@@ -253,10 +260,11 @@ const infoPane = (copy, color, assets) => (
       <p css={styles.subHeading}>
         {atGlanceCopy.genderTitle}
         <span css={styles.comparisonSubTitle}>
-          {copy.comparisonSubTitle}
+          {copy.comparisonSubTitleGender}
         </span>
       </p>
       <img css={styles.breakdownImg} src={assets.gender} alt="Gender breakdown" />
+      <p css={styles.footnote}>{copy.genderFootnote}</p>
     </div>
     <div css={styles.benefits}>
       <p css={styles.subHeading}>
