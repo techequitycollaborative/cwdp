@@ -1,11 +1,11 @@
 {
   "title": "Join the Campaign",
-  "headline": "Here's how you can get involved and support contract workers",
+  "headline": "Share your contract work story to spread the word",
   "description": [
-    "From learning more about the contract worker experience and sharing your own experience, to joining our action campaigns and supporting our public policy agenda, there are many ways to get involved with our campaign."
+    "We're looking for current and former contract workers to share their stories (you can do so anonymously if needed). Worker voice is one of the most influential tools we have to pass public policy, so if you are a contract worker or have ever been one, please share your story."
   ],
   "button": {
-    "label": "Get involved",
-    "url": "https://techequitycollaborative.org/join-cwdp-campaign/"
+    "label": "Share your story",
+    "url": "https://techequitycollaborative.org/share-your-contracting-story/"
   }
 }
