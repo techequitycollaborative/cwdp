@@ -33,6 +33,11 @@ const PolicySolutions = () => {
           <Blurb
             headline={policySolutionsCopy.headline}
             description={policySolutionsCopy.description}
+            button={{
+              text: policySolutionsCopy.button.label,
+              url: policySolutionsCopy.button.url,
+              color: themeStyles.colors.brandBlue
+            }}
           />
         )}
         right={(<Image narrow source={scalesImg} altText="Scales" />)}
