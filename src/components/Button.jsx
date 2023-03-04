@@ -43,6 +43,27 @@ const Button = ({ color, url, text }) => (
   </a>
 );
 
+const ScrollButton = ({ color, section, text }) => (
+  <button
+    css={[
+      styles.button,
+      {
+        background: color,
+        border: `3px solid ${color}`,
+        '&:hover': {
+          background: '#FFFFFF',
+          color
+        },
+      }]}
+    type="button"
+    onClick={() => {
+      document.getElementsByTagName('section')[section].scrollIntoView();
+    }}
+  >
+    {text}
+  </button>
+);
+
 Button.propTypes = {
   color: PropTypes.string,
   text: PropTypes.string.isRequired,
@@ -53,4 +74,12 @@ Button.defaultProps = {
   color: '#CC3333',
 };
 
-export default Button;
+ScrollButton.propTypes = {
+  color: PropTypes.string,
+  text: PropTypes.string.isRequired,
+  section: PropTypes.number.isRequired
+};
+
+ScrollButton.defaultProps = Button.defaultProps;
+
+export { ScrollButton, Button };

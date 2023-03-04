@@ -79,7 +79,7 @@ const LandingSection = () => (
         <Blurb
           headline={landingSectionCopy.headline}
           description={landingSectionCopy.description}
-          button={{ text: landingSectionCopy.button.label, url: landingSectionCopy.button.url }}
+          scrollButton={{ text: landingSectionCopy.button.label, section: 4 }}
           textColumn
         />
       )}

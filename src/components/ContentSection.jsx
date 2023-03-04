@@ -26,6 +26,9 @@ const styles = {
       marginBottom: 0
     },
   },
+  noHeight: {
+    minHeight: 0
+  },
 };
 
 const ContentSection = forwardRef(({
@@ -33,7 +36,8 @@ const ContentSection = forwardRef(({
   background,
   title,
   id,
-  overrideBackground
+  overrideBackground,
+  overrideHeight
 }, ref) => (
   <section
     ref={ref}
@@ -42,7 +46,8 @@ const ContentSection = forwardRef(({
       styles.section,
       {
         background: overrideBackground || (background === 'dark' ? themeStyles.colors.dark.background : themeStyles.colors.light.background)
-      }
+      },
+      overrideHeight ? styles.noHeight : null
     ]}
   >
     { title
@@ -55,6 +60,7 @@ ContentSection.propTypes = {
   content: PropTypes.node.isRequired,
   background: PropTypes.oneOf(['light', 'dark']),
   overrideBackground: PropTypes.string,
+  overrideHeight: PropTypes.bool,
   title: PropTypes.string,
   id: PropTypes.string,
 };
@@ -63,7 +69,8 @@ ContentSection.defaultProps = {
   background: 'light',
   title: '',
   id: undefined,
-  overrideBackground: ''
+  overrideBackground: '',
+  overrideHeight: false
 };
 
 export default ContentSection;

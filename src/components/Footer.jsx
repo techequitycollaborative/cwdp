@@ -10,7 +10,7 @@ import {
 import { useViewPort } from 'hooks';
 import { breakpoints, mediaQueries, themeStyles } from 'theme';
 
-import Button from './Button';
+import { Button } from './Button';
 
 const styles = {
   footerContainer: {

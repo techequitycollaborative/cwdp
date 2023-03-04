@@ -2,6 +2,8 @@ import landingSectionCopy from './copy/landingSectionCopy.json';
 import atGlanceCopy from './copy/atGlanceCopy.json';
 import closingGapCopy from './copy/closingGapCopy.json';
 import joinCampaignCopy from './copy/joinCampaignCopy.json';
+import ab1356Copy from './copy/ab1356Copy.json';
+import sb1162Copy from './copy/sb1162Copy.json';
 import policySolutionsCopy from './copy/policySolutionsCopy.json';
 import insideDisparitiesCopy from './copy/insideDisparitiesCopy.json';
 import mobilityAdvancementCopy from './copy/mobilityAdvancementCopy.json';
@@ -42,6 +44,7 @@ import rcsBalanceImg from './img/rcs-balance.png';
 import rcsProcurementImg from './img/rcs-procurement.png';
 import rcsTransparencyImg from './img/rcs-transparency.png';
 import joinImg from './img/join.png';
+import liftImg from './img/lift.png';
 import scalesImg from './img/scales.png';
 import segregationImg from './img/segregation.png';
 import heroImg from './img/hero.png';
@@ -65,6 +68,8 @@ export {
   atGlanceCopy,
   closingGapCopy,
   joinCampaignCopy,
+  ab1356Copy,
+  sb1162Copy,
   policySolutionsCopy,
   insideDisparitiesCopy,
   mobilityAdvancementCopy,
@@ -93,6 +98,7 @@ export {
   equalityImg,
   standardItemIcons,
   joinImg,
+  liftImg,
   scalesImg,
   segregationImg,
   heroImg,
