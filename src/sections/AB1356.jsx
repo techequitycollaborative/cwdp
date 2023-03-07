@@ -17,6 +17,9 @@ const styles = {
   disparitiesText: {
     textAlign: 'center',
     margin: 12
+  },
+  padBottom: {
+    paddingBottom: '1.4em',
   }
 };
 
@@ -25,7 +28,7 @@ const AB1156 = () => (
     <div css={styles.shortContainer}>
       <VerticalSplit
         left={(
-          <>
+          <div css={styles.padBottom}>
             <Blurb
               headline={ab1356Copy.headline}
               description={ab1356Copy.description}
@@ -36,7 +39,7 @@ const AB1156 = () => (
                 color: themeStyles.colors.brandBlue
               }}
             />
-          </>
+          </div>
         )}
         right={(<Image bottomAlign source={liftImg} altText="Learn about AB 1356" />)}
       />
