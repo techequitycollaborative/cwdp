@@ -1,6 +1,7 @@
 /** @jsxImportSource @emotion/react */
 import {
   atGlanceCopy,
+  landingSectionCopy,
   contractorBadgeSvg,
   contractorBadgesSmSvg,
   contractorBadgesMdSvg,
@@ -13,7 +14,7 @@ import {
   fullTimeLadderImg,
   contractorLadderImg
 } from 'assets';
-import { Quote, VerticalSplit } from 'components';
+import { Quote, VerticalSplit, Button } from 'components';
 import { breakpoints, mediaQueries, themeStyles } from 'theme';
 
 const styles = {
@@ -183,6 +184,11 @@ const styles = {
     margin: '20px auto -20px auto',
     border: '1px solid #E5E5E5',
   },
+  buttonWrapper: {
+    textAlign: 'center',
+    marginTop: '3em',
+    marginBottom: '2em'
+  }
 };
 
 const visualAssets = {
@@ -331,6 +337,12 @@ const AtGlanceDesktop = () => (
       />
     </div>
     <Quote fullWidth author={atGlanceCopy.quote.author} text={atGlanceCopy.quote.text} background="dark" />
+    <div css={styles.buttonWrapper}>
+      <Button
+        text={landingSectionCopy.downloadButton.label}
+        url={landingSectionCopy.downloadButton.url}
+      />
+    </div>
   </div>
 );
 

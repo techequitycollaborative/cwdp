@@ -1,6 +1,7 @@
 /** @jsxImportSource @emotion/react */
 import {
   atGlanceCopy,
+  landingSectionCopy,
   contractorBadgeSvg,
   contractorBadgesSmSvg,
   contractorBadgesMdSvg,
@@ -13,7 +14,7 @@ import {
   fullTimeLadderImg,
   contractorLadderImg
 } from 'assets';
-import { Quote } from 'components';
+import { Quote, Button } from 'components';
 import { breakpoints, mediaQueries, themeStyles } from 'theme';
 
 const benefitSharedPadding = {
@@ -204,6 +205,11 @@ const styles = {
     flexDirection: 'column',
     alignItems: 'flex-start',
   },
+  buttonWrapper: {
+    textAlign: 'center',
+    marginTop: '3em',
+    marginBottom: '2em'
+  }
 };
 
 const renderBenefitRow = (contractorPercent, fullTimePercent, benefit) => (
@@ -353,6 +359,12 @@ const AtGlanceMobile = () => (
     </div>
     <hr css={styles.divider} />
     <Quote author={atGlanceCopy.quote.author} text={atGlanceCopy.quote.text} background="dark" />
+    <div css={styles.buttonWrapper}>
+      <Button
+        text={landingSectionCopy.downloadButton.label}
+        url={landingSectionCopy.downloadButton.url}
+      />
+    </div>
   </div>
 );
 
