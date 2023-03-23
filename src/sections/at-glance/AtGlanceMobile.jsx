@@ -1,7 +1,7 @@
 /** @jsxImportSource @emotion/react */
 import {
   atGlanceCopy,
-  landingSectionCopy,
+  insideDisparitiesCopy,
   contractorBadgeSvg,
   contractorBadgesSmSvg,
   contractorBadgesMdSvg,
@@ -361,8 +361,8 @@ const AtGlanceMobile = () => (
     <Quote author={atGlanceCopy.quote.author} text={atGlanceCopy.quote.text} background="dark" />
     <div css={styles.buttonWrapper}>
       <Button
-        text={landingSectionCopy.downloadButton.label}
-        url={landingSectionCopy.downloadButton.url}
+        text={insideDisparitiesCopy.button.label}
+        url={insideDisparitiesCopy.button.url}
       />
     </div>
   </div>
