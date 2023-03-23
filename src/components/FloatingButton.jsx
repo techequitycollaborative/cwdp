@@ -2,8 +2,8 @@
 import { useEffect, useState } from 'react';
 import { landingSectionCopy, downloadSvg, downloadAltSvg } from 'assets';
 
-const text = 'Download the report';
-const downloadButton = landingSectionCopy.button;
+const downloadButtonLabel = landingSectionCopy.downloadButton.label;
+const downloadButtonUrl = landingSectionCopy.downloadButton.url;
 const color = '#CC3333';
 
 const styles = {
@@ -118,7 +118,7 @@ const FloatingButton = () => {
   });
 
   return (
-    <a href={downloadButton.url} target="_blank" rel="noopener noreferrer">
+    <a href={downloadButtonUrl} target="_blank" rel="noopener noreferrer">
       <button
         css={[styles.button, scrollStyles.button]}
         type="button"
@@ -128,7 +128,7 @@ const FloatingButton = () => {
         onBlur={handleMouseLeave}
       >
         <span css={[styles.buttonText, scrollStyles.buttonText]}>
-          {text}
+          {downloadButtonLabel}
         </span>
         <img css={[styles.downloadIcon, downloadIconToggle.white]} src={downloadSvg} alt="Download" />
         <img css={[styles.downloadIcon, downloadIconToggle.red]} src={downloadAltSvg} alt="Download" />

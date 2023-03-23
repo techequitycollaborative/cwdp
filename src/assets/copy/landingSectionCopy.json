@@ -8,6 +8,10 @@
   "button": {
     "label": "Protect laid-off contract workers"
   },
+  "downloadButton": {
+    "label": "Download the report",
+    "url": "https://techequitycollaborative.org/download-the-contract-worker-disparity-project-2022-report/"
+  },
   "video": {
     "title": "TBD",
     "id": "4u-FrauAqUg"
