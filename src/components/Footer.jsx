@@ -5,7 +5,7 @@ import {
   instagramLogoSvg,
   twitterLogoSvg,
   linkedinLogoSvg,
-  techEquityLogoSquareSvg
+  techEquityLogoSvg
 } from 'assets';
 import { useViewPort } from 'hooks';
 import { breakpoints, mediaQueries, themeStyles } from 'theme';
@@ -22,7 +22,12 @@ const styles = {
   techEquityLogo: {
     height: 200,
     width: 200,
-    alignSelf: 'center'
+    alignSelf: 'center',
+    marginLeft: '20px'
+  },
+  logoLink: {
+    display: 'flex',
+    justifyContent: 'center'
   },
   topBannerContainer: {
     display: 'flex',
@@ -169,7 +174,9 @@ const renderAllSocials = () => (
 
 const renderMobileAndDesktop = () => (
   <>
-    <img css={styles.techEquityLogo} src={techEquityLogoSquareSvg} alt="TEC Logo" />
+    <a css={styles.logoLink} href="https://techequity.us" target="_blank" rel="noopener noreferrer">
+    <img css={styles.techEquityLogo} src={techEquityLogoSvg} alt="TEC Logo" />
+    </a>
     {renderLinkColumn(footerSectionCopy.linkColumns.firstColumn)}
     {renderLinkColumn(footerSectionCopy.linkColumns.secondColumn)}
     {renderAllSocials()}
@@ -179,7 +186,7 @@ const renderMobileAndDesktop = () => (
 const renderTablet = () => (
   <div>
     <div css={styles.tabletLayoutRow}>
-      <img css={styles.techEquityLogo} src={techEquityLogoSquareSvg} alt="TEC Logo" />
+      <img css={styles.techEquityLogo} src={techEquityLogoSvg} alt="TEC Logo" />
       {renderAllSocials()}
     </div>
     <div css={styles.tabletLayoutRow}>

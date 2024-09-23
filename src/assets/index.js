@@ -25,7 +25,6 @@ import contractorBadgesMdSvg from './svg/contractorBadges1.9.svg';
 import contractorBadgesLgSvg from './svg/contractorBadges4.svg';
 import fullTimeEmployeeBadge from './svg/fullTimeBadge.svg';
 import quoteSvg from './svg/quote.svg';
-import techEquityLogoSquareSvg from './svg/techEquityLogoSquare.svg';
 import playButtonSvg from './svg/playButton.svg';
 import downloadSvg from './svg/download.svg';
 import downloadAltSvg from './svg/downloadAlt.svg';
@@ -90,7 +89,6 @@ export {
   contractorBadgesLgSvg,
   fullTimeEmployeeBadge,
   quoteSvg,
-  techEquityLogoSquareSvg,
   shadowWorkforceImg,
   playButtonSvg,
   downloadSvg,
