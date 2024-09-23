@@ -32,6 +32,12 @@ const styles = {
     display: 'flex',
     flexDirection: 'row'
   },
+  techEquityLogo: {
+    height: 200,
+    width: 200,
+    alignSelf: 'center',
+    marginRight: '20px'
+  },
   logo: {
     [mediaQueries(breakpoints.tablet)]: {
       width: '95%',
@@ -69,9 +75,9 @@ const LandingSection = () => (
       <div css={styles.headerLeft}>
         <img css={styles.badges} src={badgesSvg} alt="Badges" />
         <h1 css={[themeStyles.text.headline, styles.title]}>{landingSectionCopy.header}</h1>
-      </div>
-      <a css={styles.logoLink} href="https://techequitycollaborative.org" target="_blank" rel="noopener noreferrer">
-        <img css={styles.logo} src={techEquityLogoSvg} alt="TEC Logo" />
+      </div>        
+      <a css={styles.logoLink} href="https://techequity.us" target="_blank" rel="noopener noreferrer">
+        <img css={styles.techEquityLogo} src={techEquityLogoSvg} alt="TEC Logo" />
       </a>
     </div>
     <VerticalSplit
