@@ -210,6 +210,7 @@ const visualAssets = {
     gender: fullTimeGenderSvg,
     ladder: fullTimeLadderImg
   }
+
 };
 
 const infoPane = (copy, color, assets) => (

@@ -175,7 +175,7 @@ const renderAllSocials = () => (
 const renderMobileAndDesktop = () => (
   <>
     <a css={styles.logoLink} href="https://techequity.us" target="_blank" rel="noopener noreferrer">
-    <img css={styles.techEquityLogo} src={techEquityLogoSvg} alt="TEC Logo" />
+      <img css={styles.techEquityLogo} src={techEquityLogoSvg} alt="TEC Logo" />
     </a>
     {renderLinkColumn(footerSectionCopy.linkColumns.firstColumn)}
     {renderLinkColumn(footerSectionCopy.linkColumns.secondColumn)}
