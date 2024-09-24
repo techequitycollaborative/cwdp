@@ -56,6 +56,7 @@ module.exports = {
     'react/react-in-jsx-scope': 'off',
     'object-curly-newline': 'off',
     'no-unused-vars': 'warn',
+    'react/no-array-index-key': 'off',
     'react/no-unknown-property': ['error', { ignore: ['css'] }]
   },
 };
