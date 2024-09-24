@@ -207,9 +207,11 @@ const visualAssets = {
     race1: fullTimeEmployeeBadge,
     race2: fullTimeEmployeeBadge,
     race3: fullTimeEmployeeBadge,
-    gender: fullTimeGenderSvg,
-    ladder: fullTimeLadderImg
+   gender: fullTimeGenderSvg,
+   ladder: fullTimeLadderImg
   }
+
+
 };
 
 const infoPane = (copy, color, assets) => (
