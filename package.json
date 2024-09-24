@@ -15,7 +15,6 @@
     "web-vitals": "^1.0.1"
   },
   "devDependencies": {
-    "@babel/core": "^7.16.0",
     "@emotion/eslint-plugin": "^11.2.0",
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
