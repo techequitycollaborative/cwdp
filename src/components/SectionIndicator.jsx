@@ -132,6 +132,7 @@ const SectionIndicator = ({ children }) => {
     <>
       {Children.map(children, (child, index) => cloneElement(child, {
         id: `${index}`,
+        {/* eslint-disable-next-line react/no-array-index-key */}
         key: `indicator-child-${index}`,
         // eslint-disable-next-line no-return-assign
         ref: (ref) => (childrenRefs.current[index] = ref)

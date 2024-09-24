@@ -75,7 +75,7 @@ const LandingSection = () => (
       <div css={styles.headerLeft}>
         <img css={styles.badges} src={badgesSvg} alt="Badges" />
         <h1 css={[themeStyles.text.headline, styles.title]}>{landingSectionCopy.header}</h1>
-      </div>        
+      </div>
       <a css={styles.logoLink} href="https://techequity.us" target="_blank" rel="noopener noreferrer">
         <img css={styles.techEquityLogo} src={techEquityLogoSvg} alt="TEC Logo" />
       </a>
