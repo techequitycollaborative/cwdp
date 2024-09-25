@@ -51,6 +51,8 @@ import contractorLadderImg from './img/ladder-red.png';
 import fullTimeLadderImg from './img/ladder-blue.png';
 import contractorWageImg from './img/contractor-wage.png';
 import fullTimeWageImg from './img/fulltime-wage.png';
+// Note: if svg files are causing issues, can replace with png files like so:
+//import contractorBadgesSmImg from './img/contractorBadges1.4.png';
 
 // Note: These map in order to the items in closingTheGap
 const standardItemIcons = [
@@ -108,5 +110,5 @@ export {
   fullTimeLadderImg,
   contractorWageImg,
   fullTimeWageImg,
-  arrowSvg
+  arrowSvg,
 };
