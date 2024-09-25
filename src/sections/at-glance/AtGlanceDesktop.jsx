@@ -12,7 +12,7 @@ import {
   fullTimeWageImg,
   fullTimeGenderSvg,
   fullTimeLadderImg,
-  contractorLadderImg
+  contractorLadderImg,
 } from 'assets';
 import { Quote, VerticalSplit, Button } from 'components';
 import { breakpoints, mediaQueries, themeStyles } from 'theme';
@@ -151,6 +151,7 @@ const styles = {
     marginBottom: 60
   },
   raceBadgesImg: {
+    objectFit: 'contain',
     maxHeight: 90,
     display: 'inline-block',
     marginTop: 30
